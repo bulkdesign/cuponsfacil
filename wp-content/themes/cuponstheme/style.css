@@ -1,6 +1,6 @@
 /*
 Theme Name: CuponsTheme
-Theme URI: 
+Theme URI:
 Author: Patrick Cardoso
 Author URI: bulkdesign.com.br
 Description: Theme for Site 'Cupons Fácil'
@@ -38,17 +38,14 @@ body{
    padding-left: 25px;
 }
 
-.Navegaçao{
-	background-color: rgba(109,17,16,0.7);
-	height: 150px;
-}
-
-.Navegaçao .container{
-	width: 90%!important;
+.navegacao{
+	background-color: rgba(109,17,16,0.9);
+	height: 140px;
 }
 
 .brand-logo img{
-	width: 200px;
+	width: 180px;
+	padding: 3px 0;
 }
 
 .Formulario{
@@ -58,22 +55,28 @@ body{
 .Formulario input[type="text"]{
 	background-color: #eabe35;
 	border: none;
-	margin-top: 30px;
-	width: 80%!important;
+	margin: 30px 0px 0px 40px;
+	width: 66%!important;
+	padding: 6px 15px;
+	border-radius: 2px 0px 0px 2px;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .Formulario input[type="submit"]{
 	width: 19%!important;
-	height: 45px;
+	height: 57px;
 	background-color: #6d1110;
 	color: #eabe35;
 	border: 1px solid #eabe35;
 	margin-left: -5px;
 	font-weight: 800;
+	box-shadow: 2px 0px 5px 1px rgba(0, 0, 0, 0.3);
+	border-radius: 0px 2px 2px 0px;
 }
 
-ul{
+.Menu ul{
 	text-align: center;
+	margin-top: 17px;
 }
 
 .Menu li{
@@ -96,6 +99,8 @@ ul{
 .Login a{
 	background-color: transparent!important;
 	font-weight: 800;
+	float: left;
+	text-align: center;
 }
 
 #BemVindo{
@@ -132,8 +137,9 @@ ul{
 	color: #eabe35;
 }
 
-#BemVindo a{
-	margin-bottom: 30px;
+.Login a{
+	padding: 2px;
+	font-size: 11px;
 }
 
 
@@ -201,7 +207,7 @@ ul{
 /*SESSÃO MAPA*/
 #Mapa{
 	height: 110vh;
-	background-image: linear-gradient(to bottom, rgba(198, 17, 16, 0.75), rgba(192, 17, 16, 0.75)), url('images/cidade.jpg');	
+	background-image: linear-gradient(to bottom, rgba(198, 17, 16, 0.75), rgba(192, 17, 16, 0.75)), url('images/cidade.jpg');
 	text-align: center;
 	color: #eabe35!important;
 	background-repeat: no-repeat;

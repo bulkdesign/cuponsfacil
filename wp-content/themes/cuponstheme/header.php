@@ -28,15 +28,14 @@
           } else {
             echo wp_title( ' | ', false, right ); bloginfo( 'name' );
           } ?>
-        </title>    
+        </title>
     <?php wp_head(); ?>
     </head>
 
     <body>
     <section id="BemVindo">
     <!--BARRA DE NAVEGAÇÃO-->
-    <div class="Navegaçao">
-    	<div class="Navegaçao">
+    	<div class="navegacao">
     		<div class="row">
     			<div class="container">
     				<!--LOGO-->
@@ -74,7 +73,6 @@
     				<a href="#">ANUNCIE</a>
     			</div>
     			</div>
-    			
+
     		</div>
     	</div>
-    </div>
