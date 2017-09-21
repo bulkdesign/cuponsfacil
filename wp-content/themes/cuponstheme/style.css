@@ -41,7 +41,15 @@ body{
 .navegacao{
 	background-color: rgba(109,17,16,0.9);
 	height: 140px;
+	z-index: 99999;
+	position: relative;
+
 }
+
+#SlidePremium{
+	margin-top: -160px;
+}
+
 
 .brand-logo img{
 	width: 180px;
@@ -103,36 +111,37 @@ body{
 	text-align: center;
 }
 
-#BemVindo{
-	background-image: url('images/veterinario.jpg');
-	height: 100vh;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 .container{
 	width: 85%;
 }
 
-#BemVindo .ConteudoInicial{
+
+#SlidePremium .ConteudoInicial{
 	background-color: rgba(255,255,255,0.7);
 	margin-top: 170px;
 	font-weight: 800;
+	color: #6d1110!important;
+	padding: 10px 45px 35px;
+	width: 650px;
 }
 
-#BemVindo h1{
+#SlidePremium h1{
 	font-size: 30px;
 }
 
-#BemVindo h1, p{
+#SlidePremium h1, p{
 	color: #6d1110;
 }
 
-#BemVindo p{
-	margin-top: -20px;
+.slider .slides li .caption p{
+	color: #6d1110;
 }
 
-#BemVindo span, #BemVindo a{
+.slider .row{
+	width: 100%!important;
+}
+
+#SlidePremium span, #SlidePremium a{
 	background-color: #6d1110;
 	color: #eabe35;
 }
@@ -140,6 +149,7 @@ body{
 .Login a{
 	padding: 2px;
 	font-size: 11px;
+	color: #eabe35;
 }
 
 
@@ -206,7 +216,7 @@ body{
 
 /*SESSÃO MAPA*/
 #Mapa{
-	height: 110vh;
+	height: 750px;
 	background-image: linear-gradient(to bottom, rgba(198, 17, 16, 0.75), rgba(192, 17, 16, 0.75)), url('images/cidade.jpg');
 	text-align: center;
 	color: #eabe35!important;

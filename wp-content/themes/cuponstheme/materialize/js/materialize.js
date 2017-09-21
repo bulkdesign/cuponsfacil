@@ -5154,7 +5154,7 @@ if (Vel) {
     init: function (options) {
       var defaults = {
         indicators: true,
-        height: 400,
+        height: 650,
         transition: 500,
         interval: 6000
       };

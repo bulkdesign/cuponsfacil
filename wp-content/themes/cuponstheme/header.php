@@ -33,14 +33,13 @@
     </head>
 
     <body>
-    <section id="BemVindo">
     <!--BARRA DE NAVEGAÇÃO-->
     	<div class="navegacao">
     		<div class="row">
     			<div class="container">
     				<!--LOGO-->
     			<div class="col m2 brand-logo">
-    				<img src="<?php bloginfo('template_url');?>/images/Logo.png">
+    				<a href="index.html"><img src="<?php bloginfo('template_url');?>/images/Logo.png"></a>
     			</div>
 
     			<!--FORMULÁRIO E MENU-->

@@ -1,15 +1,49 @@
 <?php get_header();?>
-
-      <div class="container">
-        <div class="row">
-          <div class="col m8 ConteudoInicial">
-            <h1>Consulta veterinária com 10% de desconto em <span>Vet Diniz</span></h1>
-            <p>Atendimento médico personalizado, com respeito e qualidade. <br>
-            Realize uma consulta para o seu bichano em um ambiente diferenciado, com uma equipe preparada para melhor atendê-lo.</p>
-            <a href="#" class="btn">Ver Oferta</a>
-          </div>
+    <section class="SlidePremium section scrollspy header-home" id="SlidePremium"> <!--CLAASE HEADER-HOME É PARA O SLIDESHOW-->
+    <!--SLIDESHOW-->
+      <div class="slider">
+          <ul class="slides">
+            <li>
+              <img src="<?php bloginfo('template_url');?>/images/veterinario.jpg"> <!-- random image -->
+              <div class="caption left-align">
+                <div class="row">
+                  <div class="col m8 ConteudoInicial">
+                    <h1>Consulta veterinária com 10% de desconto em <span>Vet Diniz</span></h1>
+                    <p>Atendimento médico personalizado, com respeito e qualidade. <br>
+                    Realize uma consulta para o seu bichano em um ambiente diferenciado, com uma equipe preparada para melhor atendê-lo.</p>
+                    <a href="#" class="btn">Ver Oferta</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src="<?php bloginfo('template_url');?>/images/papelaria.jpeg"> <!-- random image -->
+              <div class="caption left-align">
+                <div class="row">
+                  <div class="col m8 ConteudoInicial">
+                    <h1>Consulta veterinária com 10% de desconto em <span>Vet Diniz</span></h1>
+                    <p>Atendimento médico personalizado, com respeito e qualidade. <br>
+                    Realize uma consulta para o seu bichano em um ambiente diferenciado, com uma equipe preparada para melhor atendê-lo.</p>
+                    <a href="#" class="btn">Ver Oferta</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src="<?php bloginfo('template_url');?>/images/seguranca.png"> <!-- random image -->
+              <div class="caption left-align">
+                <div class="row">
+                  <div class="col m8 ConteudoInicial">
+                    <h1>Consulta veterinária com 10% de desconto em <span>Vet Diniz</span></h1>
+                    <p>Atendimento médico personalizado, com respeito e qualidade. <br>
+                    Realize uma consulta para o seu bichano em um ambiente diferenciado, com uma equipe preparada para melhor atendê-lo.</p>
+                    <a href="#" class="btn">Ver Oferta</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
     </section>
 
     <!--SESSÃO PRINCIPAIS OFERTAS-->
@@ -95,7 +129,8 @@
             <p>Encontre os descontos que estão próximos à você! <br>
             Procure pelas categorias no mapa abaixo e aproveite o melhor da cidade, pelo preço mais baixo!</p>
 
-            <img src="<?php bloginfo('template_url');?>/images/Mapa.png">
+              <?php echo do_shortcode('[wpsl]');?>
+
 
             <a href="#">Ver todas as ofertas</a>
           </div>
