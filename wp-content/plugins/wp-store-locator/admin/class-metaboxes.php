@@ -76,12 +76,6 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
                     'lng' => array(
                         'label' => __( 'Longitude', 'wpsl' )
                     )
-                ),
-                __( 'Horários de Funcionamento', 'wpsl' ) => array(
-                    'hours' => array(
-                        'label' => __( 'Funcionamento', 'wpsl' ),
-                        'type'  => $wpsl_settings['editor_hour_input'] //Either set to textarea or dropdown. This is defined through the 'Opening hours input format: ' option on the settings page
-                    )
                 )
             );
             

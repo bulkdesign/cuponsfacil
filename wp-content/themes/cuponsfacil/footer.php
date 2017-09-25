@@ -70,8 +70,19 @@
 <script type="text/javascript">
    $(document).ready(function(){
     $('.slider').slider();
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+    $('ul.tabs').tabs();
   });
 </script>
+<script>
+var a2a_config = a2a_config || {};
+a2a_config.linkname = "Cupons Fácil";
+a2a_config.linkurl = "https://cuponsfacil.com.br";
+a2a_config.locale = "pt-BR";
+a2a_config.num_services = 4;
+</script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
 <?php wp_footer(); ?>
 </body>
 </html>
