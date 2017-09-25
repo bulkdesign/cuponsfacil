@@ -1,0 +1,339 @@
+/*
+Theme Name: Cupons Fácil
+Theme URI:
+Author: Bulk Design
+Author URI: bulkdesign.com.br
+Description: Tema para o site da Cupons Fácil
+*/
+
+@font-face {
+	font-family: 'Hussar';
+	src: url('fonts/HussarBold.eot');
+	src: url('fonts/HussarBold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/HussarBold.woff') format('woff'),
+		url('fonts/HussarBold.ttf') format('truetype');
+	font-style: normal;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Hussar';
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+.amarelo-cupons {
+	background-color: #eabe35 !important;
+}
+
+.texto-amarelo-cupons {
+	color: #eabe35 !important;
+}
+
+.vermelho-cupons {
+	background-color: #6d1110 !important;
+}
+
+.texto-vermelho-cupons {
+	color: #6d1110 !important;
+}
+
+.container {
+	width: 85%;
+}
+
+/* SECTION BEM VINDO */
+.navegacao {
+	background-color: rgba(109,17,16,0.9);
+	height: 140px;
+	z-index: 99999;
+	position: relative;
+}
+
+#slidepremium {
+	margin-top: -160px;
+}
+
+.brand-logo img {
+	width: 180px;
+	padding: 3px 0;
+}
+
+.busca {
+	width: 100%!important;
+}
+
+.busca input[type="text"] {
+	background-color: #eabe35;
+	border: none;
+	font-size: 18px;
+	margin: 30px 0px 0px 30px;
+	width: 59% !important;
+	padding: 6px 65px;
+	border-radius: 2px 0px 0px 2px;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+	background: url(images/busca.png) no-repeat #eabe35;
+    background-size: 45px;
+    background-position: 10px;
+}
+
+::-webkit-input-placeholder {
+   color: #717074;
+   font-size: 18px;
+}
+
+.busca input[type="submit"] {
+	width: 19%!important;
+	height: 57px;
+	background-color: #6d1110;
+	color: #eabe35;
+	border: 1px solid #eabe35;
+	margin-left: -5px;
+	box-shadow: 2px 0px 5px 1px rgba(0, 0, 0, 0.3);
+	border-radius: 0px 2px 2px 0px;
+}
+
+.menu ul {
+	text-align: center;
+	margin-top: 17px;
+}
+
+.menu li {
+	display: inline-block;
+	text-align: center;
+}
+
+.menu li a {
+	background-color: transparent!important;
+	color: white!important;
+	padding: 15px;
+}
+
+.login {
+	text-align: center;
+	margin-top: 35px;
+}
+
+.login ul {
+	margin: 0;
+}
+
+.login a {
+	font-size: 13px;
+	color: #eabe35;
+}
+
+#slidepremium .conteudoinicial {
+	background-color: rgba(255,255,255,0.7);
+	margin-top: 170px;
+	color: #6d1110!important;
+	padding: 10px 45px 35px;
+	width: 650px;
+}
+
+.conteudoinicial h1 {
+	line-height: 2.6rem;
+}
+
+#slidepremium h1, p {
+	color: #6d1110;
+}
+
+.slider .slides li .caption p {
+	color: #6d1110;
+}
+
+.slider .row{
+	width: 100%!important;
+}
+
+#slidepremium span, #slidepremium a {
+	background-color: #6d1110;
+}
+
+span.nomevendedor {
+	padding: 5px 5px 0;
+}
+
+/*sessão principais ofertas*/
+#principaisofertas {
+	height: 800px;
+}
+
+#principaisofertas h1 {
+	text-align: center;
+	color: #6d1110;
+	margin: 30px 0 70px;
+}
+
+.oferta {
+	height: 250px;
+	width: 100%!important;
+	text-align: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 30px;
+	color: #FFFFFF;
+	padding-top: 80px;
+}
+
+.oferta img {
+    width: 100px;
+    padding: 10px;
+    margin: -40px;
+}
+
+.descricaooferta {
+	background-color: rgba(109,17,16,0.7);
+	height: 75px;
+	text-align: center;
+	margin-top: -105px;
+}
+
+.descricaooferta h3 {
+	font-size: 15px;
+	color: #eabe35;
+	padding: 22px;
+}
+
+.descricaooferta p span {
+	color: white;
+}
+
+/*ofertas*/
+.primeiro {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/papelaria.jpg');
+}
+.segundo {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sistemas.jpg');
+}
+.terceiro {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hookah.jpg');
+}
+.quarto {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/iphone.png');
+}
+.quinto {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/mega.jpg');
+}
+
+/*sessão mapa*/
+#mapa {
+	height: 820px;
+	padding: 20px;
+	background-image: url('images/cidade.jpg');
+	text-align: center;
+	color: #eabe35!important;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #6D1110;
+}
+
+#mapa h1 {
+	margin: 100px 0 30px;
+}
+
+#mapa p {
+	font-size: 17px;
+	margin-bottom: 40px;
+}
+
+#mapa a {
+	font-size: 20px;
+}
+
+.wpsl-store-location p {
+	color: #eabe35 !important;
+}
+
+#wpsl-gmap {
+	width: 75% !important;
+}
+
+.wpsl-search {
+	margin-bottom: 0 !important;
+}
+
+#wpsl-result-list {
+	width: 25% !important;
+	background-color: rgba(109, 17, 16, 0.7);
+}
+
+/*sessão footer*/
+footer.page-footer {
+	background: #111111;
+}
+
+.page-footer {
+	padding: 50px 0 0px 0;
+}
+
+.page-footer .footer-copyright {
+	margin-top: 50px;
+}
+
+.footer-copyright p {
+	font-size: 11px;
+}
+
+.social ul li {
+	float: left;
+	margin-left: 15px;
+}
+
+button.btn-small {
+    font-size: 11px;
+    padding: 0px 15px 0px 15px;
+    float: left;
+    margin: 12px 0;
+}
+
+@media (min-width: 994px) {
+
+}
+
+@media (min-width: 994px) and (max-width: 1050px) {
+
+}
+
+@media (min-width: 602px) and (max-width: 994px) {
+
+}
+
+@media (min-width: 260px) and (max-width: 602px) {
+	#principaisofertas {
+		height: auto;
+	}
+
+	#wpsl-gmap {
+		width: 100% !important;
+	}
+
+	.wpsl-search {
+		display: none;
+	}
+
+	#mapa h1 {
+		margin: 50px 0 30px;
+		font-size: 1.7rem;
+	}
+
+	#wpsl-result-list {
+		width: 100% !important;
+	}
+
+	#slidepremium .conteudoinicial {
+    	background-color: rgba(255,255,255,0.7);
+    	width: 100%;
+    	margin-top: 60px !important;
+    	padding: 0px 15px 15px !important;
+	}
+
+}

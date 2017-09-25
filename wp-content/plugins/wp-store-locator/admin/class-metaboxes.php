@@ -30,8 +30,8 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
          * @return void
          */
         public function add_meta_boxes() {
-            add_meta_box( 'wpsl-store-details', __( 'Store Details', 'wpsl' ), array( $this, 'create_meta_fields' ), 'wpsl_stores', 'normal', 'high' );
-            add_meta_box( 'wpsl-map-preview', __( 'Store Map', 'wpsl' ), array( $this, 'map_preview' ), 'wpsl_stores', 'side' );            
+            add_meta_box( 'wpsl-store-details', __( 'Detalhes do Estabelecimento', 'wpsl' ), array( $this, 'create_meta_fields' ), 'wpsl_stores', 'normal', 'high' );
+            add_meta_box( 'wpsl-map-preview', __( 'Mapa', 'wpsl' ), array( $this, 'map_preview' ), 'wpsl_stores', 'side' );            
         }        
         
         /**
@@ -45,26 +45,26 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
             global $wpsl_settings;
             
             $meta_fields = array(
-                __( 'Location', 'wpsl' ) => array(
+                __( 'Localização', 'wpsl' ) => array(
                     'address' => array(
-                        'label'    => __( 'Address', 'wpsl' ),
+                        'label'    => __( 'Endereço', 'wpsl' ),
                         'required' => true
                     ),
                     'address2' => array(
-                        'label' => __( 'Address 2', 'wpsl' )
+                        'label' => __( 'Endereço 2', 'wpsl' )
                     ),
                     'city' => array(
-                        'label'    => __( 'City', 'wpsl' ),
+                        'label'    => __( 'Cidade', 'wpsl' ),
                         'required' => true
                     ),
                     'state' => array(
-                        'label' => __( 'State', 'wpsl' )
+                        'label' => __( 'Estado', 'wpsl' )
                     ),
                     'zip' => array(
-                        'label' => __( 'Zip Code', 'wpsl' )
+                        'label' => __( 'CEP', 'wpsl' )
                     ),
                     'country' => array(
-                        'label'    => __( 'Country', 'wpsl' ),
+                        'label'    => __( 'País', 'wpsl' ),
                         'required' => true
                     ),
                     'country_iso' => array(
@@ -77,24 +77,10 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
                         'label' => __( 'Longitude', 'wpsl' )
                     )
                 ),
-                __( 'Opening Hours', 'wpsl' ) => array(
+                __( 'Horários de Funcionamento', 'wpsl' ) => array(
                     'hours' => array(
-                        'label' => __( 'Hours', 'wpsl' ),
+                        'label' => __( 'Funcionamento', 'wpsl' ),
                         'type'  => $wpsl_settings['editor_hour_input'] //Either set to textarea or dropdown. This is defined through the 'Opening hours input format: ' option on the settings page
-                    )
-                ),
-                __( 'Additional Information', 'wpsl' ) => array(
-                    'phone' => array(
-                        'label' => __( 'Tel', 'wpsl' )
-                    ),
-                    'fax' => array(
-                        'label' => __( 'Fax', 'wpsl' )
-                    ),
-                    'email' => array(
-                        'label' => __( 'Email', 'wpsl' )
-                    ),
-                    'url' => array(
-                        'label' => __( 'Url', 'wpsl' )
                     )
                 )
             );
@@ -126,7 +112,7 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
                 foreach ( $this->meta_box_fields() as $tab => $meta_fields ) {                     
                     $active_class = ( $i == 0 ) ? ' wpsl-active' : '';
                     
-                    if ( $wpsl_settings['hide_hours'] && $tab == __( 'Opening Hours', 'wpsl' ) ) {
+                    if ( $wpsl_settings['hide_hours'] && $tab == __( 'Horário que abre', 'wpsl' ) ) {
                         continue;
                     } else {
                         $tab_items .= $this->meta_field_nav( $tab, $active_class ); 
@@ -141,7 +127,7 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
                 foreach ( $this->meta_box_fields() as $tab => $meta_fields ) { 
                     $active_class = ( $j == 0 ) ? ' wpsl-active' : '';
                     
-                    if ( $wpsl_settings['hide_hours'] && $tab == __( 'Opening Hours', 'wpsl' ) ) {
+                    if ( $wpsl_settings['hide_hours'] && $tab == __( 'Horário que abre', 'wpsl' ) ) {
                         continue;
                     } else {                  
                         echo '<div class="wpsl-tab wpsl-' . esc_attr( strtolower( str_replace( ' ', '-', $tab ) ) ) . $active_class . '">';
@@ -444,15 +430,15 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
             if ( $location == 'store_page' ) {
             ?>
                 <p class="wpsl-hours-dropdown">
-                    <label for="wpsl-editor-hour-input"><?php _e( 'Hour format', 'wpsl' ); ?>:</label> 
+                    <label for="wpsl-editor-hour-input"><?php _e( 'Formato de Hora', 'wpsl' ); ?>:</label> 
                     <?php echo $wpsl_admin->settings_page->show_opening_hours_format( $hour_format ); ?>
                 </p>
             <?php } ?>
                 
                 <table id="wpsl-store-hours" class="<?php echo $hour_class; ?>">
                     <tr>
-                        <th><?php _e( 'Days', 'wpsl' ); ?></th>
-                        <th><?php _e( 'Opening Periods', 'wpsl' ); ?></th>
+                        <th><?php _e( 'Dias', 'wpsl' ); ?></th>
+                        <th><?php _e( 'Períodos de Funcionamento', 'wpsl' ); ?></th>
                         <th></th>
                     </tr>
                     <?php
@@ -483,9 +469,9 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
                                             );
                                         ?>
                                             <div class="wpsl-current-period <?php if ( $i > 0 ) { echo 'wpsl-multiple-periods'; } ?>">
-                                                <?php echo $this->opening_hours_dropdown( $args, 'open' ); ?>
+                                                <?php echo $this->opening_hours_dropdown( $args, 'abre' ); ?>
                                                 <span> - </span>
-                                                <?php echo $this->opening_hours_dropdown( $args, 'close' ); ?>
+                                                <?php echo $this->opening_hours_dropdown( $args, 'fecha' ); ?>
                                                 <div class="wpsl-icon-cancel-circled"></div>
                                             </div>
                                         <?php  
@@ -522,7 +508,7 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
          * @return void
          */
         public function show_store_closed( $name, $day ) {
-            echo '<p class="wpsl-store-closed">' . __( 'Closed', 'wpsl' ) . '<input type="hidden" name="' . esc_attr( $name ) . '[' . esc_attr( $day ) . ']" value="closed"></p>';
+            echo '<p class="wpsl-store-closed">' . __( 'Fechado', 'wpsl' ) . '<input type="hidden" name="' . esc_attr( $name ) . '[' . esc_attr( $day ) . ']" value="Fechado"></p>';
         }
         
        /**
@@ -836,9 +822,8 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
             ?>
                 <div id="wpsl-gmap-wrap"></div>
                 <p class="wpsl-submit-wrap">
-                    <a id="wpsl-lookup-location" class="button-primary" href="#wpsl-meta-nav"><?php _e( 'Preview Location', 'wpsl' ); ?></a>
-                    <span class="wpsl-info"><span class="wpsl-info-text wpsl-hide"><?php echo sprintf( __( 'The map preview is based on the provided address, city and country details. %s It will ignore any custom latitude or longitude values.', 'wpsl' ), '<br><br>' ); ?></span></span>
-                    <em class="wpsl-desc"><?php _e( 'You can drag the marker to adjust the exact location of the marker.', 'wpsl' ); ?></em>
+                    <a id="wpsl-lookup-location" class="button-primary" href="#wpsl-meta-nav"><?php _e( 'Pré-Visualizar', 'wpsl' ); ?></a>
+                    <em class="wpsl-desc"><?php _e( 'É possível arrastar o marcador para a posição exata.', 'wpsl' ); ?></em>
                 </p>
             <?php
         }
@@ -858,19 +843,19 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
 
             $messages['wpsl_stores'] = array(
                 0  => '', // Unused. Messages start at index 1.
-                1  => __( 'Store updated.', 'wpsl' ),
-                2  => __( 'Custom field updated.', 'wpsl' ),
-                3  => __( 'Custom field deleted.', 'wpsl' ),
-                4  => __( 'Store updated.', 'wpsl' ),
-                5  => isset( $_GET['revision'] ) ? sprintf( __( 'Store restored to revision from %s', 'wpsl' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-                6  => __( 'Store published.', 'wpsl' ),
-                7  => __( 'Store saved.', 'wpsl' ),
-                8  => __( 'Store submitted.', 'wpsl' ),
+                1  => __( 'Estabelecimento atualizado.', 'wpsl' ),
+                2  => __( 'Campo personalizado atualizado.', 'wpsl' ),
+                3  => __( 'Campo personalizado deletado.', 'wpsl' ),
+                4  => __( 'Estabelecimento atualizado.', 'wpsl' ),
+                5  => isset( $_GET['revision'] ) ? sprintf( __( 'Estabelecimento com versão recuperada de %s', 'wpsl' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+                6  => __( 'Estabelecimento salvo.', 'wpsl' ),
+                7  => __( 'Estabelecimento salvo.', 'wpsl' ),
+                8  => __( 'Estabelecimento enviado.', 'wpsl' ),
                 9  => sprintf(
                     __( 'Store scheduled for: <strong>%1$s</strong>.', 'wpsl' ),
                     date_i18n( __( 'M j, Y @ G:i', 'wpsl' ), strtotime( $post->post_date ) )
                 ),
-                10 => __( 'Store draft updated.', 'wpsl' )
+                10 => __( 'Estabelecimento rascunho salvo.', 'wpsl' )
             );
 
             if ( ( 'wpsl_stores' == $post_type ) && ( $post_type_object->publicly_queryable ) ) {
@@ -882,7 +867,7 @@ if ( !class_exists( 'WPSL_Metaboxes' ) ) {
                 $messages[ $post_type ][9] .= $view_link;
 
                 $preview_permalink = add_query_arg( 'preview', 'true', $permalink );
-                $preview_link = sprintf( ' <a target="_blank" href="%s">%s</a>', esc_url( $preview_permalink ), __( 'Preview store', 'wpsl' ) );
+                $preview_link = sprintf( ' <a target="_blank" href="%s">%s</a>', esc_url( $preview_permalink ), __( 'Pré-Visualizar Estabelecimento', 'wpsl' ) );
                 $messages[ $post_type ][8]  .= $preview_link;
                 $messages[ $post_type ][10] .= $preview_link;
             }

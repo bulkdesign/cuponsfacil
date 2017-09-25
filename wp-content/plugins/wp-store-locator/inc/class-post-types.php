@@ -49,17 +49,17 @@ if ( !class_exists( 'WPSL_Post_Types' ) ) {
 
             // The labels for the wpsl_stores post type.
             $labels = apply_filters( 'wpsl_post_type_labels', array(
-                    'name'               => __( 'Store Locator', 'wpsl' ),
-                    'all_items'          => __( 'All Stores', 'wpsl' ),
-                    'singular_name'      => __( 'Store', 'wpsl' ),
-                    'add_new'            => __( 'New Store', 'wpsl' ),
-                    'add_new_item'       => __( 'Add New Store', 'wpsl' ),
-                    'edit_item'          => __( 'Edit Store', 'wpsl' ),
-                    'new_item'           => __( 'New Store', 'wpsl' ),
-                    'view_item'          => __( 'View Stores', 'wpsl' ),
-                    'search_items'       => __( 'Search Stores', 'wpsl' ),
-                    'not_found'          => __( 'No Stores found', 'wpsl' ),
-                    'not_found_in_trash' => __( 'No Stores found in trash', 'wpsl' ),
+                    'name'               => __( 'Estabelecimentos', 'wpsl' ),
+                    'all_items'          => __( 'Ver Todos', 'wpsl' ),
+                    'singular_name'      => __( 'Estabelecimento', 'wpsl' ),
+                    'add_new'            => __( 'Adicionar Novo', 'wpsl' ),
+                    'add_new_item'       => __( 'Adicionar Novo Estabelecimento', 'wpsl' ),
+                    'edit_item'          => __( 'Editar', 'wpsl' ),
+                    'new_item'           => __( 'Novo Estabelecimento', 'wpsl' ),
+                    'view_item'          => __( 'Ver Estabelecimentos', 'wpsl' ),
+                    'search_items'       => __( 'Buscar Estabelecimentos', 'wpsl' ),
+                    'not_found'          => __( 'Nenhum Estabelecimento Encontrado', 'wpsl' ),
+                    'not_found_in_trash' => __( 'Não encontrado na lixeira', 'wpsl' ),
                 ) 
             );
             
@@ -101,17 +101,17 @@ if ( !class_exists( 'WPSL_Post_Types' ) ) {
             }
 
             $labels = array(
-				'name'              => __( 'Store Categories', 'wpsl' ),
-				'singular_name'     => __( 'Store Category', 'wpsl' ),
-				'search_items'      => __( 'Search Store Categories', 'wpsl' ),
-				'all_items'         => __( 'All Store Categories', 'wpsl' ),
-				'parent_item'       => __( 'Parent Store Category', 'wpsl' ),
-				'parent_item_colon' => __( 'Parent Store Category:', 'wpsl' ),
-				'edit_item'         => __( 'Edit Store Category', 'wpsl' ),
-				'update_item'       => __( 'Update Store Category', 'wpsl' ),
-				'add_new_item'      => __( 'Add New Store Category', 'wpsl' ),
-				'new_item_name'     => __( 'New Store Category Name', 'wpsl' ),
-				'menu_name'         => __( 'Store Categories', 'wpsl' ),
+				'name'              => __( 'Categorias', 'wpsl' ),
+				'singular_name'     => __( 'Categoria', 'wpsl' ),
+				'search_items'      => __( 'Buscar Categorias', 'wpsl' ),
+				'all_items'         => __( 'Todas as Categorias', 'wpsl' ),
+				'parent_item'       => __( 'Categoria Mãe', 'wpsl' ),
+				'parent_item_colon' => __( 'Categoria Mãe:', 'wpsl' ),
+				'edit_item'         => __( 'Editar Categoria', 'wpsl' ),
+				'update_item'       => __( 'Atualizar Categoria', 'wpsl' ),
+				'add_new_item'      => __( 'Adicionar Nova', 'wpsl' ),
+				'new_item_name'     => __( 'Nova Categoria', 'wpsl' ),
+				'menu_name'         => __( 'Categorias', 'wpsl' ),
 			);
                         
             $args = apply_filters( 'wpsl_store_category_args', array(
@@ -141,7 +141,7 @@ if ( !class_exists( 'WPSL_Post_Types' ) ) {
             $screen = get_current_screen();
 
             if ( $screen->post_type == 'wpsl_stores' ) {
-               $title = __( 'Enter store title here', 'wpsl' );
+               $title = __( 'Insira o nome do Estabelecimento', 'wpsl' );
             }
 
             return $title;
@@ -156,10 +156,10 @@ if ( !class_exists( 'WPSL_Post_Types' ) ) {
          */
         public function edit_columns( $columns ) {
             
-            $columns['address'] = __( 'Address', 'wpsl' );
-            $columns['city']    = __( 'City', 'wpsl' );
-            $columns['state']   = __( 'State', 'wpsl' );
-            $columns['zip']     = __( 'Zip', 'wpsl' );
+            $columns['address'] = __( 'Endereço', 'wpsl' );
+            $columns['city']    = __( 'Cidade', 'wpsl' );
+            $columns['state']   = __( 'Estado', 'wpsl' );
+            $columns['zip']     = __( 'CEP', 'wpsl' );
 
             return $columns;
         }

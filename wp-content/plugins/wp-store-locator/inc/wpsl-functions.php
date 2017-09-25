@@ -235,13 +235,13 @@ function wpsl_get_templates() {
 function wpsl_get_weekdays() {
 
    $weekdays = array( 
-       'monday'    => __( 'Monday', 'wpsl' ), 
-       'tuesday'   => __( 'Tuesday', 'wpsl' ),  
-       'wednesday' => __( 'Wednesday', 'wpsl' ),  
-       'thursday'  => __( 'Thursday', 'wpsl' ),  
-       'friday'    => __( 'Friday', 'wpsl' ),  
-       'saturday'  => __( 'Saturday', 'wpsl' ),
-       'sunday'    => __( 'Sunday' , 'wpsl' )
+       'monday'    => __( 'Segunda', 'wpsl' ), 
+       'tuesday'   => __( 'Terça', 'wpsl' ),  
+       'wednesday' => __( 'Quarta', 'wpsl' ),  
+       'thursday'  => __( 'Quinta', 'wpsl' ),  
+       'friday'    => __( 'Sexta', 'wpsl' ),  
+       'saturday'  => __( 'Sábado', 'wpsl' ),
+       'sunday'    => __( 'Domingo' , 'wpsl' )
    );
 
    return $weekdays;
@@ -271,7 +271,7 @@ function wpsl_default_opening_hours() {
    
    /* Only add the textarea defaults for users that upgraded from 1.x */
    if ( version_compare( $current_version, '2.0', '<' ) ) {
-       $opening_hours['textarea'] = sprintf( __( 'Mon %sTue %sWed %sThu %sFri %sSat Closed %sSun Closed', 'wpsl' ), '9:00 AM - 5:00 PM' . "\n", '9:00 AM - 5:00 PM' . "\n", '9:00 AM - 5:00 PM' . "\n", '9:00 AM - 5:00 PM' . "\n", '9:00 AM - 5:00 PM' . "\n", "\n" ); //cleaner way without repeating it 5 times??
+       $opening_hours['textarea'] = sprintf( __( 'Seg %sTer %sQua %sQui %sSex %sSab Fechado %sDom Fechado', 'wpsl' ), '9:00 AM - 5:00 PM' . "\n", '9:00 AM - 5:00 PM' . "\n", '9:00 AM - 5:00 PM' . "\n", '9:00 AM - 5:00 PM' . "\n", '9:00 AM - 5:00 PM' . "\n", "\n" ); //cleaner way without repeating it 5 times??
    }
 
    return $opening_hours;
