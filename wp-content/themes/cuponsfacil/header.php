@@ -36,13 +36,11 @@
                         <!--OPÇÕES-->
                         <div class="col m12 menu">
                             <ul>
-                                <li><a href="#">BARES E RESTAURANTES</a>
-                                </li>
-                                <li><a href="#">SAÚDE E BELEZA</a>
-                                </li>
-                                <li><a href="#">SERVIÇOS</a>
-                                </li>
-                                <li><a href="#">AUTOMÓVEIS</a>
+                                <li><a href="#">BARES E RESTAURANTES</a></li>
+                                <li><a href="#">SAÚDE E BELEZA</a></li>
+                                <li><a href="#">SERVIÇOS</a></li>
+                                <li><a href="#">AUTOMÓVEIS</a></li>
+                                <li><a href="#">VAREJO</a></li>
                                 </li>
                             </ul>
                         </div>

@@ -81,15 +81,26 @@ get_header(); ?>
 				    	<div class="col s12">
 				    		<h3 class="texto-vermelho-cupons">Localização:</h3>
 				    		<?php $id = array(get_the_ID(), $p->ID);?>
-				    		<?php echo do_shortcode('[wpsl_address id="'.$id[1].'" name="false" city="false" state="false" country="false" phone="false"]'); ?>
-				    		Telefones: <?php the_field('telefone_fixo', $p->ID); ?> <?php if( get_field('telefone_2', $p->ID)): ?>| <?php the_field('telefone_2', $p->ID); ?><?php else: ?><?php endif; ?>
+				    		<p><?php echo do_shortcode('[wpsl_address id="'.$id[1].'" name="false" city="false" state="false" country="false" phone="false"]'); ?></p>
+				    		<p>Telefones: <?php the_field('telefone_fixo', $p->ID); ?> <?php if( get_field('telefone_2', $p->ID)): ?>| <?php the_field('telefone_2', $p->ID); ?><?php else: ?><?php endif; ?></p>
 				    		<div class="margin20">
 				    			<?php echo do_shortcode('[wpsl_map id="'.$id[1].'" zoom="16"]'); ?>
 				    		</div>
 				    	</div>
 				    	<div class="col s12">
-				    		<h3 class="texto-vermelho-cupons">Avaliações:</h3>
-				    		<?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
+				    		<div class="col s12 l3">
+					    		<h3 class="texto-vermelho-cupons">Avaliações:</h3>
+					    		<?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
+					    	</div>
+					    	<div class="col s12 l5">
+					    		<h3 class="texto-vermelho-cupons">Redes Sociais da empresa:</h3>
+						        <div class="social col m12 hide-on-small-only">
+						          <ul class="left">
+						            <li><a href="<?php the_field('facebook', $p->ID); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/images/facebook.png"/></a></li>
+						            <li><a href="<?php the_field('instagram', $p->ID); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/images/instagram.png"/></a></li>
+						          </ul>
+						        </div>
+					    	</div>
 				    	</div>
 					</div>
 				    <div id="regulamento" class="col s12 m8 push-m2">
@@ -99,17 +110,91 @@ get_header(); ?>
 				    </div>
 				    <div id="aempresa" class="col s12 m8 push-m2">
 				    	<div class="col s12">
+				    		<div class="col s12">
+								<div class="slider" style="height:300px !important;">
+									<ul class="slides" style="height: 300px !important;">
+									<?php
+									if( have_rows('fotos_da_oferta') ):
+									    while ( have_rows('fotos_da_oferta') ) : the_row(); ?>
+									        <li>
+												<img src="<?php echo the_sub_field('imagem_oferta'); ?>">
+											</li>
+									    <?php endwhile;
+										else :
+									endif; ?>	
+									</ul>
+								</div>
+				    		</div>
+				    	</div>
+				    	<div class="col s12 grey-text text-darken-2">
 				    		<?php if( $posts ): ?>
 								<?php foreach( $posts as $p ): ?>
-								    <p><?php the_field('nome_da_empresa', $p->ID); ?></p>
-								    <p><?php the_field('telefone_fixo', $p->ID); ?></p>
-								    <p><?php the_field('e-mail', $p->ID); ?></p>
-								    <p><?php the_field('funcionamento_semana', $p->ID); ?></p>
-								    <p><?php the_field('funcionamento_sabado', $p->ID); ?></p>
-								    <p><?php the_field('funcionamento_domingo', $p->ID); ?></p>
-								    <p><?php the_field('conveniencias', $p->ID); ?></p>
-								    <p><?php the_field('formas_de_pagamento', $p->ID); ?></p>
-								    <p><?php the_field('sobre_a_empresa', $p->ID); ?></p>
+									<table>
+										<thead>
+											<tr>
+												<th>Nome da empresa</th>
+												<th>Telefone fixo</th>
+												<th>E-mail</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><?php the_field('nome_da_empresa', $p->ID); ?></td>
+												<td><?php the_field('telefone_fixo', $p->ID); ?></td>
+												<td><?php the_field('e-mail', $p->ID); ?></td>
+											</tr>
+										</tbody>
+									</table>
+									<table>
+										<thead>
+											<tr>
+												<th colspan="3">Horários de funcionamento:</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Dias de semana: <?php the_field('funcionamento_semana', $p->ID); ?></td>
+												<td>Sábado: <?php the_field('funcionamento_sabado', $p->ID); ?></td>
+												<td>Domingo: <?php the_field('funcionamento_domingo', $p->ID); ?></td>
+											</tr>
+										</tbody>
+									</table>
+									<table>
+										<thead>
+											<tr>
+												<th colspan="4">Conveniências</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><?php the_field('conveniencias', $p->ID); ?></td>
+											</tr>
+										</tbody>
+									</table>
+									<table>
+										<thead>
+											<tr>
+												<th colspan="4">Formas de Pagamento</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><?php the_field('formas_de_pagamento', $p->ID); ?></td>
+											</tr>
+										</tbody>
+									</table>
+									<table>
+										<thead>
+											<tr>
+												<th>Sobre a empresa</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><?php the_field('sobre_a_empresa', $p->ID); ?></td>
+											</tr>
+										</tbody>
+									</table>
 								<?php endforeach; ?>
 							<?php endif; ?>
 				    	</div>

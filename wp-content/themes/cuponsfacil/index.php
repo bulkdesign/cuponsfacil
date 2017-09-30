@@ -1,47 +1,32 @@
 <?php get_header();?>
     <section class="slidepremium section scrollspy header-home" id="slidepremium"> <!--CLAASE HEADER-HOME É PARA O SLIDESHOW-->
+    <?php $loop = new WP_Query( array( 'post_type' => array('ofertas') )); ?>
+    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    <?php $posts = get_field('estabelecimento'); ?>
     <!--SLIDESHOW-->
       <div class="slider">
         <ul class="slides">
           <li>
-            <img src="<?php bloginfo('template_url');?>/images/veterinario.jpg"> <!-- random image -->
+            <img src="<?php echo get_field('foto_de_capa'); ?>"> <!-- random image -->
             <div class="caption left-align">
               <div class="row">
                 <div class="col m8 conteudoinicial">
-                  <h1>Consulta veterinária com 10% de desconto em <span class="texto-amarelo-cupons">Vet Diniz</span></h1>
-                  <p>Atendimento médico personalizado, com respeito e qualidade. <br>
-                  Realize uma consulta para o seu bichano em um ambiente diferenciado, com uma equipe preparada para melhor atendê-lo.</p>
-                  <a href="#" class="btn texto-amarelo-cupons">Ver Oferta</a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <img src="<?php bloginfo('template_url');?>/images/papelaria.jpeg"> <!-- random image -->
-            <div class="caption left-align">
-              <div class="row">
-                <div class="col m8 conteudoinicial">
-                  <h1>10% de Desconto no total da compra em <span class="texto-amarelo-cupons">Bavatos Papelaria e Informática</span></h1>
-                  <p>Com uma missão extremamente atual, a Bavatos procura sempre a satisfação do seu cliente, procurando soluções simples, eficazes e menos burocráticas possíveis, personalizando o atendimento e visando o reconhecimento no mercado.</p>
-                  <a href="#" class="btn texto-amarelo-cupons">Ver Oferta</a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <img src="<?php bloginfo('template_url');?>/images/seguranca.png"> <!-- random image -->
-            <div class="caption left-align">
-              <div class="row">
-                <div class="col m8 conteudoinicial">
-                  <h1>30% de Desconto na taxa de instalação em <span class="texto-amarelo-cupons">Isco Sistemas</span></h1>
-                  <p>Visando a agilidade e a confiabilidade, nosso sistema de gestão empresarial é um software na medida certa para o seu negócio e com um preço justo.</p>
-                  <a href="#" class="btn texto-amarelo-cupons">Ver Oferta</a>
+                  <h1><?php the_title(); ?> em
+                    <?php if( $posts ): ?>
+                      <?php foreach( $posts as $p ): ?>
+                          <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $p->ID); ?></span>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
+                  </h1>
+                  <p><?php the_field('descricao_da_oferta'); ?></p>
+                  <a href="<?php echo get_permalink(); ?>" class="btn texto-amarelo-cupons">Ver Oferta</a>
                 </div>
               </div>
             </div>
           </li>
         </ul>
       </div>
+    <?php endwhile; wp_reset_query(); ?>
     </section>
     <!--SESSÃO PRINCIPAIS OFERTAS-->
     <section id="principaisofertas">

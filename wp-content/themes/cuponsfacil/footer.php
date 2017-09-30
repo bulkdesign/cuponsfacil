@@ -67,6 +67,8 @@
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url');?>/materialize/js/materialize.js"></script>
+<script src="<?php bloginfo('template_url') ?>/js/bootstrap-table.js"></script>
+<script src="<?php bloginfo('template_url') ?>/js/filter-control/bootstrap-table-filter-control.js"></script>
 <script type="text/javascript">
    $(document).ready(function(){
     $('.slider').slider();
