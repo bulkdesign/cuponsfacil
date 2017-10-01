@@ -6,6 +6,8 @@ Author URI: bulkdesign.com.br
 Description: Tema para o site da Cupons Fácil
 */
 
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 @font-face {
 	font-family: 'Hussar';
 	src: url('fonts/HussarBold.eot');
@@ -19,6 +21,10 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Hussar';
+}
+
+strong {
+    font-family: 'Hussar';
 }
 
 h1 {
@@ -73,9 +79,13 @@ p.texto-pequeno {
 /* SECTION BEM VINDO */
 .navegacao {
 	background-color: rgba(109,17,16,0.9);
-	height: 140px;
+	height: 150px;
 	z-index: 99999;
 	position: relative;
+}
+
+.navegacao .row {
+    margin-bottom: 0;
 }
 
 #slidepremium {
@@ -83,8 +93,10 @@ p.texto-pequeno {
 }
 
 .brand-logo img {
-	width: 180px;
-	padding: 3px 0;
+    width: 190px;
+    padding: 4px 0;
+    position: absolute;
+    margin: 0;
 }
 
 .busca {
@@ -100,7 +112,7 @@ p.texto-pequeno {
 	padding: 6px 65px;
 	border-radius: 2px 0px 0px 2px;
 	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-	background: url(images/busca.png) no-repeat #eabe35;
+	background: url(img/assets/busca.png) no-repeat #eabe35;
     background-size: 45px;
     background-position: 10px;
 }
@@ -152,11 +164,12 @@ p.texto-pequeno {
 }
 
 #slidepremium .conteudoinicial {
-	background-color: rgba(255,255,255,0.7);
-	margin-top: 170px;
-	color: #6d1110!important;
-	padding: 10px 45px 35px;
-	width: 650px;
+    background-color: rgba(255,255,255,0.9);
+    margin: 170px 0;
+    color: #6d1110!important;
+    padding: 10px 45px 35px;
+    text-align: center;
+    width: 100%;
 }
 
 .conteudoinicial h1 {
@@ -169,10 +182,6 @@ p.texto-pequeno {
 
 .slider .slides li .caption p {
 	color: #6d1110;
-}
-
-.slider .row{
-	width: 100%!important;
 }
 
 #slidepremium span, #slidepremium a {
@@ -230,26 +239,26 @@ span.nomevendedor {
 
 /*ofertas*/
 .primeiro {
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/papelaria.jpg');
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/assets/papelaria.jpg');
 }
 .segundo {
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sistemas.jpg');
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/assets/sistemas.jpg');
 }
 .terceiro {
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hookah.jpg');
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/assets/hookah.jpg');
 }
 .quarto {
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/iphone.png');
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/assets/iphone.png');
 }
 .quinto {
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/mega.jpg');
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/assets/mega.jpg');
 }
 
 /*sessão mapa*/
 #mapa {
 	height: 820px;
 	padding: 20px;
-	background-image: url('images/cidade.jpg');
+	background-image: url('img/assets/cidade.jpg');
 	text-align: center;
 	color: #eabe35!important;
 	background-repeat: no-repeat;
@@ -316,7 +325,7 @@ span.nomevendedor {
 
 .overlay-vermelho {
 	background-color: rgba(0, 0, 0, 0.7) !important;
-    top: -136px;
+    top: -114px;
     left: 0;
     width: 100%;
     height: 600px;
@@ -772,4 +781,68 @@ fieldset[disabled] .form-control {
 }
 textarea.form-control {
   height: auto;
+}
+
+/*
+ *
+ * MY OWN STYLES
+ *
+ *
+*/
+.acupons {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acupons h1 {
+    font-size: 60px;
+    padding: 10px 10px 0;
+    background-color: rgba(109,17,16,0.7);
+}
+
+.oquefazemos, .comofunciona {
+    padding: 60px 0 80px;
+}
+
+.passos {
+    margin-top: 20px;
+}
+
+.passos img {
+    width: 100px;
+    text-align: center;
+}
+
+.parallax-container {
+    height: 350px !important;
+}
+
+.container.blog, .ultimos-artigos-blog {
+    padding: 60px 0;
+}
+
+.blog p {
+    padding-bottom: 20px;
+}
+
+.thumb_link img {
+    width: 100%;
+}
+
+#post-grid-95 .item, #post-grid-96 .item {
+    float: left;
+    margin: 10px 0 !important;
+    background-color: transparent !important;
+}
+
+#post-grid-96 {
+    background: transparent !important;
+}
+
+.skin.flat .layer-content {
+    padding: 5px 0 !important;
 }
