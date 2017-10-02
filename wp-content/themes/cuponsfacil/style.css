@@ -70,6 +70,7 @@ p.texto-pequeno {
 }
 
 .divider {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 	margin-bottom: 20px;
 }
 
@@ -104,7 +105,7 @@ p.texto-pequeno {
 	width: 100%!important;
 }
 
-.busca input[type="text"] {
+.busca input[type="search"] {
 	background-color: #eabe35;
 	border: none;
 	font-size: 18px;
@@ -132,6 +133,10 @@ p.texto-pequeno {
 	margin-left: -5px;
 	box-shadow: 2px 0px 5px 1px rgba(0, 0, 0, 0.3);
 	border-radius: 0px 2px 2px 0px;
+}
+
+.searchwp-live-search-results-showing {
+    z-index: 99999 !important;
 }
 
 .menu ul {
@@ -166,9 +171,9 @@ p.texto-pequeno {
 
 #slidepremium .conteudoinicial {
     background-color: rgba(255,255,255,0.9);
-    margin: 170px 0;
+    margin: 90px 0;
     color: #6d1110!important;
-    padding: 10px 45px 35px;
+    padding: 60px 45px 35px;
     text-align: center;
     width: 100%;
 }
@@ -216,7 +221,8 @@ span.nomevendedor {
 }
 
 .oferta img {
-    width: 200px;
+    max-width: 250px;
+    max-height: 100px;
     padding: 10px;
     margin: -40px auto;
     background: rgba(255, 255, 255, 0.7);
@@ -230,7 +236,7 @@ span.nomevendedor {
 }
 
 .descricaooferta h3 {
-	font-size: 15px;
+	font-size: 14px;
 	color: #eabe35;
     padding: 25px 0 10px;
 }

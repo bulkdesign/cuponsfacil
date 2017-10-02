@@ -8,6 +8,7 @@ $(document).ready(function(){
   $('.parallax').parallax();
   $('.scrollspy').scrollSpy();
   $('.slider').slider();
+  $('.modal').modal();
   $('.carousel.carousel-slider').carousel({fullWidth: true});
   $('ul.tabs').tabs();
   $('.toggle-overlay').click(function() {

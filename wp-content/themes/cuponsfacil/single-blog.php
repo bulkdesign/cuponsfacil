@@ -1,6 +1,6 @@
-<?php /* Template Name: Conheça */
+<?php
 /**
- * Template para exibir a página conheça.
+ * Template para exibir a página do artigo.
  */
 
 get_header(); ?>

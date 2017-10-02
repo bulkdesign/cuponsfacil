@@ -1,16 +1,17 @@
 <?php get_header();?>
     <section class="slidepremium section scrollspy header-home" id="slidepremium"> <!--CLAASE HEADER-HOME É PARA O SLIDESHOW-->
-    <?php $loop = new WP_Query( array( 'post_type' => array('ofertas') )); ?>
-    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    <?php $posts = get_field('estabelecimento'); ?>
     <!--SLIDESHOW-->
       <div class="slider">
         <ul class="slides">
+          <?php $loop = new WP_Query( array( 'post_type' => array('ofertas') )); ?>
+          <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+          <?php $posts = get_field('estabelecimento'); ?>
           <li>
             <img src="<?php echo get_field('foto_de_capa'); ?>"> <!-- random image -->
             <div class="caption left-align">
               <div class="row">
                 <div class="col m8 conteudoinicial">
+                  <img style="max-width: 250px;background-size:200px;max-height: 100px;background-repeat: no-repeat;" src="<?php echo get_field('logo_do_cliente'); ?>" />
                   <h1><?php the_title(); ?> em
                     <?php if( $posts ): ?>
                       <?php foreach( $posts as $p ): ?>
@@ -18,21 +19,17 @@
                       <?php endforeach; ?>
                     <?php endif; ?>
                   </h1>
-                  <p><?php the_field('descricao_da_oferta'); ?></p>
+                  <p><?php the_field('descricao_resumida'); ?></p>
                   <a href="<?php echo get_permalink(); ?>" class="btn texto-amarelo-cupons">Ver Oferta</a>
                 </div>
               </div>
             </div>
           </li>
+          <?php endwhile; wp_reset_query(); ?>
         </ul>
       </div>
-    <?php endwhile; wp_reset_query(); ?>
     </section>
     <!--SESSÃO PRINCIPAIS OFERTAS-->
-    <!-- INÍCIO DO LOOP -->
-    <?php $ofertas = new WP_Query( array( 'post_type' => array('ofertas'), 'posts_per_page' => 6 )); ?>
-    <?php while ( $ofertas->have_posts() ) : $ofertas->the_post(); ?>
-
     <section id="principaisofertas">
       <div class="container">
         <div class="row">
@@ -40,28 +37,31 @@
             <h1>Principais Ofertas</h1>
           </div>
           <!-- OFERTA -->
+          <!-- Início do Loop -->
+          <?php $ofertas = new WP_Query( array( 'post_type' => array('ofertas'), 'posts_per_page' => 6 )); ?>
+          <?php while ( $ofertas->have_posts() ) : $ofertas->the_post(); ?>
+          <?php $empresa = get_field('estabelecimento'); ?>
           <div class="col l4 m12 s12">
-            <a href="#">
-              <div class="oferta" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_field('foto_de_capa'); ?>');">
+            <a href="<?php echo get_permalink(); ?>">
+              <div class="oferta hoverable" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_field('foto_de_capa'); ?>');">
                 <img src="<?php echo the_field('logo_do_cliente'); ?>" />
               </div>
               <div class="descricaooferta">
                 <h3 class="white-text"><?php the_title(); ?></h3>
-                <?php if( $posts ): ?>
-                  <?php foreach( $posts as $p ): ?>
-                    <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $p->ID); ?></span>
+                <?php if( $empresa ): ?>
+                  <?php foreach( $empresa as $e ): ?>
+                    <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $e->ID); ?></span>
                   <?php endforeach; ?>
                 <?php endif; ?>
               </div>
             </a>
             <br>
           </div>
+          <?php endwhile; wp_reset_query(); ?>
           <!-- FIM OFERTA -->
         </div>
       </div>
-    </section>
-
-    <?php endwhile; wp_reset_query(); ?>   
+    </section>   
     <!--SESSÃO MAPA-->
     <section id="mapa">
       <div class="container">

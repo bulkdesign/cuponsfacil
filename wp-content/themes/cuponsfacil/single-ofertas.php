@@ -9,6 +9,18 @@
 
 get_header(); ?>
 
+<style type="text/css">
+	
+ul.slides {
+	height: 300px !important;
+}
+
+ul.indicators {
+	display: none;
+}
+
+</style>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php while ( have_posts() ) : the_post(); ?>
 		<?php $posts = get_field('estabelecimento'); ?>
@@ -24,7 +36,7 @@ get_header(); ?>
 								<?php endforeach; ?>
 							<?php endif; ?>
 						</h1>
-					    <a class="btn waves-effect amarelo-cupons texto-vermelho-cupons">Pegar cupom</a>
+					    <a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="?page_id=134">Pegar cupom</a>
 					</div>
 					<div class="overlay-vermelho"></div>
 				</div>
@@ -46,17 +58,11 @@ get_header(); ?>
 				    <div id="sobreaoferta" class="col s12 m8 push-m2">
 				    	<div class="col s12">
 				    		<div class="col s12 m6">
-								<div class="slider">
+								<div class="slider" style="margin-top: 50px;">
 									<ul class="slides">
-									<?php
-									if( have_rows('fotos_da_oferta') ):
-									    while ( have_rows('fotos_da_oferta') ) : the_row(); ?>
-									        <li>
-												<img src="<?php echo the_sub_field('imagem_oferta'); ?>">
-											</li>
-									    <?php endwhile;
-										else :
-									endif; ?>	
+								        <li>
+											<img src="<?php echo the_field('fotos_da_oferta'); ?>">
+										</li>
 									</ul>
 								</div>
 				    		</div>
@@ -71,7 +77,7 @@ get_header(); ?>
 									<a class="a2a_button_twitter"></a>
 									<a class="a2a_button_whatsapp"></a>
 								</div>
-								<a class="margin20 btn waves-effect vermelho-cupons texto-amarelo-cupons">Pegar cupom</a>
+								<a class="margin20 btn waves-effect vermelho-cupons texto-amarelo-cupons" href="?page_id=134">Pegar cupom</a>
 				    		</div>
 				    	</div>
 				    	<div class="col s12 margin20">
@@ -96,8 +102,8 @@ get_header(); ?>
 					    		<h3 class="texto-vermelho-cupons">Redes Sociais da empresa:</h3>
 						        <div class="social col m12 hide-on-small-only">
 						          <ul class="left">
-						            <li><a href="<?php the_field('facebook', $p->ID); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/images/facebook.png"/></a></li>
-						            <li><a href="<?php the_field('instagram', $p->ID); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/images/instagram.png"/></a></li>
+					            	<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
+					            	<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
 						          </ul>
 						        </div>
 					    	</div>
@@ -109,19 +115,13 @@ get_header(); ?>
 				    	</div>
 				    </div>
 				    <div id="aempresa" class="col s12 m8 push-m2">
-				    	<div class="col s12">
-				    		<div class="col s12">
+				    	<div class="col s12" style="height: 300px !important;">
+				    		<div class="col s12" style="height: 300px !important;">
 								<div class="slider" style="height:300px !important;">
 									<ul class="slides" style="height: 300px !important;">
-									<?php
-									if( have_rows('fotos_da_oferta') ):
-									    while ( have_rows('fotos_da_oferta') ) : the_row(); ?>
-									        <li>
-												<img src="<?php echo the_sub_field('imagem_oferta'); ?>">
-											</li>
-									    <?php endwhile;
-										else :
-									endif; ?>	
+								        <li style="height: 300px !important;">
+											<img style="height:300px;" src="<?php echo the_field('fotos_da_oferta'); ?>">
+										</li>
 									</ul>
 								</div>
 				    		</div>

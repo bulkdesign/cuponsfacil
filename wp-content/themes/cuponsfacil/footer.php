@@ -17,7 +17,7 @@
               <!-- <li>Categorias</li> -->
               <li>Anuncie</li>
               <li>Contato</li>
-              <li>Login</li>
+              <li><a href="wp-login.php">Login</a></li>
             </ul>
           </div>
           <div class="col hide-on-large-only s12">

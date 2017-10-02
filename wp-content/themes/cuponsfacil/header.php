@@ -50,12 +50,7 @@
                 <div class="col m8 hide-on-small-only">
                     <div class="row">
                         <!--FORMULÁRIO-->
-                        <div class="col m12 busca">
-                            <form>
-                                <input type="text" placeholder="O que você está procurando? Digite aqui...">
-                                <input type="submit" value="ENCONTRAR">
-                            </form>
-                        </div>
+                        <?php get_search_form(); ?>
                         <!--OPÇÕES-->
                         <div class="col m12 menu">
                             <ul>
@@ -72,7 +67,6 @@
                 <!--LOGIN E CADASTRO-->
                 <div class="col m2 login hide-on-small-only">
                   <ul>
-                    <li><?php echo do_shortcode('[fbl_login_button redirect="" hide_if_logged=""]'); ?></li>
                     <li><a href="wp-login.php">LOGIN/CADASTRO</a></li>
                     <li><a href="#">ANUNCIE</a></li>
                   </ul>

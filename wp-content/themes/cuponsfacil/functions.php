@@ -42,4 +42,18 @@ function custom_loginlogo_url($url) {
     return 'http://www.cuponsfacil.com.br';
 }
 
+/* Troca de logo do login */
+function logo_de_login() { 
+?> 
+<style type="text/css"> 
+body.login div#login h1 a {
+	width: 165px;
+	background-size: 150px;
+	background-image: url(http://localhost/cuponsfacil/wp-content/themes/cuponsfacil/img/logo/logo.png);
+	padding-bottom: 30px; 
+}
+</style>
+<?php 
+} add_action( 'login_enqueue_scripts', 'logo_de_login' );
+
 ?>
