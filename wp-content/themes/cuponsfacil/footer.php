@@ -14,7 +14,7 @@
             <ul class="left">
               <li><a href="?conheca=conheca">Conheça</a></li>
               <li><a href="?page_id=93">Blog</a></li>
-              <li>Categorias</li>
+              <!-- <li>Categorias</li> -->
               <li>Anuncie</li>
               <li>Contato</li>
               <li>Login</li>

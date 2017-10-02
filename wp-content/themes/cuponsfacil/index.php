@@ -29,70 +29,39 @@
     <?php endwhile; wp_reset_query(); ?>
     </section>
     <!--SESSÃO PRINCIPAIS OFERTAS-->
+    <!-- INÍCIO DO LOOP -->
+    <?php $ofertas = new WP_Query( array( 'post_type' => array('ofertas'), 'posts_per_page' => 6 )); ?>
+    <?php while ( $ofertas->have_posts() ) : $ofertas->the_post(); ?>
+
     <section id="principaisofertas">
       <div class="container">
         <div class="row">
           <div class="col l12 m12">
             <h1>Principais Ofertas</h1>
           </div>
-          <div class="col l6 m12 s12">
-            <a href="#">
-              <div class="oferta primeiro">
-                <h3>Bavatos</h3>
-              </div>
-              <div class="descricaooferta">
-                <h3>Desconto de 10% no valor total - <span>Bavatos</span></h3>
-              </div>
-            </a>
-            <br>
-          </div>
-          <div class="col l6 m12 s12">
-            <a href="#">
-              <div class="oferta segundo">
-                <h3>ISCO Sistemas</h3>
-              </div>
-              <div class="descricaooferta">
-                <h3>30% de desconto na taxa de instalação - <span>ISCO Sistemas</span></h3>
-              </div>
-            </a>
-            <br>
-          </div>
+          <!-- OFERTA -->
           <div class="col l4 m12 s12">
             <a href="#">
-              <div class="oferta terceiro">
-                <h3>Hookah</h3>
+              <div class="oferta" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_field('foto_de_capa'); ?>');">
+                <img src="<?php echo the_field('logo_do_cliente'); ?>" />
               </div>
               <div class="descricaooferta">
-                <h3>10% no combo: 2 essências + 10 unidades de carvão - <span>Hookah Beats Tabacaria</span></h3>
+                <h3 class="white-text"><?php the_title(); ?></h3>
+                <?php if( $posts ): ?>
+                  <?php foreach( $posts as $p ): ?>
+                    <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $p->ID); ?></span>
+                  <?php endforeach; ?>
+                <?php endif; ?>
               </div>
             </a>
             <br>
           </div>
-          <div class="col l4 m12 s12">
-            <a href="#">
-              <div class="oferta quarto">
-              <img src="<?php bloginfo('template_url'); ?>/images/Yu.png">
-              </div>
-              <div class="descricaooferta">
-                <h3>15% na troca de tela de qualquer iphone - <span>YuService</span></h3>
-              </div>
-            </a>
-            <br>
-          </div>
-          <div class="col l4 m12 s12">
-            <a href="#">
-              <div class="oferta quinto">
-                <img src="<?php bloginfo('template_url'); ?>/images/mega.png" style="width: 250px;">
-              </div>
-              <div class="descricaooferta">
-                <h3>20% de desconto no Extrator de E-mail - <span>MegaMailing</span></h3>
-              </div>
-            </a>
-            <br>
-          </div>
+          <!-- FIM OFERTA -->
         </div>
       </div>
     </section>
+
+    <?php endwhile; wp_reset_query(); ?>   
     <!--SESSÃO MAPA-->
     <section id="mapa">
       <div class="container">

@@ -33,6 +33,7 @@ h1 {
 
 h3 {
 	font-size: 18px;
+    margin: 0;
 }
 
 .wpsl-location-address, p, li {
@@ -215,22 +216,23 @@ span.nomevendedor {
 }
 
 .oferta img {
-    width: 100px;
+    width: 200px;
     padding: 10px;
-    margin: -40px;
+    margin: -40px auto;
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .descricaooferta {
 	background-color: rgba(109,17,16,0.7);
-	height: 75px;
-	text-align: center;
-	margin-top: -105px;
+    height: 95px;
+    text-align: center;
+    margin-top: -125px;
 }
 
 .descricaooferta h3 {
 	font-size: 15px;
 	color: #eabe35;
-	padding: 22px;
+    padding: 25px 0 10px;
 }
 
 .descricaooferta p span {
