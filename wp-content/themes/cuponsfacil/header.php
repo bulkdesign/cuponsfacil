@@ -72,7 +72,8 @@
                 <!--LOGIN E CADASTRO-->
                 <div class="col m2 login hide-on-small-only">
                   <ul>
-                    <li><a href="#">LOGIN/CADASTRO</a></li>
+                    <li><?php echo do_shortcode('[fbl_login_button redirect="" hide_if_logged=""]'); ?></li>
+                    <li><a href="wp-login.php">LOGIN/CADASTRO</a></li>
                     <li><a href="#">ANUNCIE</a></li>
                   </ul>
                 </div>
