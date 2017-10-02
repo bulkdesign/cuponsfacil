@@ -2,6 +2,10 @@
 Admin css
 */
 
+#post_grid_post_settings {
+  display: none !important;
+}
+
 #post_grid_metabox, #post_grid_post_settings {
   background: #f1f1f1 none repeat scroll 0 0;
   border: medium none;

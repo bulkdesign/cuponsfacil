@@ -16,28 +16,23 @@ $args = array(
 
 <div class="container">
 
-<?php
+<?php  global $wp_query; ?>
+<h1 class="search-title"><?php echo $wp_query->found_posts; ?> Results found for: <span><?php the_search_query(); ?></span></h1>
 
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-        _e("<h2 style='font-weight:bold;color:#000'>Search Results for: ".get_query_var('s')."</h2>");
-        while ( $the_query->have_posts() ) {
-           $the_query->the_post();
-                 ?>
-                    <li>
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </li>
-                 <?php
-        }
-    }else{
-?>
-        <h2 style='font-weight:bold;color:#000'>Nada encontrado</h2>
-        <div class="alert alert-info">
-          <p>Desculpe, nada relacionado ao que você escreveu foi encontrado.</p>
-        </div>
-<?php } ?>
+         <?php if ( have_posts() ) { ?>
+           <ul class="results">
+             <?php while ( have_posts() ) { the_post(); ?>
+                <li>
+                  <?php if ( has_post_thumbnail() ) { ?><div class="post-image"><a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail('thumbnail');?></a></div><?php }?>
+                                    <div class="post-content">
+                                    <h3><a href="<?php echo get_permalink(); ?>"><?php the_title();  ?></a></h3>
+                  <p><?php echo substr(get_the_excerpt(), 0,140); ?>... <a href="<?php the_permalink(); ?>">Read More</a></p>
+                                </div>
+                </li>
+             <?php } ?>
+             </ul>
+         <?php } ?>
 
 </div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

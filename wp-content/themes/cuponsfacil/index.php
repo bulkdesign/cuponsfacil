@@ -11,14 +11,14 @@
             <div class="caption left-align">
               <div class="row">
                 <div class="col m8 conteudoinicial">
-                  <img style="max-width: 250px;background-size:200px;max-height: 100px;background-repeat: no-repeat;" src="<?php echo get_field('logo_do_cliente'); ?>" />
-                  <h1><?php the_title(); ?> em
-                    <?php if( $posts ): ?>
-                      <?php foreach( $posts as $p ): ?>
-                          <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $p->ID); ?></span>
-                      <?php endforeach; ?>
-                    <?php endif; ?>
-                  </h1>
+                  <?php if( $posts ): ?>
+                    <?php foreach( $posts as $p ): ?>
+                    <img style="background-size:230px;max-height: 100px;background-repeat: no-repeat;" src="<?php echo get_field('logo_do_cliente', $p->ID); ?>" />
+                    <h1><?php the_title(); ?> em
+                            <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $p->ID); ?></span>
+                        <?php endforeach; ?>
+                      <?php endif; ?>
+                    </h1>
                   <p><?php the_field('descricao_resumida'); ?></p>
                   <a href="<?php echo get_permalink(); ?>" class="btn texto-amarelo-cupons">Ver Oferta</a>
                 </div>
@@ -44,12 +44,12 @@
           <div class="col l4 m12 s12">
             <a href="<?php echo get_permalink(); ?>">
               <div class="oferta hoverable" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_field('foto_de_capa'); ?>');">
-                <img src="<?php echo the_field('logo_do_cliente'); ?>" />
+                <?php if( $empresa ): ?>
+                  <?php foreach( $empresa as $e ): ?>
+                  <img src="<?php echo the_field('logo_do_cliente', $e->ID); ?>" />
               </div>
               <div class="descricaooferta">
                 <h3 class="white-text"><?php the_title(); ?></h3>
-                <?php if( $empresa ): ?>
-                  <?php foreach( $empresa as $e ): ?>
                     <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $e->ID); ?></span>
                   <?php endforeach; ?>
                 <?php endif; ?>

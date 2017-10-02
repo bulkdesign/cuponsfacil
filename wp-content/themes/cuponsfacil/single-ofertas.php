@@ -29,7 +29,7 @@ ul.indicators {
 		    <div class="carousel-fixed-item center">
 		    	<div class="row">
 		    		<div class="col s12 m8 push-m2">
-				    	<h1 class="texto-amarelo-cupons nafrente"><?php the_title(); ?>
+				    	<h1 class="texto-amarelo-cupons"><?php the_title(); ?>
 							<?php if( $posts ): ?>
 								<?php foreach( $posts as $p ): ?>
 								    <span class="white-text">em <?php the_field('nome_da_empresa', $p->ID); ?></span>
@@ -38,10 +38,10 @@ ul.indicators {
 						</h1>
 					    <a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="?page_id=134">Pegar cupom</a>
 					</div>
-					<div class="overlay-vermelho"></div>
 				</div>
 		    </div>
 		    <div class="carousel-item white-text" href="#one!">
+		    	<div class="overlay-vermelho"></div>
 		    	<img src="<?php echo get_field('foto_de_capa'); ?>">
 		    </div>
 		</div>
