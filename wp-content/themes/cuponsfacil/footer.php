@@ -15,8 +15,8 @@
               <li><a href="?conheca=conheca">Conheça</a></li>
               <li><a href="?page_id=93">Blog</a></li>
               <!-- <li>Categorias</li> -->
-              <li>Anuncie</li>
-              <li>Contato</li>
+              <li><a href="?page_id=156">Anuncie</a></li>
+              <li><a href="?page_id=158">Contato</a></li>
               <li><a href="wp-login.php">Login</a></li>
             </ul>
           </div>
@@ -35,14 +35,7 @@
             <div class="container">
               <p class="white-text hide-on-small-only">Inscreva-se na nossa newsletter para ficar por dentro de todas as promoções e novidades da Cupons Fácil:</p>
             </div>
-            <div class="col s12">
-              <div class="col s8">
-                <input type="email" name="" placeholder="Seu e-mail" />
-              </div>
-              <div class="col s2">
-                <button type="submit" class="vermelho-cupons btn btn-small">Enviar</button>
-              </div>
-            </div>
+            <?php echo do_shortcode('[contact-form-7 id="162" title="Newsletter"]'); ?>
           </div>
           <div class="social col l3 m12 hide-on-small-only">
             <h3 class="texto-amarelo-cupons right">Nós, nas Redes Sociais</h3>
@@ -76,6 +69,8 @@
   <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/materialize.js"></script>
   <script src="<?php bloginfo('template_url') ?>/js/bootstrap-table.js"></script>
   <script src="<?php bloginfo('template_url') ?>/js/filter-control/bootstrap-table-filter-control.js"></script>
+  <script src="<?php bloginfo('template_url') ?>/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+  <script src="<?php bloginfo('template_url') ?>/js/owlcarousel/dist/owl.carousel.min.js"></script>
   <script src="<?php bloginfo('template_url') ?>/js/scripts.js"></script>
   <script async src="https://static.addtoany.com/menu/page.js"></script>
   <?php wp_footer(); ?>

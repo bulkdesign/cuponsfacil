@@ -78,6 +78,10 @@ p.texto-pequeno {
 	margin-top: 20px;
 }
 
+.margin50 {
+    margin-top: 50px;
+}
+
 /* SECTION BEM VINDO */
 .navegacao {
 	background-color: rgba(109,17,16,0.9);
@@ -839,4 +843,93 @@ textarea.form-control {
 
 .skin.flat .layer-content {
     padding: 5px 0 !important;
+}
+
+header.page-header {
+    margin-top: 50px;
+}
+
+.search-container {
+    width: 100%;
+    padding-bottom: 200px;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+#ss-search-page-form {
+    text-align:center;
+    margin: auto;
+    padding-top:50px;
+}
+
+#ss-search-page-form .search-field {
+    border: 2px solid #dddddd;
+    border-radius: 4px;
+    width:60%;
+    margin-top:20px;
+}
+
+#ss-search-page-form .search-submit {
+    padding: 10px 10px;
+    margin-bottom:5px;
+    text-transform: uppercase;
+}
+
+.search-page-title {
+    padding-top:50px;
+    padding-bottom:25px;
+}
+
+.search-post-title {
+    width: 100%;
+    float: left;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: block;
+    padding-top: 8px;
+}
+
+.search-post-business {
+    font-size: 12px;
+}
+
+.divider.search-post {
+    margin-top: 10px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.capa-oferta {
+    float: left;
+    width: 100%;
+    max-height: 250px;
+}
+
+.owl-item {
+    width: 150px !important; 
+}
+
+.ofertas-destaque {
+    max-height: 150px;
+}
+
+.ofertas-carousel {
+    text-transform: none;
+    float: left;
+    line-height: 1.2;
+    margin-top: 8px;
+    text-align: left;
+    font-size: 11px;
+}
+
+.btn.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+input.wpcf7-form-control.wpcf7-submit.vermelho-cupons.btn.btn-small {
+    margin: 10px 0 0;
+}
+
+div#ajaxsearchprores1_1 {
+    top: 120px !important;
 }

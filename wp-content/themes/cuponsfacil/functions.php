@@ -56,4 +56,18 @@ body.login div#login h1 a {
 <?php 
 } add_action( 'login_enqueue_scripts', 'logo_de_login' );
 
+// SOMETHING
+function my_pre_get_posts($query) {
+
+    if( is_admin() ) 
+        return;
+
+    if( is_search() && $query->is_main_query() ) {
+        $query->set('post_type', array('ofertas', 'wpsl_stores'));
+    } 
+
+}
+
+add_action( 'pre_get_posts', 'my_pre_get_posts' );
+
 ?>

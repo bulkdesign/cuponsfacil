@@ -14,6 +14,23 @@ $(document).ready(function(){
   $('.toggle-overlay').click(function() {
     $('aside').toggleClass('open');
   })
+  $('.bxslider').bxSlider({
+    pager: false,
+    adaptiveHeight: true,
+    mode: 'horizontal'
+  });
+  $('.loop').owlCarousel({
+      center: true,
+      items:2,
+      loop:true,
+      margin:10,
+      responsive:{
+          600:{
+              items:4
+          }
+      }
+  });
+
   var a2a_config = a2a_config || {};
   a2a_config.linkname = "Cupons Fácil";
   a2a_config.linkurl = "https://cuponsfacil.com.br";

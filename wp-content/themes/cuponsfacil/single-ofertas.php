@@ -19,6 +19,15 @@ ul.indicators {
 	display: none;
 }
 
+.carousel.carousel-slider {
+	top: 0px !important;
+	margin-bottom: 0px;
+}
+
+.carousel.carousel-slider .carousel-fixed-item {
+	bottom: 10% !important;
+}
+
 </style>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

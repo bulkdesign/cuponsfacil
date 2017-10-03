@@ -21,12 +21,12 @@ get_header(); ?>
 				<div class="col s12 l11 push-l1" style="margin-bottom: 50px;">
 					<div class="col s12 l7">
 						<div class="col s12 l4">
-							<img style="width: 190px;float:left;padding-right: 30px;" src="<?php echo get_field('logo_do_cliente'); ?>">
+							<?php if( $posts ): ?>
+								<?php foreach( $posts as $p ): ?>
+							<img style="width: 190px;float:left;padding-right: 30px;" src="<?php echo get_field('logo_do_cliente', $p->ID); ?>">
 						</div>
 						<div class="col s12 l8">
 							<h3><?php the_title(); ?></h3>
-							<?php if( $posts ): ?>
-								<?php foreach( $posts as $p ): ?>
 								    <p>Empresa: <?php the_field('nome_da_empresa', $p->ID); ?></p>
 								<?php endforeach; ?>
 							<?php endif; ?>

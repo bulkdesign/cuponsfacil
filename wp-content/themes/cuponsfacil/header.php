@@ -32,6 +32,11 @@
     <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/materialize.css"  media="screen,projection"/>
     <!-- IMPORTAÇÃO DO STYLE.CSS -->
     <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url') ?>/style.css"  media="screen,projection"/>
+    <!-- bxSlider CSS file -->
+    <link href="<?php bloginfo('template_url') ?>/js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/js/owlcarousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/js/owlcarousel/dist/assets/owl.theme.default.min.css">
     <!-- WP PINGBACK -->
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <!-- WP HEAD -->
@@ -54,11 +59,11 @@
                         <!--OPÇÕES-->
                         <div class="col m12 menu">
                             <ul>
-                                <li><a href="#">BARES E RESTAURANTES</a></li>
-                                <li><a href="#">SAÚDE E BELEZA</a></li>
-                                <li><a href="#">SERVIÇOS</a></li>
-                                <li><a href="#">AUTOMÓVEIS</a></li>
-                                <li><a href="#">VAREJO</a></li>
+                                <li><a href="?page_id=169">BARES E RESTAURANTES</a></li>
+                                <li><a href="?page_id=171">SAÚDE E BELEZA</a></li>
+                                <li><a href="?page_id=173">SERVIÇOS</a></li>
+                                <li><a href="?page_id=165">AUTOMÓVEIS</a></li>
+                                <li><a href="?page_id=167">VAREJO</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -68,7 +73,7 @@
                 <div class="col m2 login hide-on-small-only">
                   <ul>
                     <li><a href="wp-login.php">LOGIN/CADASTRO</a></li>
-                    <li><a href="#">ANUNCIE</a></li>
+                    <li><a href="?page_id=156">ANUNCIE</a></li>
                   </ul>
                 </div>
             </div>
