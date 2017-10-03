@@ -43,10 +43,10 @@ function wpsl_create_underscore_templates( $template ) {
 <script id="wpsl-listing-template" type="text/template">
     <?php
         $listing_template = '<li data-store-id="<%= id %>">' . "\r\n";
-        $listing_template .= "\t\t" . '<div class="wpsl-store-location">' . "\r\n";
+        $listing_template .= "\t\t"?><a style="color:#eabe35 !important;font-size:16px !important;" href="<?php the_permalink(); ?>"><?php '<div class="wpsl-store-location">' . "\r\n";
         $listing_template .= "\t\t\t" . '<p><%= thumb %>' . "\r\n";
         $listing_template .= "\t\t\t\t" . wpsl_store_header_template( 'listing' ) . "\r\n"; // Check which header format we use
-        $listing_template .= "\t\t\t\t" . '<span class="wpsl-street"><%= address %><%= address2 %>' . '</span>' . "\r\n";
+        $listing_template .= "\t\t\t\t" . '</a><span class="wpsl-street white-text" style="font-size:14px"><%= address %><%= address2 %>' . '</span>' . "\r\n";
 
         $listing_template .= "\t\t\t" . '</p>' . "\r\n";
         

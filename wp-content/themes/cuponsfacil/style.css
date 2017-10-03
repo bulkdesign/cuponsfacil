@@ -379,12 +379,19 @@ button.btn-small {
     margin: 12px 0;
 }
 
-@media (min-width: 994px) {
+@media (min-width: 1115px) and (max-width: 1275px) {
+    .menu li a {
+        padding: 10px;
+        font-size: 14px;
+    }
 
 }
 
-@media (min-width: 994px) and (max-width: 1050px) {
-
+@media (min-width: 994px) and (max-width: 1114px) {
+    .menu li a {
+        padding: 5px;
+        font-size: 12px;
+    }
 }
 
 @media (min-width: 602px) and (max-width: 994px) {
@@ -392,6 +399,11 @@ button.btn-small {
 }
 
 @media (min-width: 260px) and (max-width: 602px) {
+    .menu li a {
+        padding: 5px;
+        font-size: 11px;
+    }
+
 	#principaisofertas {
 		height: auto;
 	}
