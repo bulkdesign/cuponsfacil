@@ -101,7 +101,7 @@ p.texto-pequeno {
 .brand-logo img {
     width: 190px;
     padding: 4px 0;
-    position: absolute;
+    position: relative;
     margin: 0;
 }
 
@@ -109,54 +109,86 @@ p.texto-pequeno {
 	width: 100%!important;
 }
 
-.busca input[type="search"] {
-	background-color: #eabe35;
-	border: none;
-	font-size: 18px;
-	margin: 30px 0px 0px 30px;
-	width: 58% !important;
-	padding: 6px 65px;
-	border-radius: 2px 0px 0px 2px;
-	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-	background: url(img/assets/busca.png) no-repeat #eabe35;
-    background-size: 45px;
-    background-position: 10px;
+ul.menu {
+    width: 100%;
 }
 
-::-webkit-input-placeholder {
-   color: #717074;
-   font-size: 16px;
-}
-
-.busca input[type="submit"] {
-	width: 19%!important;
-	height: 56px;
-	background-color: #6d1110;
-	color: #eabe35;
-	border: none;
-	margin-left: -5px;
-	box-shadow: 2px 0px 5px 1px rgba(0, 0, 0, 0.3);
-	border-radius: 0px 2px 2px 0px;
-}
-
-.searchwp-live-search-results-showing {
-    z-index: 99999 !important;
-}
-
-.menu ul {
-	text-align: center;
-	margin-top: 17px;
-}
-
-.menu li {
-	display: inline-block;
-	text-align: center;
+ul.menu li {
+    float: left;
 }
 
 .menu li a {
-	background-color: transparent!important;
-	color: white!important;
-	padding: 15px;
+	padding: 0 9px;
+    text-transform: uppercase;
+}
+
+aside {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #060133;
+    transition: all .5s ease;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav.mobile-menu {
+    text-align: center;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: none;
+    background: none;
+}
+
+.mobile-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mobile-menu li {
+    height: 0px;
+    padding: 25px 45px 0;
+    margin-top: 20px;
+    align-items: center;
+    flex: 1;
+    float: none;
+}
+
+.mobile-menu a {
+    color: #FFFFFF;
+    font-size: 1.5em;
+    transition: all 0.5s ease;
+    display: block;
+    text-decoration: none;
+    margin: 2px;
+    position: relative;
+    z-index: 999999;
+    cursor: pointer !important;
+}
+
+.margin-clear {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.outer-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
 }
 
 .login {
@@ -377,61 +409,6 @@ button.btn-small {
     padding: 0px 15px 0px 15px;
     float: left;
     margin: 12px 0;
-}
-
-@media (min-width: 1115px) and (max-width: 1275px) {
-    .menu li a {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-}
-
-@media (min-width: 994px) and (max-width: 1114px) {
-    .menu li a {
-        padding: 5px;
-        font-size: 12px;
-    }
-}
-
-@media (min-width: 602px) and (max-width: 994px) {
-
-}
-
-@media (min-width: 260px) and (max-width: 602px) {
-    .menu li a {
-        padding: 5px;
-        font-size: 11px;
-    }
-
-	#principaisofertas {
-		height: auto;
-	}
-
-	#wpsl-gmap {
-		width: 100% !important;
-	}
-
-	.wpsl-search {
-		display: none;
-	}
-
-	#mapa h1 {
-		margin: 50px 0 30px;
-		font-size: 1.7rem;
-	}
-
-	#wpsl-result-list {
-		width: 100% !important;
-	}
-
-	#slidepremium .conteudoinicial {
-    	background-color: rgba(255,255,255,0.7);
-    	width: 100%;
-    	margin-top: 60px !important;
-    	padding: 0px 15px 15px !important;
-	}
-
 }
 
 /* BOOTSTRAP TABLE */
@@ -944,4 +921,121 @@ input.wpcf7-form-control.wpcf7-submit.vermelho-cupons.btn.btn-small {
 
 div#ajaxsearchprores1_1 {
     top: 120px !important;
+}
+
+.probox {
+    padding: 1px !important;
+}
+
+.probox .promagnifier {
+    background-color: #6d1110 !important;
+    padding: 0px 15px 0px 15px !important;
+}
+
+#ajaxsearchpro1_1 .probox .proinput input.orig, #ajaxsearchpro1_2 .probox .proinput input.orig, div.ajaxsearchpro[id*="ajaxsearchpro1_"] .probox .proinput input.orig {
+    padding-left: 5px !important;
+}
+
+/*
+ *
+ * MEDIA QUERIES
+ *
+ *
+*/
+@media (min-width: 1115px) and (max-width: 1275px) {
+    .menu li a {
+        padding: 10px !important;
+        font-size: 14px;
+    }
+
+}
+
+@media (min-width: 994px) and (max-width: 1114px) {
+    .menu li a {
+        padding: 5px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 602px) and (max-width: 994px) {
+
+}
+
+@media (min-width: 260px) and (max-width: 602px) {
+    #principaisofertas {
+        height: auto;
+    }
+
+    #wpsl-gmap {
+        width: 100% !important;
+    }
+
+    .wpsl-search {
+        display: none;
+    }
+
+    #mapa h1 {
+        margin: 50px 0 30px;
+        font-size: 1.7rem;
+    }
+
+    #wpsl-result-list {
+        width: 100% !important;
+    }
+
+    #slidepremium .conteudoinicial {
+        background-color: rgba(255,255,255,0.9);
+        width: 100%;
+        padding: 30px !important;
+    }
+
+    .conteudoinicial h1 {
+        line-height: 2rem;
+        font-size: 18px;
+        margin: 20px 0; 
+    }
+
+    .slider, .slider .slides {
+        height: 550px !important;
+    }
+
+    .slider .slides li .caption {
+        width: 100%;
+        top: 105px;
+        left: 0%;
+    }
+
+    ul.indicators {
+        display: none;
+    }
+
+    #wpsl-result-list {
+        height: auto !important;
+    }
+
+    #wpsl-wrap #wpsl-result-list li {
+        padding: 0px 0 20px !important;
+    }
+
+    #wpsl-result-list li p {
+        margin: 0 !important;
+    }
+
+    .wpsl-direction-wrap {
+        margin: 0 !important
+    }
+
+    #mapa {
+        height: auto;
+        background-position: center;
+    }
+
+    .page-footer {
+        padding: 0;
+    }
+
+    .page-footer .footer-copyright {
+        margin-top: 0;
+    }
+
 }

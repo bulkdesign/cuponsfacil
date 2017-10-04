@@ -13,21 +13,17 @@ function remove_default_post_type() {
 /* Suporte do tema para imagem destacadas */
 add_theme_support( 'post-thumbnails' );
 
-/* Suporte do tema para menu */
+/* Suporte do tema para menu do topo */
 function register_my_menu() {
   register_nav_menu('new-menu',__( 'Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
 
-/* Implementação de classes no menu */
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-
-function special_nav_class ($classes, $item) {
-    if (in_array('current-menu-item', $classes) ){
-        $classes[] = 'active menu-active';
-    }
-    return $classes;
+/* Suporte do tema para menu do topo */
+function menu_de_categorias() {
+  register_nav_menu('menu-categorias',__( 'Menu de Categorias' ));
 }
+add_action( 'init', 'menu_de_categorias' );
 
 /* Remoção dos avisos de update do WordPress */
 function remove_core_updates(){

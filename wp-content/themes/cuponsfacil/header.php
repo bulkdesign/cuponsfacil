@@ -44,38 +44,55 @@
     </head>
     <body>
     <!--BARRA DE NAVEGAÇÃO-->
-    <div class="navegacao">
-        <div class="row">
-            <div class="container">
-                <!--LOGO-->
-                <div class="col s2 push-s2 m2 brand-logo">
-                    <a href="/cuponsfacil"><img src="<?php bloginfo('template_url');?>/img/logo/logo.png"></a>
-                </div>
-                <!--FORMULÁRIO E MENU-->
-                <div class="col m8 hide-on-small-only">
-                    <div class="row">
-                        <!--FORMULÁRIO-->
-                        <?php get_search_form(); ?>
-                        <!--OPÇÕES-->
-                        <div class="col m12 menu">
-                            <ul>
-                                <li><a href="?page_id=169">BARES E RESTAURANTES</a></li>
-                                <li><a href="?page_id=171">SAÚDE E BELEZA</a></li>
-                                <li><a href="?page_id=173">SERVIÇOS</a></li>
-                                <li><a href="?page_id=165">AUTOMÓVEIS</a></li>
-                                <li><a href="?page_id=167">VAREJO</a></li>
-                                </li>
+    <nav class="navegacao z-depth-0">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="row">
+                    <div class="col s12">
+                        <!-- LOGO -->
+                        <div class="col hide-on-small-only l2">
+                            <a href="/" class="brand-logo">
+                            <img src="<?php bloginfo('template_url');?>/img/logo/logo.png"/>
+                            </a>
+                        </div>
+                        <div class="col s12 center hide-on-med-and-up">
+                            <a href="/" class="brand-logo">
+                            <img src="<?php bloginfo('template_url');?>/img/logo/logo.png"/>
+                            </a>
+                        </div>
+                        <!-- BUSCA -->
+                        <div class="col hide-on-small-only l8">
+                            <?php get_search_form(); ?>
+                            <div class="col l11 push-l1">
+                                <ul class="menu hide-on-med-and-down">
+                                    <div class="col l12">
+                                    <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias' ) ); ?>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- LOGIN -->
+                        <div class="col s12 l2">
+                            <ul class="right hide-on-med-and-down">
+                                <?php wp_nav_menu( array( 'theme_location' => 'new-menu' ) ); ?>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <!--LOGIN E CADASTRO-->
-                <div class="col m2 login hide-on-small-only">
-                  <ul>
-                    <li><a href="wp-login.php">LOGIN/CADASTRO</a></li>
-                    <li><a href="?page_id=156">ANUNCIE</a></li>
-                  </ul>
-                </div>
+                <main class="hide-on-large-only">
+                    <a class="texto-vermelho-cupons toggle-overlay"><i class="small material-icons">menu</i></a>
+                </main>
             </div>
         </div>
-    </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <aside>
+        <div class="outer-close toggle-overlay">
+            <a class="white-text right close"><i class="margin-clear small material-icons">clear</i></a>
+        </div>
+        <nav class="mobile-menu">
+            <ul>
+                <?php wp_nav_menu( array( 'theme_location' => array('new-menu', 'menu-categorias') ) ); ?>
+            </ul>
+        </nav>
+    </aside>

@@ -10,7 +10,7 @@
             <img src="<?php echo get_field('foto_de_capa'); ?>"> <!-- random image -->
             <div class="caption left-align">
               <div class="row">
-                <div class="col m8 conteudoinicial">
+                <div class="col s12 m8 conteudoinicial">
                   <?php if( $posts ): ?>
                     <?php foreach( $posts as $p ): ?>
                     <img style="background-size:230px;max-height: 100px;background-repeat: no-repeat;" src="<?php echo get_field('logo_do_cliente', $p->ID); ?>" />
@@ -19,7 +19,7 @@
                         <?php endforeach; ?>
                       <?php endif; ?>
                     </h1>
-                  <p><?php the_field('descricao_resumida'); ?></p>
+                  <p class="hide-on-small-only"><?php the_field('descricao_resumida'); ?></p>
                   <a href="<?php echo get_permalink(); ?>" class="btn texto-amarelo-cupons">Ver Oferta</a>
                 </div>
               </div>

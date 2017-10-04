@@ -20,16 +20,6 @@
               <li><a href="wp-login.php">Login</a></li>
             </ul>
           </div>
-          <div class="col hide-on-large-only s12">
-            <h3 class="texto-amarelo-cupons center">Cupons Fácil</h3>
-            <ul class="center">
-              <li>Conheça</li>
-              <li>Categorias</li>
-              <li>Anuncie</li>
-              <li>Contato</li>
-              <li>Login</li>
-            </ul>
-          </div>
           <div class="col l6 s12 center hide-on-small-only">
             <h3 class="texto-amarelo-cupons">Newsletter</h3>
             <div class="container">
@@ -40,15 +30,6 @@
           <div class="social col l3 m12 hide-on-small-only">
             <h3 class="texto-amarelo-cupons right">Nós, nas Redes Sociais</h3>
             <ul class="right">
-              <li><a href="https://www.facebook.com/CuponsFacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
-              <li><a href="https://instagram.com/cuponsfacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
-              <li><a href="#" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/twitter.png"/></a></li>
-              <li><a href="#" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/youtube.png"/></a></li>
-            </ul>
-          </div>
-          <div class="social col s12 m12 hide-on-large-only">
-            <h3 class="texto-amarelo-cupons center">Nós, nas Redes Sociais</h3>
-            <ul class="center">
               <li><a href="https://www.facebook.com/CuponsFacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
               <li><a href="https://instagram.com/cuponsfacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
               <li><a href="#" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/twitter.png"/></a></li>
