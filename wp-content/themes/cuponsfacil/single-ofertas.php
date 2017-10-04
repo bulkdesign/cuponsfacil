@@ -66,7 +66,8 @@ ul.indicators {
 			    <div class="dentro-abas">
 				    <div id="sobreaoferta" class="col s12 m8 push-m2">
 				    	<div class="col s12">
-				    		<div class="col s12 m6">
+				    		<!-- FOTO OFERTA DESKTOP -->
+				    		<div class="col hide-on-small-only m6">
 								<div class="slider" style="margin-top: 50px;">
 									<ul class="slides">
 								        <li>
@@ -75,21 +76,33 @@ ul.indicators {
 									</ul>
 								</div>
 				    		</div>
+				    		<!-- FOTO OFERTA MOBILE -->
+				    		<div class="col s12 hide-on-med-and-up">
+								<div class="slider oferta-mobile">
+									<ul class="slides">
+								        <li>
+											<img src="<?php echo the_field('fotos_da_oferta'); ?>">
+										</li>
+									</ul>
+								</div>
+				    		</div>
 				    		<div class="col s12 m6">
-				    			<h1 class="texto-vermelho-cupons">Desconto de <?php echo the_field('desconto'); ?>%</h1>
+				    			<h1 class="hide-on-small-only texto-vermelho-cupons">Desconto de <?php echo the_field('desconto'); ?>%</h1>
 				    			<?php echo the_field('descricao_da_oferta'); ?>
 								<div class="divider"></div>
 								<!-- AddToAny BEGIN -->
-								<p class="texto-pequeno">Compartilhe esta oferta:</p>
-								<div class="a2a_kit a2a_kit_size_16 a2a_default_style">
-									<a class="a2a_button_facebook"></a>
-									<a class="a2a_button_twitter"></a>
-									<a class="a2a_button_whatsapp"></a>
+								<div class="hide-on-small-only">
+									<p class="texto-pequeno">Compartilhe esta oferta:</p>
+									<div class="a2a_kit a2a_kit_size_16 a2a_default_style">
+										<a class="a2a_button_facebook"></a>
+										<a class="a2a_button_twitter"></a>
+										<a class="a2a_button_whatsapp"></a>
+									</div>
+									<a class="margin20 btn waves-effect vermelho-cupons texto-amarelo-cupons hide-on-small-only" href="?page_id=134">Pegar cupom</a>
 								</div>
-								<a class="margin20 btn waves-effect vermelho-cupons texto-amarelo-cupons" href="?page_id=134">Pegar cupom</a>
 				    		</div>
 				    	</div>
-				    	<div class="col s12 margin20">
+				    	<div class="col s12 margin20 comousar">
 				    		<h3 class="texto-vermelho-cupons">Como utilizar o cupom:</h3>
 				    		<p>Apresente o cupom no local, podendo ser tanto impresso quanto diretamente pela tela do celular.</p>
 				    	</div>
@@ -102,18 +115,26 @@ ul.indicators {
 				    			<?php echo do_shortcode('[wpsl_map id="'.$id[1].'" zoom="16"]'); ?>
 				    		</div>
 				    	</div>
-				    	<div class="col s12">
+				    	<div class="col s12 margin20">
 				    		<div class="col s12 l3">
-					    		<h3 class="texto-vermelho-cupons">Avaliações:</h3>
+					    		<h3 class="texto-vermelho-cupons avaliacoes">Avaliações:</h3>
 					    		<?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
 					    	</div>
-					    	<div class="col s12 l5">
-					    		<h3 class="texto-vermelho-cupons">Redes Sociais da empresa:</h3>
+					    	<div class="col s12 l5 margin20">
+					    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais">Redes Sociais da empresa:</h3>
+					    		<!-- REDES SOCIAIS DESKTOP -->
 						        <div class="social col m12 hide-on-small-only">
-						          <ul class="left">
-					            	<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
-					            	<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
-						          </ul>
+						        	<ul class="left">
+					            		<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
+					            		<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
+						          	</ul>
+						        </div>
+						        <!-- REDES SOCIAIS MOBILE -->
+						        <div class="social col hide-on-med-and-up">
+						        	<ul class="left">
+					            		<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
+					            		<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
+						          	</ul>
 						        </div>
 					    	</div>
 				    	</div>

@@ -71,7 +71,11 @@
             <p class="texto-amarelo-cupons hide-on-small-only">Encontre os descontos que estão próximos à você! <br>
             Procure pelas categorias no mapa abaixo e aproveite o melhor da cidade, pelo preço mais baixo!</p>
             <?php echo do_shortcode('[wpsl zoom="21"]');?>
-            <div class="btn vermelho-cupons"><a href="#" class="texto-amarelo-cupons"><h6 style="padding-top: 4px;">Ver todas as ofertas<h6></a></div>
+            <div class="btn vermelho-cupons">
+              <a href="#" class="texto-amarelo-cupons">
+                <h6 style="padding-top: 4px;font-size:12px;">Ver todas as ofertas<h6>
+              </a>
+            </div>
           </div>
         </div>
       </div>

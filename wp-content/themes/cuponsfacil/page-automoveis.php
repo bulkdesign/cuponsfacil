@@ -9,7 +9,7 @@ get_header(); ?>
 	<div class="container">
 		<header class="titulo-pagina">
 			<!-- TÍTULO -->
-			<?php the_title( '<h1 class="titulo-pagina margin50 center">', '</h1>' );	?>
+			<?php the_title( '<h1 class="texto-vermelho-cupons titulo-pagina margin50 center">', '</h1>' );	?>
 		</header>
 		<!-- INÍCIO DO WHILE -->
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -31,7 +31,7 @@ get_header(); ?>
 							<?php while ( $loopcategorias->have_posts() ) : $loopcategorias->the_post(); ?>
 			            	<?php $empresa = get_field('estabelecimento'); ?>
 
-			            	<div class="col s12 m6 l4 center">
+			            	<div class="col s12 m6 l4 center margin-categorias">
 			            		<a href="<?php the_permalink(); ?>">
 			            			<img class="capa-oferta" src="<?php echo get_field('foto_de_capa'); ?>">
 			            		</a>

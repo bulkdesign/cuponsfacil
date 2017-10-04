@@ -14,12 +14,6 @@ function remove_default_post_type() {
 add_theme_support( 'post-thumbnails' );
 
 /* Suporte do tema para menu do topo */
-function register_my_menu() {
-  register_nav_menu('new-menu',__( 'Menu' ));
-}
-add_action( 'init', 'register_my_menu' );
-
-/* Suporte do tema para menu do topo */
 function menu_de_categorias() {
   register_nav_menu('menu-categorias',__( 'Menu de Categorias' ));
 }

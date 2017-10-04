@@ -27,7 +27,7 @@
       } ?>
     </title>
     <!-- IMPORTAÇÃO DOS ÍCONES-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- IMPORTAÇÃO DO MATERIALIZE -->
     <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/materialize.css"  media="screen,projection"/>
     <!-- IMPORTAÇÃO DO STYLE.CSS -->
@@ -73,14 +73,15 @@
                         </div>
                         <!-- LOGIN -->
                         <div class="col s12 l2">
-                            <ul class="right hide-on-med-and-down">
-                                <?php wp_nav_menu( array( 'theme_location' => 'new-menu' ) ); ?>
+                            <ul class="right hide-on-med-and-down menu-de-acesso">
+                                <li><a href="/?wp-login.php">Login/Cadastro</a></li>
+                                <li><a href="/?page_id=156">Anuncie</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <main class="hide-on-large-only">
-                    <a class="texto-vermelho-cupons toggle-overlay"><i class="small material-icons">menu</i></a>
+                    <a class="white-text toggle-overlay"><i class="small material-icons">menu</i></a>
                 </main>
             </div>
         </div>
@@ -91,8 +92,10 @@
             <a class="white-text right close"><i class="margin-clear small material-icons">clear</i></a>
         </div>
         <nav class="mobile-menu">
-            <ul>
-                <?php wp_nav_menu( array( 'theme_location' => array('new-menu', 'menu-categorias') ) ); ?>
+            <ul class="menu-de-acesso">
+                <li><a href="/?wp-login.php">Login/Cadastro</a></li>
+                <li><a href="/?page_id=156">Anuncie</a></li>
+                <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias', 'menu_class' => 'menu-de-acesso' ) ); ?>
             </ul>
         </nav>
     </aside>

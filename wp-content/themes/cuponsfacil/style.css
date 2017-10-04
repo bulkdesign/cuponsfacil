@@ -128,7 +128,7 @@ aside {
     height: 100%;
     top: 0;
     left: 0;
-    background: #060133;
+    background: #6d1110;
     transition: all .5s ease;
     z-index: 99999;
     opacity: 0;
@@ -157,16 +157,15 @@ nav.mobile-menu {
 }
 
 .mobile-menu li {
-    height: 0px;
-    padding: 25px 45px 0;
-    margin-top: 20px;
+    padding: 85px 35px 0;
+    margin-top: 0px;
     align-items: center;
     flex: 1;
     float: none;
 }
 
 .mobile-menu a {
-    color: #FFFFFF;
+    color: #eabe35;
     font-size: 1.5em;
     transition: all 0.5s ease;
     display: block;
@@ -185,24 +184,21 @@ nav.mobile-menu {
 .outer-close {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 30px;
     width: 85px;
     height: 85px;
     cursor: pointer;
 }
 
-.login {
-	text-align: center;
-	margin-top: 35px;
+ul.menu-de-acesso > li {
+    margin: 15px 0 -10px;
+    height: 20px;
 }
 
-.login ul {
-	margin: 0;
-}
-
-.login a {
+ul.menu-de-acesso > li a {
 	font-size: 13px;
 	color: #eabe35;
+    text-transform: uppercase;
 }
 
 #slidepremium .conteudoinicial {
@@ -1036,6 +1032,41 @@ div#ajaxsearchprores1_1 {
 
     .page-footer .footer-copyright {
         margin-top: 0;
+    }
+
+    ul.menu-de-acesso > li {
+        margin: -17px 0 -10px;
+        height: 20px;
+    }
+
+    .margin-categorias {
+        margin: 10px 0 50px;
+    }
+
+    .capa-oferta {
+        height: 210px !important;
+        max-height: 50%;
+    }
+
+    .capa-oferta h1 {
+        font-size: 22px;
+        padding: 0 10px;
+    }
+
+    #sobreaoferta ul.slides, #sobreaoferta .slider {
+        height: 150px !important;
+    }
+
+    .col.s12.margin20.comousar {
+        margin-top: 0;
+    }
+
+    h3.avaliacoes, h3.ofertas-redes-sociais {
+        font-size: 14px;
+    }
+
+    .social ul li {
+        margin: 0 10px 0px 0px;
     }
 
 }
