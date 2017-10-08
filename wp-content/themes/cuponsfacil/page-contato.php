@@ -13,7 +13,11 @@ get_header(); ?>
 		</header>
 		<!-- INÍCIO DO WHILE -->
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php echo do_shortcode("[contact-form-7 id='160' title='Contato']"); ?>
+			<div class="row">
+				<div class="col s12 l8 push-l2">
+					<?php echo do_shortcode('[contact-form-7 id="160" title="Contato"]'); ?>
+				</div>
+			</div>
 		<?php endwhile; ?>
 		<!-- FIM DO WHILE -->
 	</div>
