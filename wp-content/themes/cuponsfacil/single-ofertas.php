@@ -145,22 +145,14 @@ ul.indicators {
 				    	</div>
 				    </div>
 				    <div id="aempresa" class="col s12 m8 push-m2">
-				    	<div class="col s12" style="height: 300px !important;">
-				    		<div class="col s12" style="height: 300px !important;">
-								<div class="slider" style="height:300px !important;">
-									<ul class="slides" style="height: 300px !important;">
-								        <li style="height: 300px !important;">
-											<img style="height:300px;" src="<?php echo the_field('fotos_da_oferta'); ?>">
-										</li>
-									</ul>
-								</div>
-				    		</div>
+				    	<div class="col s12" style="height: 300px !important; margin-bottom: 50px">
+							<img style="width: 100%; height:300px;" src="<?php echo the_field('fotos_da_oferta'); ?>">
 				    	</div>
 				    	<div class="col s12 grey-text text-darken-2">
 				    		<?php if( $posts ): ?>
 								<?php foreach( $posts as $p ): ?>
 									<table>
-										<thead>
+										<thead style="background:#F2F2F2">
 											<tr>
 												<th>Nome da empresa</th>
 												<th>Telefone fixo</th>
@@ -176,7 +168,7 @@ ul.indicators {
 										</tbody>
 									</table>
 									<table>
-										<thead>
+										<thead style="background:#F2F2F2">
 											<tr>
 												<th colspan="3">Horários de funcionamento:</th>
 											</tr>
@@ -190,7 +182,7 @@ ul.indicators {
 										</tbody>
 									</table>
 									<table>
-										<thead>
+										<thead style="background:#F2F2F2">
 											<tr>
 												<th colspan="4">Conveniências</th>
 											</tr>
@@ -202,19 +194,30 @@ ul.indicators {
 										</tbody>
 									</table>
 									<table>
-										<thead>
+										<thead style="background:#F2F2F2">
 											<tr>
 												<th colspan="4">Formas de Pagamento</th>
 											</tr>
 										</thead>
 										<tbody>
+											<?php
+
+											$campo_pagamentos = array();
+											$caminho_icones = '../cuponsfacil/wp-content/themes/cuponsfacil/img/pagamento/';
+											$campo_pagamentos = get_field('formas_de_pagamento', $p->ID); ?>
+
 											<tr>
-												<td><?php the_field('formas_de_pagamento', $p->ID); ?></td>
+												<td>
+													<?php foreach ($campo_pagamentos as $opcoes) { ?>
+														<img src="<?php echo $caminho_icones . $opcoes . '.png'; ?>"/>
+													<?php } ?>
+												</td>
 											</tr>
+
 										</tbody>
 									</table>
 									<table>
-										<thead>
+										<thead style="background:#F2F2F2">
 											<tr>
 												<th>Sobre a empresa</th>
 											</tr>
