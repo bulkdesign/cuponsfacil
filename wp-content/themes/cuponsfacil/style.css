@@ -230,7 +230,7 @@ span.nomevendedor {
 	padding: 5px 5px 0;
 }
 
-/*sessão principais ofertas*/
+/* PRINCIPAIS OFERTAS */
 #principaisofertas {
 	height: 800px;
 }
@@ -281,7 +281,7 @@ h1.titulo-oferta {
 	color: white;
 }
 
-/*sessão mapa*/
+/* MAPA */
 #mapa {
 	height: 820px;
 	padding: 20px;
@@ -378,9 +378,13 @@ h1.titulo-oferta {
     border-top: 0;
 }
 
-/*sessão footer*/
+/* FOOTER */
 footer.page-footer {
 	background: #111111;
+}
+
+footer.page-footer li a {
+    color: #FFFFFF;
 }
 
 .page-footer {
@@ -930,6 +934,10 @@ div#ajaxsearchprores1_1 {
 
 #ajaxsearchpro1_1 .probox .proinput input.orig, #ajaxsearchpro1_2 .probox .proinput input.orig, div.ajaxsearchpro[id*="ajaxsearchpro1_"] .probox .proinput input.orig {
     padding-left: 5px !important;
+}
+
+.bx-wrapper {
+    margin-bottom: 30px !important;
 }
 
 /*

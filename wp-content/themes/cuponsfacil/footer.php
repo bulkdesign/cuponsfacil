@@ -17,7 +17,7 @@
               <!-- <li>Categorias</li> -->
               <li><a href="?page_id=156">Anuncie</a></li>
               <li><a href="?page_id=158">Contato</a></li>
-              <li><a href="wp-login.php">Login</a></li>
+              <li><a href="/wp-login.php">Login</a></li>
             </ul>
           </div>
           <div class="col l6 s12 center hide-on-small-only">

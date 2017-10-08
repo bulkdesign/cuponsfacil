@@ -28,7 +28,7 @@
 				</ul>
 
 				<div class="col s12">
-					<h3 class="center texto-vermelho-cupons" style="margin-bottom: 50px;">Confira todos os resultados encontrados para "<?php printf( esc_html__( '%s' ), '<span><strong>' . get_search_query() . '</strong></span>' ); ?>":</h3>
+					<h3 class="center texto-vermelho-cupons" style="margin-bottom: 20px;">Confira todos os resultados encontrados para "<?php printf( esc_html__( '%s' ), '<span><strong>' . get_search_query() . '</strong></span>' ); ?>":</h3>
 				</div>
 
 				<div class="owl-carousel loop">
@@ -58,9 +58,7 @@
 					</div>
 				</div>
 	 
-	            <header class="page-header">
-	                <div class="divider"></div>
-	            </header><!-- .page-header -->
+	            <div class="divider"></div>
     			<div class="search-container">
 	 			
 		 			<div class="row">
