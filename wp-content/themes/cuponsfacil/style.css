@@ -324,7 +324,17 @@ h1.titulo-oferta {
 }
 
 .wpsl-direction-wrap {
-	margin-top: 16px;
+	margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#wpsl-result-list li p {
+    margin-bottom: 0 !important;
+}
+
+#wpsl-wrap .wpsl-info-window p {
+    margin: 10px 0 10px !important;
+    font-size: 13px !important;
 }
 
 /* PAGINA DA OFERTA */
