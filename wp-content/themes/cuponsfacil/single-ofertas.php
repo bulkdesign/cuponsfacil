@@ -120,23 +120,26 @@ ul.indicators {
 					    		<h3 class="texto-vermelho-cupons avaliacoes">Avaliações:</h3>
 					    		<?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
 					    	</div>
-					    	<div class="col s12 l5 margin20">
-					    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais">Redes Sociais da empresa:</h3>
-					    		<!-- REDES SOCIAIS DESKTOP -->
-						        <div class="social col m12 hide-on-small-only">
-						        	<ul class="left">
-					            		<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
-					            		<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
-						          	</ul>
-						        </div>
-						        <!-- REDES SOCIAIS MOBILE -->
-						        <div class="social col hide-on-med-and-up">
-						        	<ul class="left">
-					            		<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
-					            		<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
-						          	</ul>
-						        </div>
-					    	</div>
+					    	<?php if( get_field('facebook', $p->ID) ): ?>
+						    	<div class="col s12 l5">
+						    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais">Redes Sociais da empresa:</h3>
+						    		<!-- REDES SOCIAIS DESKTOP -->
+							        <div class="social col m12 hide-on-small-only">
+							        	<ul class="left">
+						            		<li><a href="<?php the_field('facebook', $p->ID); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
+						            		<li><a href="<?php the_field('instagram', $p->ID); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
+							          	</ul>
+							        </div>
+							        <!-- REDES SOCIAIS MOBILE -->
+							        <div class="social col hide-on-med-and-up margin20">
+							        	<ul class="left">
+						            		<li><a href="<?php the_field('facebook', $p->ID); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
+						            		<li><a href="<?php the_field('instagram', $p->ID); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
+							          	</ul>
+							        </div>
+						    	</div>
+					    		<?php else: ?>
+					    	<?php endif; ?>
 				    	</div>
 					</div>
 				    <div id="regulamento" class="col s12 m8 push-m2">
