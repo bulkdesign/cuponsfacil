@@ -5,12 +5,12 @@
  */
  
 $(document).ready(function(){
+  $('ul.tabs').tabs();
   $('.parallax').parallax();
   $('.scrollspy').scrollSpy();
   $('.slider').slider();
   $('.modal').modal();
   $('.carousel.carousel-slider').carousel({fullWidth: true});
-  $('ul.tabs').tabs();
   $('.toggle-overlay').click(function() {
     $('aside').toggleClass('open');
   })

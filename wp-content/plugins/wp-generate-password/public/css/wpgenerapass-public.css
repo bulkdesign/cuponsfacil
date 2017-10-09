@@ -1,0 +1,18 @@
+/**
+ * All of the CSS for your public-facing functionality
+ */
+.display-public-wpgenerapass {
+	background: rgba(176, 188, 180, 0.35);
+	padding: 15px 20px;
+    width: 200px;
+}
+.display-public-wpgenerapass-text {
+	/*Put your css here*/
+}
+.wpgenerapass-shortcode-error {
+	background-color: rgba(255, 0, 0, 0.14);
+}
+
+.display-public-wpgenerapass-password-text {
+	font-size: 13px;
+}

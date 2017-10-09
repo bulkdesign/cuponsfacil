@@ -33,6 +33,7 @@ ul.indicators {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php while ( have_posts() ) : the_post(); ?>
 		<?php $posts = get_field('estabelecimento'); ?>
+		<?php $cupom = get_field('cupom'); ?>
 
 		<div class="carousel capa-oferta carousel-slider center" data-indicators="true">
 		    <div class="carousel-fixed-item center">
@@ -45,7 +46,11 @@ ul.indicators {
 								<?php endforeach; ?>
 							<?php endif; ?>
 						</h1>
-					    <a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="?page_id=134">Pegar cupom</a>
+						<?php if( $cupom ): ?>
+							<?php foreach( $cupom as $c ): ?>
+					    		<a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+					    	<?php endforeach; ?>
+					    <?php endif; ?>
 					</div>
 				</div>
 		    </div>
@@ -98,7 +103,11 @@ ul.indicators {
 										<a class="a2a_button_twitter"></a>
 										<a class="a2a_button_whatsapp"></a>
 									</div>
-									<a class="margin20 btn waves-effect vermelho-cupons texto-amarelo-cupons hide-on-small-only" href="?page_id=134">Pegar cupom</a>
+									<?php if( $cupom ): ?>
+										<?php foreach( $cupom as $c ): ?>
+								    		<a class="margin20 btn waves-effect vermelho-cupons texto-amarelo-cupons hide-on-small-only" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+								    	<?php endforeach; ?>
+								    <?php endif; ?>
 								</div>
 				    		</div>
 				    	</div>
@@ -115,41 +124,17 @@ ul.indicators {
 				    			<?php echo do_shortcode('[wpsl_map id="'.$id[1].'" zoom="16"]'); ?>
 				    		</div>
 				    	</div>
-				    	<div class="col s12 margin20">
-				    		<div class="col s12 l3">
-					    		<h3 class="texto-vermelho-cupons avaliacoes">Avaliações:</h3>
-					    		<?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
-					    	</div>
-					    	<?php if( get_field('facebook', $p->ID) ): ?>
-						    	<div class="col s12 l5">
-						    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais">Redes Sociais da empresa:</h3>
-						    		<!-- REDES SOCIAIS DESKTOP -->
-							        <div class="social col m12 hide-on-small-only">
-							        	<ul class="left">
-						            		<li><a href="<?php the_field('facebook', $p->ID); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
-						            		<li><a href="<?php the_field('instagram', $p->ID); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
-							          	</ul>
-							        </div>
-							        <!-- REDES SOCIAIS MOBILE -->
-							        <div class="social col hide-on-med-and-up margin20">
-							        	<ul class="left">
-						            		<li><a href="<?php the_field('facebook', $p->ID); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
-						            		<li><a href="<?php the_field('instagram', $p->ID); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
-							          	</ul>
-							        </div>
-						    	</div>
-					    		<?php else: ?>
-					    	<?php endif; ?>
-				    	</div>
 					</div>
-				    <div id="regulamento" class="col s12 m8 push-m2">
+				    <div id="regulamento" class="col s12 m8 push-m2 margin20">
 				    	<div class="col s12">
+				    	<h3 class="texto-vermelho-cupons avaliacoes">Regulamento:</h3>
 				    		<?php echo the_field('regulamento_da_oferta'); ?>
 				    	</div>
 				    </div>
 				    <div id="aempresa" class="col s12 m8 push-m2">
 				    	<div class="col s12" style="height: 300px !important; margin-bottom: 50px">
-							<img style="width: 100%; height:300px;" src="<?php echo the_field('fotos_da_oferta'); ?>">
+				    	<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
+							<img class="margin20" style="width: 100%; height:300px;" src="<?php echo the_field('fotos_da_oferta'); ?>">
 				    	</div>
 				    	<div class="col s12 grey-text text-darken-2">
 				    		<?php if( $posts ): ?>
@@ -234,6 +219,29 @@ ul.indicators {
 								<?php endforeach; ?>
 							<?php endif; ?>
 				    	</div>
+				    	<div class="col s12 margin40">
+				    		<div class="col s12 l3">
+					    		<h3 class="texto-vermelho-cupons avaliacoes">Avaliações:</h3>
+					    		<?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
+					    	</div>
+					    	<div class="col s12 l5">
+					    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais">Redes Sociais da empresa:</h3>
+					    		<!-- REDES SOCIAIS DESKTOP -->
+						        <div class="social col m12 hide-on-small-only">
+						        	<ul class="left">
+					            		<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
+					            		<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
+						          	</ul>
+						        </div>
+						        <!-- REDES SOCIAIS MOBILE -->
+						        <div class="social col hide-on-med-and-up margin20">
+						        	<ul class="left">
+					            		<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
+					            		<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
+						          	</ul>
+						        </div>
+					    	</div>
+			    		</div>
 				    </div>
 				</div>
 			</div>
