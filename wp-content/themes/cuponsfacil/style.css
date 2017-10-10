@@ -335,7 +335,8 @@ h1.titulo-oferta {
 }
 
 #mapa a {
-	font-size: 20px;
+    color: #eabe35;
+    font-size: 16px;
 }
 
 .wpsl-store-location p {

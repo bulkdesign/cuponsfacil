@@ -945,5 +945,9 @@ table.wpsl-opening-hours td {
 }
 
 .wpsl-store-location {
-    height: 50px;
+    padding: 25px 0 0;
+}
+
+a.wpsl-store-details {
+    font-size: 14px !important;
 }
