@@ -74,8 +74,8 @@
                         <!-- LOGIN -->
                         <div class="col s12 l2">
                             <ul class="right hide-on-med-and-down menu-de-acesso">
-                                <li><a href="/?wp-login.php">Login/Cadastro</a></li>
-                                <li><a href="/?page_id=156">Anuncie</a></li>
+                                <li><a href="/wp-login.php">Login/Cadastro</a></li>
+                                <li><a href="/anuncie">Anuncie</a></li>
                             </ul>
                         </div>
                     </div>

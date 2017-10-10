@@ -195,14 +195,18 @@ nav.mobile-menu {
     cursor: pointer;
 }
 
+ul.menu-de-acesso {
+    margin: 30px 0;
+}
+
 ul.menu-de-acesso > li {
-    margin: 15px 0 -10px;
-    height: 20px;
+    line-height: 10px;
 }
 
 ul.menu-de-acesso > li a {
-	font-size: 13px;
+	font-size: 15px;
 	color: #eabe35;
+    padding: 10px 0;
     text-transform: uppercase;
 }
 
