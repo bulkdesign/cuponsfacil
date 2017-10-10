@@ -32,8 +32,7 @@
             <ul class="right">
               <li><a href="https://www.facebook.com/CuponsFacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
               <li><a href="https://instagram.com/cuponsfacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
-              <li><a href="#" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/twitter.png"/></a></li>
-              <li><a href="#" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/youtube.png"/></a></li>
+              <li><a href="https://www.youtube.com/channel/UCKEorUhqPYIE4u26s_TU9KA" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/youtube.png"/></a></li>
             </ul>
           </div>
         </div>         
