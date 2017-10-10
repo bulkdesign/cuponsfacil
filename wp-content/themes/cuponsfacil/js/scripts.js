@@ -31,6 +31,23 @@ $(document).ready(function(){
       }
   });
 
+  var scrollTop = 0;
+  $(window).scroll(function(){
+    scrollTop = $(window).scrollTop();
+      $('.counter').html(scrollTop);
+    
+      if (scrollTop >= 100) {
+        $('.categorias').css('display', 'none');
+        $('#global-nav').addClass('scrolled-nav');
+        
+        }
+        
+        else if (scrollTop < 100) {
+          $('.categorias').css('display', 'block');
+          $('#global-nav').removeClass('scrolled-nav');
+        }   
+  }); 
+
   var a2a_config = a2a_config || {};
   a2a_config.linkname = "Cupons Fácil";
   a2a_config.linkurl = "https://cuponsfacil.com.br";

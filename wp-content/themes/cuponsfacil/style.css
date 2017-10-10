@@ -122,7 +122,8 @@ ul.menu li {
 }
 
 .menu li a {
-	padding: 0 9px;
+	padding: 0 4px;
+    line-height: 64px;
     text-transform: uppercase;
 }
 
@@ -203,6 +204,33 @@ ul.menu-de-acesso > li a {
 	font-size: 13px;
 	color: #eabe35;
     text-transform: uppercase;
+}
+
+#global-nav {
+    position: fixed;
+    top: 0;
+    height: 150px;
+    z-index: 9999;
+    width: 100%;
+    line-height: 150px;
+    background-color: rgba(109,17,16,0.9);
+    -webkit-transition: height .5s, line-height .5s; /* Safari */
+    transition: height .5s, line-height .5s;
+}
+
+.scrolled-nav {
+  height: 60px !important;
+  line-height: 60px !important;
+}
+
+.counter {
+  width: 20px;
+  height: 20px;
+  background: black;
+  color: #fff;
+  position: fixed;
+  top: 120px;
+  right: 0;
 }
 
 #slidepremium .conteudoinicial {

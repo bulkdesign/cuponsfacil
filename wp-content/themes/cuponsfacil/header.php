@@ -44,7 +44,7 @@
     </head>
     <body>
     <!--BARRA DE NAVEGAÇÃO-->
-    <nav class="navegacao z-depth-0">
+    <nav id="global-nav" class="navegacao z-depth-0">
         <div class="container">
             <div class="nav-wrapper">
                 <div class="row">
@@ -63,7 +63,7 @@
                         <!-- BUSCA -->
                         <div class="col hide-on-small-only l8">
                             <?php get_search_form(); ?>
-                            <div class="col l11 push-l1">
+                            <div class="col l11 push-l1 categorias">
                                 <ul class="menu hide-on-med-and-down">
                                     <div class="col l12">
                                     <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias' ) ); ?>

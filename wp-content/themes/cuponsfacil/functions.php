@@ -39,7 +39,7 @@ function logo_de_login() {
 body.login div#login h1 a {
 	width: 165px;
 	background-size: 150px;
-	background-image: url(http://localhost/cuponsfacil/wp-content/themes/cuponsfacil/img/logo/logo.png);
+	background-image: url(https://www.cuponsfacil.com.br/wp-content/themes/cuponsfacil/img/logo/logo.png);
 	padding-bottom: 30px; 
 }
 </style>
