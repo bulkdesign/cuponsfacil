@@ -99,7 +99,7 @@ p.texto-pequeno {
 }
 
 #slidepremium {
-	margin-top: -160px;
+	margin-top: -10px;
 }
 
 .brand-logo img {
@@ -107,6 +107,8 @@ p.texto-pequeno {
     padding: 4px 0;
     position: relative;
     margin: 0;
+    -webkit-transition: all .3s ease-in-out; /* Safari */
+    transition: all .3s ease-in-out;
 }
 
 .busca {
@@ -197,6 +199,8 @@ nav.mobile-menu {
 
 ul.menu-de-acesso {
     margin: 30px 0;
+    -webkit-transition: margin .3s; /* Safari */
+    transition: margin .3s;
 }
 
 ul.menu-de-acesso > li {
@@ -208,6 +212,8 @@ ul.menu-de-acesso > li a {
 	color: #eabe35;
     padding: 10px 0;
     text-transform: uppercase;
+    -webkit-transition: font-size .3s; /* Safari */
+    transition: font-size .3s;
 }
 
 #global-nav {
@@ -218,8 +224,8 @@ ul.menu-de-acesso > li a {
     width: 100%;
     line-height: 150px;
     background-color: rgba(109,17,16,0.9);
-    -webkit-transition: height .5s, line-height .5s; /* Safari */
-    transition: height .5s, line-height .5s;
+    -webkit-transition: height .3s, line-height .3s; /* Safari */
+    transition: height .3s, line-height .3s;
 }
 
 .scrolled-nav {
@@ -964,6 +970,11 @@ header.page-header {
 
 input.wpcf7-form-control.wpcf7-submit.vermelho-cupons.btn.btn-small {
     margin: 10px 0 0;
+}
+
+div#ajaxsearchpro1_1 {
+    -webkit-transition: margin .3s; /* Safari */
+    transition: margin .3s;
 }
 
 div#ajaxsearchprores1_1 {
