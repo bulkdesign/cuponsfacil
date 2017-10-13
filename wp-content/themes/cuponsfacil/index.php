@@ -6,8 +6,11 @@
           <?php $loop = new WP_Query( array( 'post_type' => array('ofertas') )); ?>
           <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
           <?php $posts = get_field('estabelecimento'); ?>
+          <!-- Selecao do plano -->
+          <?php $plano = get_field('plano'); ?>
+          <?php if( $plano == 'premium' ): ?>
           <li>
-            <img src="<?php echo get_field('foto_de_capa'); ?>"> <!-- random image -->
+            <img src="<?php echo get_field('foto_de_capa'); ?>">
             <div class="caption left-align">
               <div class="row">
                 <div class="col s12 m8 conteudoinicial">
@@ -25,6 +28,8 @@
               </div>
             </div>
           </li>
+          <?php else: ?>
+          <?php endif; ?>
           <?php endwhile; wp_reset_query(); ?>
         </ul>
       </div>
@@ -38,7 +43,7 @@
           </div>
           <!-- OFERTA -->
           <!-- Início do Loop -->
-          <?php $ofertas = new WP_Query( array( 'post_type' => array('ofertas'), 'posts_per_page' => 6 )); ?>
+          <?php $ofertas = new WP_Query( array( 'post_type' => array('ofertas'), 'posts_per_page' => 6, 'orderby' => 'rand' )); ?>
           <?php while ( $ofertas->have_posts() ) : $ofertas->the_post(); ?>
           <?php $empresa = get_field('estabelecimento'); ?>
           <div class="col l4 m12 s12">
