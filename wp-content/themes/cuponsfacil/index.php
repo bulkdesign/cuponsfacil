@@ -13,7 +13,7 @@
                 <div class="col s12 m8 conteudoinicial">
                   <?php if( $posts ): ?>
                     <?php foreach( $posts as $p ): ?>
-                    <img style="background-size:230px;max-height: 100px;background-repeat: no-repeat;" src="<?php echo get_field('logo_do_cliente', $p->ID); ?>" />
+                    <img style="background-size:200px;max-height: 150px;background-repeat: no-repeat;" src="<?php echo get_field('logo_do_cliente', $p->ID); ?>" />
                     <h1><?php the_title(); ?> em
                             <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $p->ID); ?></span>
                         <?php endforeach; ?>

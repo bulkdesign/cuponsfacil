@@ -47,8 +47,13 @@ ul.indicators {
 							<?php endif; ?>
 						</h1>
 						<?php if( $cupom ): ?>
+							<?php $user_id = get_current_user_id(); ?>
 							<?php foreach( $cupom as $c ): ?>
-					    		<a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+								<?php if( $user_id == 0 ): ?>
+									<?php echo 'sai daqui, viado'; ?>
+								<?php else: ?>
+					    			<a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+					    		<?php endif; ?>
 					    	<?php endforeach; ?>
 					    <?php endif; ?>
 					</div>
@@ -104,8 +109,13 @@ ul.indicators {
 										<a class="a2a_button_whatsapp"></a>
 									</div>
 									<?php if( $cupom ): ?>
+										<?php $user_id = get_current_user_id(); ?>
 										<?php foreach( $cupom as $c ): ?>
-								    		<a class="margin20 btn waves-effect vermelho-cupons texto-amarelo-cupons hide-on-small-only" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+											<?php if( $user_id == 0 ): ?>
+												<?php echo 'sai daqui, viado'; ?>
+											<?php else: ?>
+								    			<a class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+								    		<?php endif; ?>
 								    	<?php endforeach; ?>
 								    <?php endif; ?>
 								</div>

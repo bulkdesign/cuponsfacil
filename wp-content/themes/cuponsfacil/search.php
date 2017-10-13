@@ -15,7 +15,7 @@
 
 	<?php  global $wp_query; ?>
 
-	    <section id="primary" class="content-area">
+	    <section id="primary" class="content-area" style="margin-top: 150px;">
 	        <main id="main" class="site-main" role="main">
 	 
 	        <?php if ( have_posts() ) : ?>
