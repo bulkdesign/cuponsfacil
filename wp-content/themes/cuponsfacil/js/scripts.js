@@ -5,7 +5,6 @@
  */
  
 $(document).ready(function(){
-  $('ul.tabs').tabs();
   $('.parallax').parallax();
   $('.scrollspy').scrollSpy();
   $('.slider').slider();

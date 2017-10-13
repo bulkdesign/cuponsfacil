@@ -14,7 +14,10 @@ get_header(); ?>
 		<!-- INÍCIO DO WHILE -->
 		<?php while ( have_posts() ) : the_post(); ?>
 			<div class="row">
-				<div class="col s12 l8 push-l2">
+				<div class="col s12 center">
+					<p>Se você é um usuário do site e possui alguma dúvida ou deseja mais informações, entre em contato através do formulário abaixo:</p>
+				</div>
+				<div class="col s12 l8 push-l2 margin20">
 					<?php echo do_shortcode('[contact-form-7 id="160" title="Contato"]'); ?>
 				</div>
 			</div>

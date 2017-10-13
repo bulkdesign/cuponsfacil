@@ -7,7 +7,7 @@
  * @since Cupons Facil
  */
 
-get_header(); ?>
+get_header('paginas'); ?>
 
 <style type="text/css">
 	
@@ -52,27 +52,22 @@ ul.indicators {
 								<?php if( $user_id == 0 ): ?>
 									<?php echo 'sai daqui, viado'; ?>
 								<?php else: ?>
-					    			<a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+									<div class="margin-top">
+					    				<a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+					    			</div>
 					    		<?php endif; ?>
 					    	<?php endforeach; ?>
 					    <?php endif; ?>
 					</div>
 				</div>
 		    </div>
-		    <div class="carousel-item white-text" href="#one!">
+		    <div class="white-text">
 		    	<div class="overlay-vermelho"></div>
 		    	<img src="<?php echo get_field('foto_de_capa'); ?>">
 		    </div>
 		</div>
 		<div class="container">
 			<div class="row">
-			    <div class="col s12 m8 push-m2 abas">
-			    	<ul class="tabs">
-			        	<li class="tab col s4"><a class="active" href="#sobreaoferta">Sobre a Oferta</a></li>
-			        	<li class="tab col s4"><a href="#regulamento">Regulamento</a></li>
-			        	<li class="tab col s4"><a href="#aempresa">A Empresa</a></li>
-			      	</ul>
-			    </div>
 			    <div class="dentro-abas">
 				    <div id="sobreaoferta" class="col s12 m8 push-m2">
 				    	<div class="col s12">
@@ -96,9 +91,8 @@ ul.indicators {
 									</ul>
 								</div>
 				    		</div>
-				    		<div class="col s12 m6">
-				    			<h1 class="hide-on-small-only texto-vermelho-cupons">Desconto de <?php echo the_field('desconto'); ?>%</h1>
-				    			<?php echo the_field('descricao_da_oferta'); ?>
+				    		<div class="col s12 m6 margin20">
+				    			<h1 class="hide-on-small-only texto-vermelho-cupons"><?php the_title(); ?></h1>
 								<div class="divider"></div>
 								<!-- AddToAny BEGIN -->
 								<div class="hide-on-small-only">
@@ -118,116 +112,165 @@ ul.indicators {
 								    		<?php endif; ?>
 								    	<?php endforeach; ?>
 								    <?php endif; ?>
+								    <!-- VALIDADE DA OFERTA -->
+					        		<?php 
+					        			$validade_oferta = get_field('validade', false, false);
+					        			$validade_oferta = new DateTime($validade_oferta);
+					        		?>
+				        			<p>Validade da oferta: <?php echo $validade_oferta->format('j/m/y'); ?></p>
 								</div>
 				    		</div>
 				    	</div>
+				    	<!-- DESCRICAO -->
+				    	<div id="regulamento" class="col s12 margin20">
+				    		<h3 class="texto-vermelho-cupons avaliacoes">Descrição da oferta:</h3>
+				    		<div class="margin20">
+				    			<?php echo the_field('descricao_da_oferta'); ?>
+				    		</div>
+				    	</div>
+				    	<!-- COMO USAR -->
 				    	<div class="col s12 margin20 comousar">
 				    		<h3 class="texto-vermelho-cupons">Como utilizar o cupom:</h3>
 				    		<p>Apresente o cupom no local, podendo ser tanto impresso quanto diretamente pela tela do celular.</p>
 				    	</div>
-				    	<div class="col s12">
-				    		<h3 class="texto-vermelho-cupons">Localização:</h3>
-				    		<?php $id = array(get_the_ID(), $p->ID);?>
-				    		<p><?php echo do_shortcode('[wpsl_address id="'.$id[1].'" name="false" city="false" state="false" country="false" phone="false"]'); ?></p>
-				    		<p>Telefones: <?php the_field('telefone_fixo', $p->ID); ?> <?php if( get_field('telefone_2', $p->ID)): ?>| <?php the_field('telefone_2', $p->ID); ?><?php else: ?><?php endif; ?></p>
-				    		<div class="margin20">
-				    			<?php echo do_shortcode('[wpsl_map id="'.$id[1].'" zoom="16"]'); ?>
-				    		</div>
-				    	</div>
 					</div>
+					<!-- REGULAMENTO -->
 				    <div id="regulamento" class="col s12 m8 push-m2 margin20">
 				    	<div class="col s12">
 				    	<h3 class="texto-vermelho-cupons avaliacoes">Regulamento:</h3>
 				    		<?php echo the_field('regulamento_da_oferta'); ?>
 				    	</div>
 				    </div>
+				    <!-- A EMPRESA -->
 				    <div id="aempresa" class="col s12 m8 push-m2">
 				    	<div class="col s12" style="height: 300px !important; margin-bottom: 50px">
 				    	<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
-							<img class="margin20" style="width: 100%; height:300px;" src="<?php echo the_field('fotos_da_oferta'); ?>">
+							<img class="margin20" style="width: 100%; height:300px;background-image:url('<?php echo the_field('fotos_da_oferta'); ?>');background-size:cover;background-position: 100% 50%;background-repeat: no-repeat;">
 				    	</div>
 				    	<div class="col s12 grey-text text-darken-2">
-				    		<?php if( $posts ): ?>
-								<?php foreach( $posts as $p ): ?>
-									<table>
-										<thead style="background:#F2F2F2">
-											<tr>
-												<th>Nome da empresa</th>
-												<th>Telefone fixo</th>
-												<th>E-mail</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><?php the_field('nome_da_empresa', $p->ID); ?></td>
-												<td><?php the_field('telefone_fixo', $p->ID); ?></td>
-												<td><?php the_field('e-mail', $p->ID); ?></td>
-											</tr>
-										</tbody>
-									</table>
-									<table>
-										<thead style="background:#F2F2F2">
-											<tr>
-												<th colspan="3">Horários de funcionamento:</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Dias de semana: <?php the_field('funcionamento_semana', $p->ID); ?></td>
-												<td>Sábado: <?php the_field('funcionamento_sabado', $p->ID); ?></td>
-												<td>Domingo: <?php the_field('funcionamento_domingo', $p->ID); ?></td>
-											</tr>
-										</tbody>
-									</table>
-									<table>
-										<thead style="background:#F2F2F2">
-											<tr>
-												<th colspan="4">Conveniências</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><?php the_field('conveniencias', $p->ID); ?></td>
-											</tr>
-										</tbody>
-									</table>
-									<table>
-										<thead style="background:#F2F2F2">
-											<tr>
-												<th colspan="4">Formas de Pagamento</th>
-											</tr>
-										</thead>
-										<tbody>
-											<?php
+			    		<?php if( $posts ): ?>
+						<?php foreach( $posts as $p ): ?>
+							<table>
+								<thead style="background:#F2F2F2">
+									<tr>
+										<th>Nome da empresa</th>
+										<th>Telefone fixo</th>
+										<th>E-mail</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><?php the_field('nome_da_empresa', $p->ID); ?></td>
+										<?php if ( get_field('telefone_fixo') ): ?>
+											<td><?php the_field('telefone_fixo', $p->ID); ?></td>
+										<?php else: ?>
+											<td>Não possui</td>
+										<?php endif; ?>
+										<td><?php the_field('e-mail', $p->ID); ?></td>
+									</tr>
+								</tbody>
+							</table>
+							<table>
+								<thead style="background:#F2F2F2">
+									<tr>
+										<th colspan="3">Horários de funcionamento:</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dias de semana: <?php the_field('funcionamento_semana', $p->ID); ?></td>
+										<?php if ( get_field('funcionamento_sabado') ): ?>
+											<td>Sábado: <?php the_field('funcionamento_sabado', $p->ID); ?></td>
+										<?php else: ?>
+											<td>Sábado: fechado</td>
+										<?php endif; ?>
+										<?php if ( get_field('funcionamento_domingo') ): ?>
+											<td>Domingo: <?php the_field('funcionamento_domingo', $p->ID); ?></td>
+										<?php else: ?>
+											<td>Domingo: fechado</td>
+										<?php endif; ?>
+									</tr>
+								</tbody>
+							</table>
+							<table>
+								<thead style="background:#F2F2F2">
+									<tr>
+										<th colspan="4">Conveniências</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><?php the_field('conveniencias', $p->ID); ?></td>
+									</tr>
+								</tbody>
+							</table>
+							<table>
+								<thead style="background:#F2F2F2">
+									<tr>
+										<th colspan="4">Formas de Pagamento</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
 
-											$campo_pagamentos = array();
-											$caminho_icones = '../cuponsfacil/wp-content/themes/cuponsfacil/img/pagamento/';
-											$campo_pagamentos = get_field('formas_de_pagamento', $p->ID); ?>
+									$campo_pagamentos = array();
+									$caminho_icones = '/img/pagamento/';
+									$campo_pagamentos = get_field('formas_de_pagamento', $p->ID); ?>
 
-											<tr>
-												<td>
-													<?php foreach ($campo_pagamentos as $opcoes) { ?>
-														<img src="<?php echo $caminho_icones . $opcoes . '.png'; ?>"/>
-													<?php } ?>
-												</td>
-											</tr>
+									<tr>
+										<td>
+											<?php foreach ($campo_pagamentos as $opcoes) { ?>
+												<img src="<?php echo bloginfo('template_url') . $caminho_icones . $opcoes . '.png'; ?>"/>
+											<?php } ?>
+										</td>
+									</tr>
 
-										</tbody>
-									</table>
-									<table>
-										<thead style="background:#F2F2F2">
-											<tr>
-												<th>Sobre a empresa</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><?php the_field('sobre_a_empresa', $p->ID); ?></td>
-											</tr>
-										</tbody>
-									</table>
-								<?php endforeach; ?>
-							<?php endif; ?>
+								</tbody>
+							</table>
+							<table>
+								<thead style="background:#F2F2F2">
+									<tr>
+										<th>Sobre a empresa</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="sobreaempresa"><?php the_field('sobre_a_empresa', $p->ID); ?></td>
+									</tr>
+								</tbody>
+							</table>
+					    	<!-- LOCALIZACAO -->
+					    	<table>
+					    		<thead style="background:#F2F2F2">
+					    			<tr>
+					    				<th colspan="2">Localização</th>
+					    			</tr>
+					    		</thead>
+					    		<tbody>
+			    					<?php $id = array(get_the_ID(), $p->ID);?>
+		    							<tr>
+			    							<td>Endereço:</td>
+				    						<td>
+				    							<?php echo do_shortcode('[wpsl_address id="'.$id[1].'" name="false" city="false" state="false" country="false" phone="false"]'); ?>
+				    						</td>
+				    					</tr>
+										<tr>
+											<td>Telefones:</td>
+											<td>
+												<?php the_field('telefone_fixo', $p->ID); ?>
+				    							<?php if( get_field('telefone_2', $p->ID)): ?>
+				    								| <?php the_field('telefone_2', $p->ID); ?>
+				    							<?php else: ?>
+				    							<?php endif; ?>
+											</td>
+										</tr>
+					    				<tr>
+					    					<td colspan="2" style="padding:0;margin:0;">
+									    		<?php echo do_shortcode('[wpsl_map id="'.$id[1].'" zoom="16"]'); ?>
+									    	</td>
+						    			</tr>
+					    		</tbody>
+					    	</table>
 				    	</div>
 				    	<div class="col s12 margin40">
 				    		<div class="col s12 l3">
@@ -239,8 +282,22 @@ ul.indicators {
 					    		<!-- REDES SOCIAIS DESKTOP -->
 						        <div class="social col m12 hide-on-small-only">
 						        	<ul class="left">
-					            		<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
-					            		<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
+						        		<!-- FACEBOOK -->
+						        		<?php if( get_field('facebook', $p->ID) ): ?>
+					            			<li>
+					            				<a href="<?php echo get_field('facebook', $p->ID); ?>" target="blank">
+					            					<img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/>
+					            				</a>
+					            			</li>
+					            		<?php endif; ?>
+					            		<!-- INSTAGRAM -->
+					            		<?php if (get_field('instagram', $p->ID)): ?>
+					            			<li>
+					            				<a href="<?php echo get_field('instagram', $p->ID); ?>" target="blank">
+					            					<img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/>
+					            				</a>
+					            			</li>
+					            		<?php endif; ?>
 						          	</ul>
 						        </div>
 						        <!-- REDES SOCIAIS MOBILE -->
@@ -252,6 +309,8 @@ ul.indicators {
 						        </div>
 					    	</div>
 			    		</div>
+						<?php endforeach; ?>
+						<?php endif; ?>
 				    </div>
 				</div>
 			</div>
