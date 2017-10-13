@@ -18,18 +18,23 @@ $(document).ready(function(){
     adaptiveHeight: true,
     mode: 'horizontal'
   });
-  $('.loop').owlCarousel({
-      center: true,
-      items:2,
-      loop:true,
-      margin:10,
-      responsive:{
-          600:{
-              items:4
-          }
-      }
-  });
-
+  $('.owl-carousel').owlCarousel({
+    autoWidth:true,
+    margin:10,
+    loop:true,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+  })
   var scrollTop = 0;
   $(window).scroll(function(){
     scrollTop = $(window).scrollTop();

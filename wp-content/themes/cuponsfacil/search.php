@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header('paginas'); ?>
 
 <div class="container">
 
@@ -15,84 +15,83 @@
 
 	<?php  global $wp_query; ?>
 
-	    <section id="primary" class="content-area" style="margin-top: 150px;">
+	    <section id="primary" class="content-area">
 	        <main id="main" class="site-main" role="main">
-	 
-	        <?php if ( have_posts() ) : ?>
-
+		        <!-- BANNER TOPO (PLANO PREMIUM) -->
 	        	<ul class="bxslider">
-					<li><img src="http://via.placeholder.com/1250x150"></li>
-					<li><img src="http://via.placeholder.com/1250x150"></li>
-					<li><img src="http://via.placeholder.com/1250x150"></li>
-					<li><img src="http://via.placeholder.com/1250x150"></li>
+        			<?php $loop = new WP_Query( array( 'post_type' => array('ofertas') )); ?>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					<?php $plano = get_field('plano'); ?>
+					<?php if( $plano == 'premium' ): ?>
+	            	<li>
+	            		<div style="max-width:1250px;height:150px;background:url('<?php echo get_field('foto_de_capa'); ?>');background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;">Olar</div>
+	            	</li>
+                	<?php else: ?>
+			    	<?php endif; ?>
+			    	<?php endwhile; wp_reset_query(); ?>
 				</ul>
-
+				<!-- CAROUSEL (PLANO FLEX) -->
 				<div class="col s12">
 					<h3 class="center texto-vermelho-cupons" style="margin-bottom: 20px;">Confira todos os resultados encontrados para "<?php printf( esc_html__( '%s' ), '<span><strong>' . get_search_query() . '</strong></span>' ); ?>":</h3>
 				</div>
-
-				<div class="owl-carousel loop">
-					<div>
+				<div class="owl-carousel owl-theme">
+					<?php $loop = new WP_Query( array( 'post_type' => array('ofertas') )); ?>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					<?php $plano = get_field('plano'); ?>
+					<?php if( $plano == 'flex' ): ?>
+					<div class="item">
 						<a class="ofertas-carousel" href="<?php the_permalink(); ?>">
-							<img src="<?php echo get_field('foto_de_capa'); ?>">
+							<div style="height:100px;background:url('<?php echo get_field('foto_de_capa'); ?>');background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;"></div>
 							<p><?php the_title(); ?></p>	
 						</a>
 					</div>
-					<div>
-						<a class="ofertas-carousel" href="<?php the_permalink(); ?>">
-							<img src="<?php echo get_field('foto_de_capa'); ?>">
-							<p><?php the_title(); ?></p>	
-						</a>
-					</div>
-					<div>
-						<a class="ofertas-carousel" href="<?php the_permalink(); ?>">
-							<img src="<?php echo get_field('foto_de_capa'); ?>">
-							<p><?php the_title(); ?></p>	
-						</a>
-					</div>
-					<div>
-						<a class="ofertas-carousel" href="<?php the_permalink(); ?>">
-							<img src="<?php echo get_field('foto_de_capa'); ?>">
-							<p><?php the_title(); ?></p>	
-						</a>
-					</div>
+					<?php else: ?>
+					<?php endif; ?>
+			    	<?php endwhile; wp_reset_query(); ?>
 				</div>
-	 
 	            <div class="divider"></div>
-    			<div class="search-container">
-	 			
-		 			<div class="row">
-			            <div class="col s12">
-
-				            <?php while ( have_posts() ) : the_post(); ?>
-				            	<?php $empresa = get_field('estabelecimento'); ?>
-
-				            	<div class="col s12 m6 l4 center">
-				            		<a href="<?php the_permalink(); ?>">
-				            			<img class="capa-oferta" src="<?php echo get_field('foto_de_capa'); ?>">
-				            		</a>
-				            		<span class="search-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
-				            		<?php if( $empresa ): ?>
-                  					<?php foreach( $empresa as $e ): ?>
-				            			<span class="texto-vermelho-cupons search-post-business"><?php the_field('nome_da_empresa', $e->ID); ?></span>
-				            			<div class="divider search-post"></div>
-				            			<a style="text-transform: none;" class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php the_permalink(); ?>">Ver detalhes da oferta</a>
-				            		<?php endforeach; ?>
-                					<?php endif; ?>
-				            	</div>
-			 
-			            	<?php endwhile; ?>
-
-			            </div>
-			        </div>
-
-			    </div>
-	 
-	        <?php else : ?>
-	 
-	            <?php //get_template_part( 'template-parts/content', 'none' ); ?>
-	 
-	        <?php endif; ?>
+	            <!-- RESULTADO DOS DEMAIS -->
+	 			<?php if ( have_posts() ) : ?> 
+	    			<div class="search-container">
+			 			<div class="row">
+			 				<!-- MOSTRANDO AS OFERTAS -->
+			 				<?php if( get_field('foto_de_capa') ): ?>
+					            <div class="col s12">
+						            <?php while ( have_posts() ) : the_post(); ?>
+						            	<?php $empresa = get_field('estabelecimento'); ?>
+						            	<div class="col s12 m6 l4 center">
+						            		<a href="<?php the_permalink(); ?>">
+						            			<img class="capa-oferta" src="<?php echo get_field('foto_de_capa'); ?>">
+						            		</a>
+						            		<span class="search-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+						            		<?php if( $empresa ): ?>
+		                  					<?php foreach( $empresa as $e ): ?>
+						            			<span class="texto-vermelho-cupons search-post-business"><?php the_field('nome_da_empresa', $e->ID); ?></span>
+						            			<div class="divider search-post"></div>
+						            			<a style="text-transform: none;" class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php the_permalink(); ?>">Ver detalhes da oferta</a>
+						            		<?php endforeach; ?>
+		                					<?php endif; ?>
+						            	</div>
+					            	<?php endwhile; ?>
+					            </div>
+					        <!-- MOSTRANDO ESTABELECIMENTOS -->
+					        <?php else: ?>
+					            <div class="col s12">
+						            <?php while ( have_posts() ) : the_post(); ?>
+						            	<?php $empresa = get_field('estabelecimento'); ?>
+						            	<div class="col s12 m6 l3 center hoverable">
+						            		<a href="<?php the_permalink(); ?>">
+						            			<img src="<?php echo get_field('logo_do_cliente'); ?>" style="width:100%;height:auto;">
+						            		</a>
+						            		<span class="search-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+						            	</div>
+					            	<?php endwhile; ?>
+					            </div>
+					        <?php endif; ?>
+				        </div>
+				    </div>
+		        <?php else : ?>
+		        <?php endif; ?>
 	 
 	        </main><!-- #main -->
 	    </section><!-- #primary -->
