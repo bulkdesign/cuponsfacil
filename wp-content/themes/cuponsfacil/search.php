@@ -24,7 +24,17 @@
 					<?php $plano = get_field('plano'); ?>
 					<?php if( $plano == 'premium' ): ?>
 	            	<li>
-	            		<div style="max-width:1250px;height:150px;background:url('<?php echo get_field('foto_de_capa'); ?>');background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;">Olar</div>
+	            		<div style="max-width:1250px;height:150px;background:linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('<?php echo get_field('foto_de_capa'); ?>');background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;">
+	            			<div class="oferta-banner-busca">
+	            				<?php $empresa = get_field('estabelecimento'); ?>
+	            				<?php if( $empresa ): ?>
+		                  			<?php foreach( $empresa as $e ): ?>
+	            						<h3 class="white-text center"><?php the_title(); ?>, por <?php echo get_field('nome_da_empresa', $e->ID); ?></h3>
+	            					<?php endforeach; ?>
+	            				<?php endif; ?>
+	            				<a class="texto-amarelo-cupons center" href="<?php the_permalink(); ?>">Ver oferta</a>
+	            			</div>
+	            		</div>
 	            	</li>
                 	<?php else: ?>
 			    	<?php endif; ?>

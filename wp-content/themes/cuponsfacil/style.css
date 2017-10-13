@@ -1022,6 +1022,22 @@ td.sobreaempresa p {
     margin-bottom: 0 !important;
 }
 
+.oferta-banner-busca {
+    height: 150px;
+}
+
+.oferta-banner-busca h3 {
+    position: relative;
+    top: 35%;
+}
+
+.oferta-banner-busca a {
+    position: relative;
+    margin: 60px auto;
+    text-align: center;
+    display: block;
+}
+
 /*
  *
  * MEDIA QUERIES
