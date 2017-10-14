@@ -3,7 +3,7 @@
  * Template para exibir a página do artigo.
  */
 
-get_header(); ?>
+get_header('paginas'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
