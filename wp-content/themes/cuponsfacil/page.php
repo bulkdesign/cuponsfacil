@@ -25,7 +25,7 @@ get_header(); ?>
 					<?php the_content(); ?>
 				</div>
 			</div>
-		<?php endwhile();?>
+		<?php endwhile; ?>
 		<!-- FIM DO WHILE -->
 	</div>
 </article>
