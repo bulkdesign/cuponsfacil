@@ -8,7 +8,7 @@ get_header('paginas'); ?>
 			<h1 class="texto-vermelho-cupons center">Cupom gerado com sucesso!</h1>
 
 			<?php global $current_user; get_currentuserinfo(); ?>
-			<p class="center">Este cupom foi enviado para o e-mail <?php $current_user->user_email; ?></p>
+			<p class="center">Este cupom foi enviado para o e-mail <?php echo $current_user->user_email; ?></p>
 		</div>
 		<!-- INÍCIO DO WHILE -->
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -51,7 +51,7 @@ get_header('paginas'); ?>
 						<?php wp_insert_post( 
 							array(
 								'post_author' => get_current_user_id(),   
-								'post_content' => 'Código do cupom: ' . strip_tags(do_shortcode('[wpgenerapass]')) . "\n". $o->ID,
+								'post_content' => strip_tags(do_shortcode('[wpgenerapass]')),
 								'post_title' => $current_user->display_name . ' - ' . $o->post_title,
 								'post_status' => 'publish',
 								'post_type' => 'cupom_gerado'
