@@ -66,7 +66,7 @@
                             </a>
                         </div>
                         <!-- BUSCA -->
-                        <div class="col hide-on-small-only l8">
+                        <div class="col hide-on-med-and-down l8">
                             <?php get_search_form(); ?>
                             <div class="col l12 categorias">
                                 <ul class="menu hide-on-med-and-down">

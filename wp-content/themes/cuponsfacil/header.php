@@ -66,11 +66,11 @@
                             </a>
                         </div>
                         <!-- BUSCA -->
-                        <div class="col hide-on-small-only l8">
+                        <div class="col hide-on-med-and-down l8">
                             <?php get_search_form(); ?>
-                            <div class="col l12 categorias">
+                            <div class="col hide-on-med-and-down l12 categorias">
                                 <ul class="menu hide-on-med-and-down">
-                                    <div class="col l12">
+                                    <div class="col hide-on-med-and-down l12">
                                     <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias' ) ); ?>
                                     </div>
                                 </ul>
@@ -98,6 +98,7 @@
         </div>
         <nav class="mobile-menu">
             <ul class="menu-de-acesso">
+                <li class="center"><?php get_search_form(); ?></li>
                 <li><a href="/cuponsfacil/login">Login/Cadastro</a></li>
                 <li><a href="/cuponsfacil/anuncie">Anuncie</a></li>
                 <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias', 'menu_class' => 'menu-de-acesso' ) ); ?>

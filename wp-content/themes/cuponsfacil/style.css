@@ -1074,10 +1074,79 @@ td.sobreaempresa p {
 }
 
 @media (min-width: 602px) and (max-width: 994px) {
+    .oquefazemos.cupom-gerado {
+        padding: 5px 0 60px;
+    }
 
+    #slidepremium .conteudoinicial {
+        padding: 30px 45px 35px;
+    }
+
+    #ajaxsearchpro1_1, #ajaxsearchpro1_2, div.ajaxsearchpro[id*="ajaxsearchpro1_"] {
+        width: 100% !important;
+    }
+
+    i.small.material-icons {
+        margin-top: 35px;
+    }
+
+    .col.s12.m6.l4.center.margin-categorias {
+        margin-top: 0px;
+        margin-bottom: 50px;
+    }
+
+    ul.menu-de-acesso > li {
+        margin: -17px 0 -10px;
+        height: 20px;
+    }
+
+    #principaisofertas {
+        height: auto;
+    }
+
+    #wpsl-gmap {
+        width: 100% !important;
+    }
+
+    .wpsl-search {
+        display: none;
+    }
+
+    #mapa h1 {
+        margin: 50px 0 30px;
+        font-size: 1.7rem;
+    }
+
+    #wpsl-result-list {
+        width: 100% !important;
+    }
+
+    #mapa {
+        height: auto;
+    }
 }
 
 @media (min-width: 260px) and (max-width: 602px) {
+    .oquefazemos.cupom-gerado {
+        padding: 5px 0 60px;
+    }
+    
+    #principaisofertas h1 {
+        margin: 30px auto;
+    }
+
+    #ajaxsearchpro1_1, #ajaxsearchpro1_2, div.ajaxsearchpro[id*="ajaxsearchpro1_"] {
+        width: 100%;
+    }
+
+    .search-container .col.s12.m6.l3.center.hoverable {
+        margin: 0px 0 50px;
+    }
+
+    i.small.material-icons {
+        margin-top: 35px;
+    }
+
     #principaisofertas {
         height: auto;
     }
@@ -1147,7 +1216,7 @@ td.sobreaempresa p {
     }
 
     .page-footer {
-        padding: 0;
+        padding: 30px 0;
     }
 
     .page-footer .footer-copyright {

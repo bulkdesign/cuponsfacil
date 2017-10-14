@@ -18,10 +18,10 @@ get_header('categorias'); ?>
 					<p>Se você deseja anunciar a oferta da sua empresa no site da Cupons Fácil, entre em contato através do formulário abaixo:</p>
 				</div>
 				<div class="col s12 margin20">
-					<div class="col s12 m6">
+					<div class="col s12 m12">
 						<?php echo do_shortcode("[contact-form-7 id='161' title='Anuncie']"); ?>
 					</div>
-					<div class="col s12 l4 push-l1">
+					<div class="col s12 m12 l4 push-l1">
 						<p class="texto-vermelho-cupons">ATENDIMENTO COMERCIAL</p>
 						<h1 class="margin20 texto-vermelho-cupons">(41) 99113-2661</h1>
 						<h3 class="margin20 texto-vermelho-cupons">comercial@cuponsfacil.com.br</h3>

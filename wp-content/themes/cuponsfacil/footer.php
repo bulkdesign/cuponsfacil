@@ -8,8 +8,10 @@
   <footer class="page-footer">
     <div class="container">
       <div class="row">
-        <div class="col l12 left">
-          <div class="col l3 hide-on-small-only">
+        <!-- DESKTOP -->
+        <div class="col hide-on-med-and-down l12 left">
+          <!-- SITEMAP -->
+          <div class="col l3">
             <h3 class="texto-amarelo-cupons">Cupons Fácil</h3>
             <ul class="left">
               <li><a href="?conheca=conheca">Conheça</a></li>
@@ -20,22 +22,35 @@
               <li><a href="/wp-login.php">Login</a></li>
             </ul>
           </div>
-          <div class="col l6 s12 center hide-on-small-only">
+          <!-- NEWSLETTER -->
+          <div class="col l6 center">
             <h3 class="texto-amarelo-cupons">Newsletter</h3>
             <div class="container">
-              <p class="white-text hide-on-small-only">Inscreva-se na nossa newsletter para ficar por dentro de todas as promoções e novidades da Cupons Fácil:</p>
+              <p class="white-text">Inscreva-se na nossa newsletter para ficar por dentro de todas as promoções e novidades da Cupons Fácil:</p>
             </div>
             <?php echo do_shortcode('[contact-form-7 id="162" title="Newsletter"]'); ?>
           </div>
-          <div class="social col l3 m12 hide-on-small-only">
-            <h3 class="texto-amarelo-cupons right">Nós, nas Redes Sociais</h3>
+          <!-- REDES SOCIAIS -->
+          <div class="social col l3">
+            <h3 class="texto-amarelo-cupons right right-align hide-on-med-and-down">Nós, nas Redes Sociais</h3>
             <ul class="right">
               <li><a href="https://www.facebook.com/CuponsFacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
               <li><a href="https://instagram.com/cuponsfacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
               <li><a href="https://www.youtube.com/channel/UCKEorUhqPYIE4u26s_TU9KA" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/youtube.png"/></a></li>
             </ul>
           </div>
-        </div>         
+        </div>
+        <!-- MOBILE -->
+        <div class="col s12 m12 hide-on-large-only">
+          <!-- REDES SOCIAIS -->
+          <div class="social col s12 m12">
+            <ul style="position: relative;left: 35%;">
+              <li><a href="https://www.facebook.com/CuponsFacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
+              <li><a href="https://instagram.com/cuponsfacil/" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>
+              <li><a href="https://www.youtube.com/channel/UCKEorUhqPYIE4u26s_TU9KA" target="blank"><img width="30" src="<?php bloginfo('template_url') ?>/img/redes-sociais/youtube.png"/></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="footer-copyright">

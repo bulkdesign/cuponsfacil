@@ -22,7 +22,7 @@
                         <?php endforeach; ?>
                       <?php endif; ?>
                     </h1>
-                  <p class="hide-on-small-only"><?php the_field('descricao_resumida'); ?></p>
+                  <p class="hide-on-med-and-down"><?php the_field('descricao_resumida'); ?></p>
                   <a href="<?php echo get_permalink(); ?>" class="btn texto-amarelo-cupons">Ver Oferta</a>
                 </div>
               </div>

@@ -277,13 +277,13 @@ ul.indicators {
 				    	</div>
 				    	<div class="col s12 margin40">
 				    		<div class="col s12 l3">
-					    		<h3 class="texto-vermelho-cupons avaliacoes">Avaliações:</h3>
+					    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais">Avaliações:</h3>
 					    		<?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
 					    	</div>
 					    	<div class="col s12 l5">
-					    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais">Redes Sociais da empresa:</h3>
 					    		<!-- REDES SOCIAIS DESKTOP -->
-						        <div class="social col m12 hide-on-small-only">
+					    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais hide-on-med-and-down">Redes Sociais da empresa:</h3>
+						        <div class="social col m12 hide-on-med-and-down">
 						        	<ul class="left">
 						        		<!-- FACEBOOK -->
 						        		<?php if( get_field('facebook', $p->ID) ): ?>
@@ -304,7 +304,8 @@ ul.indicators {
 						          	</ul>
 						        </div>
 						        <!-- REDES SOCIAIS MOBILE -->
-						        <div class="social col hide-on-med-and-up margin20">
+						        <h3 class="texto-vermelho-cupons ofertas-redes-sociais hide-on-large-only margin20">Redes Sociais da empresa:</h3>
+						        <div class="social col hide-on-large-only">
 						        	<ul class="left">
 					            		<li><a href="<?php the_field('facebook'); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/facebook.png"/></a></li>
 					            		<li><a href="<?php the_field('instagram'); ?>" target="blank"><img width="25" src="<?php bloginfo('template_url') ?>/img/redes-sociais/instagram.png"/></a></li>

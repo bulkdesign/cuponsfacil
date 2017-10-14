@@ -4,7 +4,7 @@ get_header('paginas'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
-		<div class="oquefazemos">
+		<div class="oquefazemos cupom-gerado">
 			<h1 class="texto-vermelho-cupons center">Cupom gerado com sucesso!</h1>
 
 			<?php global $current_user; get_currentuserinfo(); ?>
@@ -19,16 +19,19 @@ get_header('paginas'); ?>
 			<?php foreach( $oferta_relacionada as $o ): ?>
 
 			<div class="row">
-				<div class="col s12 l11 push-l1" style="margin-bottom: 50px;">
-					<div class="col s12 l6 push-l1">
+				<div class="col s12 m12 l11 push-l1" style="margin-bottom: 50px;">
+					<div class="col s12 m12 l6 push-l1">
 						<?php $estabelecimento = get_field('estabelecimento', $o->ID); ?>
 						<?php if( $estabelecimento ): ?>
 							<?php foreach( $estabelecimento as $e ): ?>
-						<div class="col s12 l4">
+						<div class="col hide-on-small-only m4 l4">
 							<img style="width: 190px;float:left;padding-right: 30px;" src="<?php echo get_field('logo_do_cliente', $e->ID); ?>">
 						</div>
+						<div class="col s12 hide-on-med-and-up center">
+							<img style="width: 80%;margin: 0 0 30px;" src="<?php echo get_field('logo_do_cliente', $e->ID); ?>">
+						</div>
 						<!-- ESTABELECIMENTO -->
-						<div class="col s12 l8">
+						<div class="col s12 m8 push-l1 l8">
 								<h3><?php echo $o->post_title; ?></h3>
 									<p>Empresa: <?php echo get_field('nome_da_empresa', $e->ID); ?></p>
 									<?php 
@@ -47,7 +50,7 @@ get_header('paginas'); ?>
 							<p><?php the_field('regulamento_da_oferta', $o->ID); ?></p>
 						</div>
 					</div>
-					<div class="col s12 l3 pull-l1 right">
+					<div class="col s12 m12 l3 pull-l1 right">
 						<?php wp_insert_post( 
 							array(
 								'post_author' => get_current_user_id(),   
