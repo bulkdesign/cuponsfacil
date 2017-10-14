@@ -260,7 +260,11 @@ ul.indicators {
 										<tr>
 											<td>Telefones:</td>
 											<td>
-												<?php the_field('telefone_fixo', $p->ID); ?>
+												<?php if( get_field('telefone_fixo', $p->ID)): ?>
+													<?php the_field('telefone_fixo', $p->ID); ?>
+												<?php else: ?>
+													Não possui
+												<?php endif; ?>
 				    							<?php if( get_field('telefone_2', $p->ID)): ?>
 				    								| <?php the_field('telefone_2', $p->ID); ?>
 				    							<?php else: ?>

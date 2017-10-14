@@ -51,7 +51,7 @@ $(document).ready(function(){
         $('div#ajaxsearchpro1_1').css('margin', '10px auto');
         $('.categorias').css('display', 'none');
         $('#global-nav').addClass('scrolled-nav');
-        $('.brand-logo img').attr('src',"/cuponsfacil/wp-content/themes/cuponsfacil/img/logo/logo-scroll.png");
+        $('.brand-logo img').attr('src',"https://www.cuponsfacil.com.br/wp-content/themes/cuponsfacil/img/logo/logo-scroll.png");
         $('.brand-logo img').css('padding', '12px 0');
         $('ul.menu-de-acesso').css('margin', '10px 0');
         $('ul.menu-de-acesso > li a').css('font-size', '14px');
@@ -68,7 +68,7 @@ $(document).ready(function(){
           $('div#ajaxsearchpro1_1').css('margin', '30px auto 0')
           $('.categorias').css('display', 'block');
           $('#global-nav').removeClass('scrolled-nav');
-          $('.brand-logo img').attr('src',"/cuponsfacil/wp-content/themes/cuponsfacil/img/logo/logo.png");
+          $('.brand-logo img').attr('src',"https://www.cuponsfacil.com.br/wp-content/themes/cuponsfacil/img/logo/logo.png");
           $('.brand-logo img').css('padding', '4px 0');
           $('ul.menu-de-acesso').css('margin', '30px 0');
           $('ul.menu-de-acesso > li a').css('font-size', '15px');
