@@ -59,3 +59,12 @@ function my_pre_get_posts($query) {
 }
 
 add_action( 'pre_get_posts', 'my_pre_get_posts' );
+
+// REDIRECT
+function redirect_after_cupom( $redirect_to, $request, $user ){
+    // instead of using $redirect_to we're redirecting back to $request
+    return $request;
+}
+add_filter('login_redirect', 'redirect_after_cupom', 10, 3);
+
+?>

@@ -76,7 +76,7 @@ class barcode_qrcode_generator {
 		
 		imagedestroy($img);
 		
-		return '<img src="'.esc_attr($uploads['baseurl'].'/'.$filename).'" height="'.esc_attr($height).'" alt="'.esc_attr($text).'" />';
+		return '<img style="margin:0px auto;display:block" src="'.esc_attr($uploads['baseurl'].'/'.$filename).'" height="'.esc_attr($height).'" alt="'.esc_attr($text).'" />';
 	}
 
 	function barcode_qrcode_generator_qrcode_add_shortcode($attr) {
@@ -96,13 +96,13 @@ class barcode_qrcode_generator {
 		$filename = sha1($text.$eclevel.$height.$width.$transparency).'.png';
 
 		if ( file_exists($uploads['basedir'].'/'.$filename) && empty($remake) )
-			return '<img src="'.esc_attr($uploads['baseurl'].'/'.$filename).'" height="'.esc_attr($height).'" width="'.esc_attr($width).'" alt="'.esc_attr($text).'" />';
+			return '<img style="margin:0px auto;display:block;" src="'.esc_attr($uploads['baseurl'].'/'.$filename).'" height="'.esc_attr($height).'" width="'.esc_attr($width).'" alt="'.esc_attr($text).'" />';
 
 		require_once('phpqrcode.php');
 		
 		QRcode::png($text, $uploads['basedir'].'/'.$filename, 3, 3, 4, false, 0xFFFFFF, 0x000000, $height, $width, $transparency);
 
-		return '<img src="'.esc_attr($uploads['baseurl'].'/'.$filename).'" height="'.esc_attr($height).'" width="'.esc_attr($width).'" alt="'.esc_attr($text).'" />';
+		return '<img style="margin:0px auto;display:block;" src="'.esc_attr($uploads['baseurl'].'/'.$filename).'" height="'.esc_attr($height).'" width="'.esc_attr($width).'" alt="'.esc_attr($text).'" />';
 	}
 }
 $barcode_qrcode_generator = new barcode_qrcode_generator();

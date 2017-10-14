@@ -1,12 +1,14 @@
 <?php 
 
-get_header(); ?>
+get_header('paginas'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<div class="oquefazemos">
 			<h1 class="texto-vermelho-cupons center">Cupom gerado com sucesso!</h1>
-			<!-- <p class="center">Este cupom foi enviado para o e-mail cadastrado</p> -->
+
+			<?php global $current_user; get_currentuserinfo(); ?>
+			<p class="center">Este cupom foi enviado para o e-mail <?php $current_user->user_email; ?></p>
 		</div>
 		<!-- INÍCIO DO WHILE -->
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -18,15 +20,15 @@ get_header(); ?>
 
 			<div class="row">
 				<div class="col s12 l11 push-l1" style="margin-bottom: 50px;">
-					<div class="col s12 l7">
+					<div class="col s12 l6 push-l1">
+						<?php $estabelecimento = get_field('estabelecimento', $o->ID); ?>
+						<?php if( $estabelecimento ): ?>
+							<?php foreach( $estabelecimento as $e ): ?>
 						<div class="col s12 l4">
 							<img style="width: 190px;float:left;padding-right: 30px;" src="<?php echo get_field('logo_do_cliente', $e->ID); ?>">
 						</div>
 						<!-- ESTABELECIMENTO -->
 						<div class="col s12 l8">
-						<?php $estabelecimento = get_field('estabelecimento', $o->ID); ?>
-						<?php if( $estabelecimento ): ?>
-							<?php foreach( $estabelecimento as $e ): ?>
 								<h3><?php echo $o->post_title; ?></h3>
 									<p>Empresa: <?php echo get_field('nome_da_empresa', $e->ID); ?></p>
 									<?php 
@@ -45,33 +47,20 @@ get_header(); ?>
 							<p><?php the_field('regulamento_da_oferta', $o->ID); ?></p>
 						</div>
 					</div>
-					<div class="col s12 l2 pull-l2 right">
-
-						<?php global $current_user;
-						      get_currentuserinfo();
-						      // echo 'Username: ' .  . "\n";
-						      // echo 'User email: ' . $current_user->user_email . "\n";
-						      // echo 'User level: ' . $current_user->user_level . "\n";
-						      // echo 'User first name: ' . $current_user->user_firstname . "\n";
-						      // echo 'User last name: ' . $current_user->user_lastname . "\n";
-						      // echo 'User display name: ' . $current_user->display_name . "\n";
-						      // echo 'User ID: ' . $current_user->ID . "\n";
-						?>
-
+					<div class="col s12 l3 pull-l1 right">
 						<?php wp_insert_post( 
-							array(  //'ID'   => (if its update, you have to provide existing post, you can use the ID to update it),  // optional
+							array(
 								'post_author' => get_current_user_id(),   
-								'post_content' => 'Código do cupom: ' . strip_tags(do_shortcode('[wpgenerapass]')) . "\n". $o->ID,  // content of the article,
-								'post_title' => $current_user->user_login . ' - ' . $o->post_title,  // title of the article
-								'post_status' => 'publish',   // i just published the post directly, but you can change the status as of your need
-								'post_type' => 'cupom_gerado',   // if any custom post type, you can use it here 
-								// 'post_category' => array(25, 35),
-								// 'tax_input' => array('WordPress', 'post')
+								'post_content' => 'Código do cupom: ' . strip_tags(do_shortcode('[wpgenerapass]')) . "\n". $o->ID,
+								'post_title' => $current_user->display_name . ' - ' . $o->post_title,
+								'post_status' => 'publish',
+								'post_type' => 'cupom_gerado'
 							) 
 						); ?>
 
-						<?php //echo do_shortcode('[qrcode url=asdasd height=100 width=2 transparency=1]'); ?>
-						<p class="center"><?php // echo do_shortcode('[wpgenerapass]'); ?></p>
+						<?php echo do_shortcode('[qrcode text="Cupons Fácil" height=200 width=200 transparency=1]'); ?>
+						<p class="center">O seu código de desconto:</p>
+							<?php echo do_shortcode('[wpgenerapass]'); ?>
 					</div>
 				</div>
 

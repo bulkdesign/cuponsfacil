@@ -3,7 +3,7 @@
  * Template padrão para exibir as páginas.
  */
 
-get_header(); ?>
+get_header('categorias'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">

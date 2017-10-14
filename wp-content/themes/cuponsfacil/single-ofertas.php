@@ -50,7 +50,8 @@ ul.indicators {
 							<?php $user_id = get_current_user_id(); ?>
 							<?php foreach( $cupom as $c ): ?>
 								<?php if( $user_id == 0 ): ?>
-									<?php echo 'sai daqui, viado'; ?>
+									<a style="pointer-events: all;" class="btn disabled tooltipped" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
+									<a class="texto-amarelo-cupons" href="<?php echo wp_login_url(get_permalink()); ?>"> Fazer login</a></p>
 								<?php else: ?>
 									<div class="margin-top">
 					    				<a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
@@ -102,16 +103,19 @@ ul.indicators {
 										<a class="a2a_button_twitter"></a>
 										<a class="a2a_button_whatsapp"></a>
 									</div>
+									<div class="margin20">
 									<?php if( $cupom ): ?>
 										<?php $user_id = get_current_user_id(); ?>
 										<?php foreach( $cupom as $c ): ?>
 											<?php if( $user_id == 0 ): ?>
-												<?php echo 'sai daqui, viado'; ?>
+												<a style="pointer-events: all;" class="btn disabled tooltipped" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
+												<a class="texto-vermelho-cupons" href="<?php echo wp_login_url(get_permalink()); ?>">Fazer login</a></p>
 											<?php else: ?>
 								    			<a class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
 								    		<?php endif; ?>
 								    	<?php endforeach; ?>
 								    <?php endif; ?>
+									</div>
 								    <!-- VALIDADE DA OFERTA -->
 					        		<?php 
 					        			$validade_oferta = get_field('validade', false, false);

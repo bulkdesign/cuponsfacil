@@ -9,6 +9,7 @@ $(document).ready(function(){
   $('.scrollspy').scrollSpy();
   $('.slider').slider();
   $('.modal').modal();
+  $('.tooltipped').tooltip({delay: 50});
   $('.carousel.carousel-slider').carousel({fullWidth: true});
   $('.toggle-overlay').click(function() {
     $('aside').toggleClass('open');

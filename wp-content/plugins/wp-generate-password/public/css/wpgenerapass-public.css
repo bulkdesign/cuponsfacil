@@ -3,8 +3,9 @@
  */
 .display-public-wpgenerapass {
 	background: rgba(176, 188, 180, 0.35);
-	padding: 15px 20px;
-    width: 200px;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
 }
 .display-public-wpgenerapass-text {
 	/*Put your css here*/
