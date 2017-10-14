@@ -79,8 +79,8 @@
                         <!-- LOGIN -->
                         <div class="col s12 l2">
                             <ul class="right hide-on-med-and-down menu-de-acesso">
-                                <li><a href="/cuponsfacil/login">Login/Cadastro</a></li>
-                                <li><a href="/cuponsfacil/anuncie">Anuncie</a></li>
+                                <li><a href="/login">Login/Cadastro</a></li>
+                                <li><a href="/anuncie">Anuncie</a></li>
                             </ul>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
         </div>
         <nav class="mobile-menu">
             <ul class="menu-de-acesso">
-                <li><a href="/cuponsfacil/login">Login/Cadastro</a></li>
-                <li><a href="/cuponsfacil/anuncie">Anuncie</a></li>
+                <li><a href="/login">Login/Cadastro</a></li>
+                <li><a href="/anuncie">Anuncie</a></li>
                 <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias', 'menu_class' => 'menu-de-acesso' ) ); ?>
             </ul>
         </nav>

@@ -1057,6 +1057,10 @@ td.sobreaempresa p {
     width: 100%;
 }
 
+#wpadminbar #wp-admin-bar-my-account.with-avatar>a img {
+    display: none !important;
+}
+
 /*
  *
  * MEDIA QUERIES
@@ -1130,7 +1134,7 @@ td.sobreaempresa p {
     .oquefazemos.cupom-gerado {
         padding: 5px 0 60px;
     }
-    
+
     #principaisofertas h1 {
         margin: 30px auto;
     }
