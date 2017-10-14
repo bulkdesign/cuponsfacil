@@ -1057,7 +1057,7 @@ td.sobreaempresa p {
     width: 100%;
 }
 
-#wpadminbar #wp-admin-bar-my-account.with-avatar>a img {
+img.func-um_user.gravatar.avatar.avatar-26.um-avatar.um-avatar-default {
     display: none !important;
 }
 
