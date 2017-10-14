@@ -116,10 +116,10 @@ p.texto-pequeno {
 }
 
 ul.menu {
-    width: 648px !important;
-    float: left;
-    height: 62px;
-    margin: 0px -27px;
+    display: block;
+    position: relative;
+    width: 630px !important;
+    margin: 0px auto;
 }
 
 ul.menu li {
@@ -128,7 +128,6 @@ ul.menu li {
 }
 
 .menu li a {
-    padding: 0px 1.45em;
     line-height: 64px;
     text-transform: uppercase;
     font-size: 13px;
@@ -1014,7 +1013,9 @@ h3.avaliacoes {
 div#regulamento {
     padding: 30px 30px;
     background: rgba(0, 0, 0, 0.03);
-    border: 2px solid #dbdbdb !important;
+    border: 1px solid #dbdbdb !important;
+    margin: 20px 15px 0px;
+    width: 97.5%;
 }
 
 td.sobreaempresa p {
@@ -1048,6 +1049,14 @@ td.sobreaempresa p {
     top: 50%;
 }
 
+.menu-categorias-container {
+    float: left;
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    width: 100%;
+}
+
 /*
  *
  * MEDIA QUERIES
@@ -1055,17 +1064,12 @@ td.sobreaempresa p {
  *
 */
 @media (min-width: 1115px) and (max-width: 1275px) {
-    .menu li a {
-        padding: 10px !important;
-        font-size: 14px;
-    }
 
 }
 
 @media (min-width: 994px) and (max-width: 1114px) {
-    .menu li a {
-        padding: 5px;
-        font-size: 12px;
+    .brand-logo img {
+        width: 170px;
     }
 }
 

@@ -1,15 +1,15 @@
-<?php
+<?php /* Template Name: Conta */
 /**
- * Template padrão para exibir as páginas.
+ * Template para exibir a página com todos os artigos do blog.
  */
 
-get_header('paginas'); ?>
+get_header('categorias'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<header class="titulo-pagina">
 			<!-- TÍTULO -->
-			<?php the_title( '<h1 class="titulo-pagina">', '</h1>' );	?>
+			<h1 class="titulo-pagina">Informações da conta</h1>
 		</header>
 		<!-- INÍCIO DO WHILE -->
 		<?php while ( have_posts() ) : the_post(); ?>

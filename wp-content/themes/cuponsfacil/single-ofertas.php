@@ -50,8 +50,7 @@ ul.indicators {
 							<?php $user_id = get_current_user_id(); ?>
 							<?php foreach( $cupom as $c ): ?>
 								<?php if( $user_id == 0 ): ?>
-									<a style="pointer-events: all;" class="btn disabled tooltipped" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
-									<a class="texto-amarelo-cupons" href="<?php echo wp_login_url(get_permalink()); ?>"> Fazer login</a></p>
+									<a href="<?php echo wp_login_url(get_permalink()); ?>" style="pointer-events: all;" class="btn disabled tooltipped" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
 								<?php else: ?>
 									<div class="margin-top">
 					    				<a class="btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
@@ -132,19 +131,19 @@ ul.indicators {
 				    			<?php echo the_field('descricao_da_oferta'); ?>
 				    		</div>
 				    	</div>
+						<!-- REGULAMENTO -->
+					    <div id="regulamento" class="col s12">
+					    	<div class="col s12">
+					    	<h3 class="texto-vermelho-cupons avaliacoes">Regulamento:</h3>
+					    		<?php echo the_field('regulamento_da_oferta'); ?>
+					    	</div>
+					    </div>
 				    	<!-- COMO USAR -->
-				    	<div class="col s12 margin20 comousar">
-				    		<h3 class="texto-vermelho-cupons">Como utilizar o cupom:</h3>
+				    	<div id="regulamento" class="col s12">
+				    		<h3 class="texto-vermelho-cupons avaliacoes">Como utilizar o cupom:</h3>
 				    		<p>Apresente o cupom no local, podendo ser tanto impresso quanto diretamente pela tela do celular.</p>
 				    	</div>
 					</div>
-					<!-- REGULAMENTO -->
-				    <div id="regulamento" class="col s12 m8 push-m2 margin20">
-				    	<div class="col s12">
-				    	<h3 class="texto-vermelho-cupons avaliacoes">Regulamento:</h3>
-				    		<?php echo the_field('regulamento_da_oferta'); ?>
-				    	</div>
-				    </div>
 				    <!-- A EMPRESA -->
 				    <div id="aempresa" class="col s12 m8 push-m2">
 				    	<div class="col s12" style="height: 300px !important; margin-bottom: 50px">
@@ -177,7 +176,7 @@ ul.indicators {
 							<table>
 								<thead style="background:#F2F2F2">
 									<tr>
-										<th colspan="3">Horários de funcionamento:</th>
+										<th colspan="3">Horários de funcionamento</th>
 									</tr>
 								</thead>
 								<tbody>

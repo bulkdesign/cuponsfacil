@@ -35,7 +35,10 @@ function custom_loginlogo_url($url) {
 /* Troca de logo do login */
 function logo_de_login() { 
 ?> 
-<style type="text/css"> 
+<style type="text/css">
+#loginform .newsociallogins, #loginform h3 {
+  display: none;
+} 
 body.login div#login h1 a {
 	width: 165px;
 	background-size: 150px;
@@ -66,5 +69,36 @@ function redirect_after_cupom( $redirect_to, $request, $user ){
     return $request;
 }
 add_filter('login_redirect', 'redirect_after_cupom', 10, 3);
+
+// CUSTOM POST STATUS
+/**
+ * Add 'Unread' post status.
+ */
+function wpdocs_custom_post_status(){
+    register_post_status( 'utilizado', array(
+        'label'                     => _x( 'Utilizado', 'post' ),
+        'public'                    => true,
+        'exclude_from_search'       => true,
+        'show_in_admin_all_list'    => true,
+        'show_in_admin_status_list' => true,
+        'label_count'               => _n_noop( 'Utilizado <span class="count">(%s)</span>', 'Utilizado <span class="count">(%s)</span>' ),
+    ) );
+}
+add_action( 'init', 'wpdocs_custom_post_status' );
+
+// BLOQUEIO DE VISUALIZACAO DE CUPONS SEM ESTAR LOGADO
+function get_out_cupons( $content ) {
+    global $post;
+
+    if ( $post->post_type == 'cupons' ) {
+        if ( !is_user_logged_in() ) {
+            $content = 'Faça o login para visualizar esta página.';
+        }
+    }
+
+    return $content;
+}
+
+add_filter( 'the_content', 'get_out_cupons' );
 
 ?>

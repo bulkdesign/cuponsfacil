@@ -3,9 +3,9 @@
     <head>
     <!-- METAS -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="keywords" content="insira aqui palavras-chave, separadas por vírgula">
-    <meta name="description" content="insira aqui uma descrição do site">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+    <meta name="keywords" content="cupons, cupons de desconto, desconto, promoção, oferta, comércio, negócio local, geolocalização, descontos, pertinho, cupons fácil, curitiba, paraná, descontos em curitiba, ofertas, ofertas em curitiba">
+    <meta name="description" content="Encontre na Cupons Fácil todos os Cupons de Desconto e Promoções das empresas que estão pertinho de você.">
     <!-- TÍTULO -->
     <title>
       <?php if ( is_category() ) {
