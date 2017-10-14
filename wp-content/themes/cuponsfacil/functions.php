@@ -36,7 +36,15 @@ function custom_loginlogo_url($url) {
 function logo_de_login() { 
 ?> 
 <style type="text/css">
-#loginform .newsociallogins, #loginform h3 {
+#loginform .newsociallogins {
+    margin: 0px 0 20px;
+}
+
+#loginform .wow-fb-login {
+  padding: padding: 10px 40px 10px 40px;
+}
+
+#loginform h3 {
   display: none;
 } 
 body.login div#login h1 a {

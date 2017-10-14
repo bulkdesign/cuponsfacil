@@ -3,7 +3,7 @@
  * Template para exibir a página com todos os artigos do blog.
  */
 
-get_header('paginas'); ?>
+get_header('categorias'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">

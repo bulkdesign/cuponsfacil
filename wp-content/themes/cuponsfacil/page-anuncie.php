@@ -18,7 +18,7 @@ get_header('categorias'); ?>
 					<p>Se você deseja anunciar a oferta da sua empresa no site da Cupons Fácil, entre em contato através do formulário abaixo:</p>
 				</div>
 				<div class="col s12 margin20">
-					<div class="col s12 m12">
+					<div class="col s12 m12 l7">
 						<?php echo do_shortcode("[contact-form-7 id='161' title='Anuncie']"); ?>
 					</div>
 					<div class="col s12 m12 l4 push-l1">
