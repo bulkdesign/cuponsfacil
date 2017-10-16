@@ -63,7 +63,7 @@ ul.indicators {
 		    </div>
 		    <div class="white-text">
 		    	<div class="overlay-vermelho"></div>
-		    	<img src="<?php echo get_field('foto_de_capa'); ?>">
+		    	<img src="<?php echo get_field('foto_de_capa'); ?>" style="width:100%;margin:-120px 0">
 		    </div>
 		</div>
 		<div class="container">
@@ -146,13 +146,16 @@ ul.indicators {
 					</div>
 				    <!-- A EMPRESA -->
 				    <div id="aempresa" class="col s12 m8 push-m2">
-				    	<div class="col s12" style="height: 300px !important; margin-bottom: 50px">
-				    	<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
-							<img class="margin20" style="width: 100%; height:300px;background-image:url('<?php echo the_field('fotos_da_oferta'); ?>');background-size:cover;background-position: 100% 50%;background-repeat: no-repeat;">
-				    	</div>
-				    	<div class="col s12 grey-text text-darken-2">
 			    		<?php if( $posts ): ?>
 						<?php foreach( $posts as $p ): ?>
+				    	<div class="col s12" style="height: 300px !important; margin-bottom: 50px">
+				    	<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
+			    			<?php if( get_field('foto_da_empresa', $p->ID)): ?>
+								<img class="margin20" style="width: 100%; height:300px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:cover;background-position: 100% 50%;background-repeat: no-repeat;">
+							<?php else: ?>
+							<?php endif; ?>
+				    	</div>
+				    	<div class="col s12 grey-text text-darken-2">
 							<table>
 								<thead style="background:#F2F2F2">
 									<tr>
@@ -183,12 +186,12 @@ ul.indicators {
 									<tr>
 										<td>Dias de semana: <?php the_field('funcionamento_semana', $p->ID); ?></td>
 										<?php if ( get_field('funcionamento_sabado') ): ?>
-											<td>Sábado: <?php the_field('funcionamento_sabado', $p->ID); ?></td>
+											<td>Sábado: <?php echo get_field('funcionamento_sabado', $p->ID); ?></td>
 										<?php else: ?>
 											<td>Sábado: fechado</td>
 										<?php endif; ?>
 										<?php if ( get_field('funcionamento_domingo') ): ?>
-											<td>Domingo: <?php the_field('funcionamento_domingo', $p->ID); ?></td>
+											<td>Domingo: <?php echo gets_field('funcionamento_domingo', $p->ID); ?></td>
 										<?php else: ?>
 											<td>Domingo: fechado</td>
 										<?php endif; ?>

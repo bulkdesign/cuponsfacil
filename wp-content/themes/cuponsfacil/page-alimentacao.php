@@ -1,4 +1,4 @@
-<?php /* Template Name: Bares e Restaurantes */
+<?php /* Template Name: Alimentação */
 /**
  * Template padrão para exibir as páginas.
  */
@@ -17,7 +17,7 @@ get_header('categorias'); ?>
 		<?php
 
 		$args = array(
-		    'category_name' => 'bares-e-restaurantes',
+		    'category_name' => 'alimentacao',
 		    'post_type' => 'ofertas'
 		);
 

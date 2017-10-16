@@ -43,8 +43,10 @@
           </div>
           <!-- OFERTA -->
           <!-- Início do Loop -->
-          <?php $ofertas = new WP_Query( array( 'post_type' => array('ofertas'), 'posts_per_page' => 6, 'orderby' => 'rand' )); ?>
+          <?php $ofertas = new WP_Query( array( 'post_type' => array('ofertas'), 'posts_per_page' => 6 )); ?>
           <?php while ( $ofertas->have_posts() ) : $ofertas->the_post(); ?>
+          <?php $planoflex = get_field('plano'); ?>
+          <?php if( $planoflex == 'flex' ): ?>
           <?php $empresa = get_field('estabelecimento'); ?>
           <div class="col l4 m12 s12">
             <a href="<?php echo get_permalink(); ?>">
@@ -62,6 +64,8 @@
             </a>
             <br>
           </div>
+          <?php else: ?>
+          <?php endif; ?>
           <?php endwhile; wp_reset_query(); ?>
           <!-- FIM OFERTA -->
         </div>

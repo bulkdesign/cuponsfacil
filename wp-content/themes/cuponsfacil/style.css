@@ -1057,8 +1057,16 @@ td.sobreaempresa p {
     width: 100%;
 }
 
-img.func-um_user.gravatar.avatar.avatar-26.um-avatar.um-avatar-default {
+.menu-categorias-container nav ul a {
+    padding: 0 22px !important;
+}
+
+img.um-avatar-default {
     display: none !important;
+}
+
+.slider .slides li img {
+    background-size: 100% 100% !important;
 }
 
 /*
