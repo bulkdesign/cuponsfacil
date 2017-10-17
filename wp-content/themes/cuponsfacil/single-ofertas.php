@@ -61,10 +61,18 @@ ul.indicators {
 					</div>
 				</div>
 		    </div>
-		    <div class="white-text">
-		    	<div class="overlay-vermelho"></div>
-		    	<img src="<?php echo get_field('foto_de_capa'); ?>" style="width:100%;margin:-120px 0">
-		    </div>
+		    <div class="hide-on-med-and-down">
+			    <div class="white-text">
+			    	<div class="overlay-vermelho"></div>
+			    	<img src="<?php echo get_field('foto_de_capa'); ?>" style="width:100%;margin:-120px 0">
+			    </div>
+			</div>
+		    <div class="hide-on-large-only">
+			    <div class="white-text">
+			    	<div class="overlay-vermelho"></div>
+			    	<img src="<?php echo get_field('foto_de_capa'); ?>" style="width:100%;">
+			    </div>
+			</div>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -82,8 +90,8 @@ ul.indicators {
 								</div>
 				    		</div>
 				    		<!-- FOTO OFERTA MOBILE -->
-				    		<div class="col s12 hide-on-med-and-up">
-								<div class="slider oferta-mobile">
+				    		<div class="col s12 hide-on-large-only">
+								<div class="slider oferta-mobile" style="margin-top:20px;">
 									<ul class="slides">
 								        <li>
 											<img src="<?php echo the_field('fotos_da_oferta'); ?>">
@@ -151,31 +159,78 @@ ul.indicators {
 				    	<div class="col s12" style="height: 300px !important; margin-bottom: 50px">
 				    	<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
 			    			<?php if( get_field('foto_da_empresa', $p->ID)): ?>
-								<img class="margin20" style="width: 100%; height:300px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:cover;background-position: 100% 50%;background-repeat: no-repeat;">
+								<img class="margin20" style="width: 100%; height:300px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:cover;background-position: 100% 0%;background-repeat: no-repeat;">
 							<?php else: ?>
 							<?php endif; ?>
 				    	</div>
 				    	<div class="col s12 grey-text text-darken-2">
-							<table>
-								<thead style="background:#F2F2F2">
-									<tr>
-										<th>Nome da empresa</th>
-										<th>Telefone fixo</th>
-										<th>E-mail</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><?php the_field('nome_da_empresa', $p->ID); ?></td>
+				    		<div class="hide-on-med-and-down">
+								<table>
+									<thead style="background:#F2F2F2">
+										<tr>
+											<th>Nome da empresa</th>
+											<th>Telefone fixo</th>
+											<th>E-mail</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><?php the_field('nome_da_empresa', $p->ID); ?></td>
+											<?php if ( get_field('telefone_fixo') ): ?>
+												<td><?php the_field('telefone_fixo', $p->ID); ?></td>
+											<?php else: ?>
+												<td>Não possui</td>
+											<?php endif; ?>
+											<td><?php the_field('e-mail', $p->ID); ?></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="hide-on-large-only">
+								<!-- NOME -->
+								<table>
+									<thead style="background:#F2F2F2">
+										<tr>
+											<th>Nome da empresa</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><?php the_field('nome_da_empresa', $p->ID); ?></td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- TELEFONE -->
+								<table>
+									<thead style="background:#F2F2F2">
+										<tr>
+											<th>Telefone fixo</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
 										<?php if ( get_field('telefone_fixo') ): ?>
 											<td><?php the_field('telefone_fixo', $p->ID); ?></td>
 										<?php else: ?>
 											<td>Não possui</td>
 										<?php endif; ?>
-										<td><?php the_field('e-mail', $p->ID); ?></td>
-									</tr>
-								</tbody>
-							</table>
+										</tr>
+									</tbody>
+								</table>
+								<!-- EMAIL -->
+								<table>
+									<thead style="background:#F2F2F2">
+										<tr>
+											<th>E-mail</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><?php the_field('e-mail', $p->ID); ?></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 							<table>
 								<thead style="background:#F2F2F2">
 									<tr>
