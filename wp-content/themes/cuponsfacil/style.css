@@ -1129,6 +1129,11 @@ img.um-avatar-default {
         font-size: 1.7rem;
     }
 
+    .capa-oferta h1 {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
     #wpsl-result-list {
         width: 100% !important;
     }
@@ -1263,6 +1268,11 @@ img.um-avatar-default {
 
     #sobreaoferta ul.slides, #sobreaoferta .slider {
         height: 150px !important;
+    }
+
+    div#regulamento {
+        margin: 20px 12px 0px;
+        width: 93.8%;
     }
 
     .col.s12.margin20.comousar {
