@@ -57,7 +57,7 @@ body.login div#login h1 a {
 <?php 
 } add_action( 'login_enqueue_scripts', 'logo_de_login' );
 
-// SOMETHING
+// GETTING POST TYPES TO SEARCH QUERY
 function my_pre_get_posts($query) {
 
     if( is_admin() ) 
@@ -108,5 +108,32 @@ function get_out_cupons( $content ) {
 }
 
 add_filter( 'the_content', 'get_out_cupons' );
+
+// SEND EMAIL AFTER GENERATED COUPON
+add_action('future_to_publish', 'send_emails_on_new_event');
+add_action('new_to_publish', 'send_emails_on_new_event');
+add_action('draft_to_publish' ,'send_emails_on_new_event');
+add_action('auto-draft_to_publish' ,'send_emails_on_new_event');
+ 
+ /**
+ * Send emails on event publication
+ *
+ * @param WP_Post $post
+ */
+function send_emails_on_new_event($post)
+{
+    global $current_user; get_currentuserinfo();
+    $emails = $current_user->user_email; //If you want to send to site administrator, use $emails = get_option('admin_email');
+
+    $subject = 'Cupons Fácil - ' . get_the_title($post->ID);
+
+    $headers = array('Content-Type: text/html; charset=UTF-8','From: Cupons Fácil <no-reply@cuponsfacil.com.br>');
+
+    $message = "Olá," . $current_user->display_name;
+    $message .= "\n Obrigado por utilizar a Cupons Fácil. Seguem abaixo os dados do seu Cupom:";
+ 
+    wp_mail($emails, $subject, $message, $headers);
+} 
+
 
 ?>
