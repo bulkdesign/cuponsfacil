@@ -110,30 +110,45 @@ function get_out_cupons( $content ) {
 add_filter( 'the_content', 'get_out_cupons' );
 
 // SEND EMAIL AFTER GENERATED COUPON
-add_action('future_to_publish', 'send_emails_on_new_event');
 add_action('new_to_publish', 'send_emails_on_new_event');
-add_action('draft_to_publish' ,'send_emails_on_new_event');
-add_action('auto-draft_to_publish' ,'send_emails_on_new_event');
- 
- /**
- * Send emails on event publication
- *
- * @param WP_Post $post
- */
-function send_emails_on_new_event($post)
-{
+
+function send_emails_on_new_event($wp_query) {
+
+    global $post;
     global $current_user; get_currentuserinfo();
-    $emails = $current_user->user_email; //If you want to send to site administrator, use $emails = get_option('admin_email');
+    
+    $emails = $current_user->user_email;
+    
+    $cupons_gerados = new WP_Query( array('post_type' => 'cupom_gerado', 'posts_per_page' => '1', 'orderby' => 'ID', 'order' => 'DESC', 'author' => $current_user->ID));
 
-    $subject = 'Cupons Fácil - ' . get_the_title($post->ID);
+        while ( $cupons_gerados->have_posts() ) : $cupons_gerados->the_post();
+    
+            $subject = 'Cupons Fácil - ' . get_the_title();
 
-    $headers = array('Content-Type: text/html; charset=UTF-8','From: Cupons Fácil <no-reply@cuponsfacil.com.br>');
+            $headers = array('Content-Type: text/html; charset=UTF-8','From: Cupons Fácil <no-reply@cuponsfacil.com.br>');
 
-    $message = "Olá," . $current_user->display_name;
-    $message .= "\n Obrigado por utilizar a Cupons Fácil. Seguem abaixo os dados do seu Cupom:";
- 
+            $message = "Olá, " . $current_user->display_name . ". ";
+            $message .= "Obrigado por utilizar a Cupons Fácil.";
+            $message .= "<br><br>Seguem abaixo os dados do seu Cupom:<br><br>";
+            $message .= "<span style='font-weight:bold'>CÓDIGO DO CUPOM:</span><br>";
+            $message .= $post->post_content;
+            $message .= "<br><br><span style='font-weight:bold'>COMO UTILIZAR:</span><br>";
+            $message .= "Apresente o cupom no local, apenas apresentando o código ou a página do cupom.";
+            $message .= "<br><br>Link do cupom: " . get_the_permalink();
+            $message .= "<br><br>Obs.: o cupom é individual e intransferível.<br><br>";
+            $message .= "<span style='font-weight:bold'>VOCÊ NÃO PRECISA IMPRIMIR</span><br>";
+            $message .= "No momento da compra basta apresentar para o atendente o código do cupom e pronto!";
+            $message .= "<br><br>--";
+            $message .= "<br>Atenciosamente,<br>";
+            $message .= "Equipe Cupons Fácil.<br>";
+            $message .= "cuponsfacil.com.br<br>comercial@cuponsfacil.com.br";
+
+        endwhile;
+
+    wp_reset_query();
+
     wp_mail($emails, $subject, $message, $headers);
-} 
 
+}
 
 ?>
