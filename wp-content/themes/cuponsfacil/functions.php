@@ -94,9 +94,9 @@ function get_out_cupons( $content ) {
 add_filter( 'the_content', 'get_out_cupons' );
 
 // SEND EMAIL AFTER GENERATED COUPON
-add_action('new_to_publish', 'send_emails_on_new_event');
+add_action('new_to_gerado', 'send_emails_on_new_event');
 
-function send_emails_on_new_event($wp_query) {
+function send_emails_on_new_event($post) {
 
     global $post;
     global $current_user; get_currentuserinfo();
@@ -157,5 +157,23 @@ $(".inline-edit-status select ").append("<option value=\"cancelado\">Cancelado</
 }
 
 add_action( 'admin_footer-edit.php', 'post_status_bulk_edit' );
+
+// CHANGE POST STATUS ON BUTTON (UTILIZADO)
+function toDraft($pid) {
+
+$toDraft = $_POST['utilizado'];
+   if($toDraft == 'status_usado'){
+      wp_update_post(array('ID' => $pid, 'post_status'   =>  'utilizado'));
+  }
+}
+
+// CHANGE POST STATUS ON BUTTON (CANCELADO)
+function toCancel($pid) {
+
+$toCancel = $_POST['cancelado'];
+   if($toCancel == 'status_cancelado'){
+      wp_update_post(array('ID' => $pid, 'post_status'   =>  'cancelado'));
+  }
+}
 
 ?>

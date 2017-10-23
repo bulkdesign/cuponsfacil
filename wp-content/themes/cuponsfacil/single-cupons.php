@@ -55,7 +55,7 @@ get_header('paginas'); ?>
 							array(
 								'post_author' => get_current_user_id(),   
 								'post_content' => strip_tags(do_shortcode('[wpgenerapass]')),
-								'post_title' => $current_user->display_name . ' - ' . $o->post_title,
+								'post_title' => $e->post_title . ' - ' . $o->post_title,
 								'post_status' => 'Gerado',
 								'post_type' => 'cupom_gerado'
 							) 

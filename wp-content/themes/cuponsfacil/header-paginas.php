@@ -34,6 +34,8 @@
     <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url') ?>/style.css"  media="screen,projection"/>
     <!-- bxSlider CSS file -->
     <link href="<?php bloginfo('template_url') ?>/js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <!-- Emoji Support -->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/js/owlcarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/js/owlcarousel/dist/assets/owl.theme.default.min.css">
