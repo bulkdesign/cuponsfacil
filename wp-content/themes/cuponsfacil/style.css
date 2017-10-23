@@ -218,7 +218,7 @@ ul.menu-de-acesso > li {
 ul.menu-de-acesso > li a {
 	font-size: 15px;
 	color: #eabe35;
-    padding: 10px 0;
+    padding: 10px 5px !important;
     text-transform: uppercase;
     -webkit-transition: font-size .3s; /* Safari */
     transition: font-size .3s;
@@ -1033,12 +1033,12 @@ td.sobreaempresa p {
 
 .oferta-banner-busca h3 {
     position: relative;
-    top: 35%;
+    top: 25%;
 }
 
 .oferta-banner-busca a {
     position: relative;
-    margin: 60px auto;
+    margin: 40px auto;
     text-align: center;
     display: block;
 }
@@ -1063,6 +1063,14 @@ td.sobreaempresa p {
 
 img.um-avatar-default {
     display: none !important;
+}
+
+img.logo-cima-banner {
+    position: relative;
+    top: 15%;
+    width: 100px;
+    text-align: center;
+    margin: 0px auto;
 }
 
 /*.slider .slides li img {
