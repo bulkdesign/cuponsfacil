@@ -88,13 +88,14 @@
 					        <?php else: ?>
 					            <div class="col s12">
 						            <?php while ( have_posts() ) : the_post(); ?>
-						            	<?php $empresa = get_field('estabelecimento'); ?>
-						            	<div class="col s12 m6 l3 center hoverable">
-						            		<a href="<?php the_permalink(); ?>">
-						            			<img src="<?php echo get_field('logo_do_cliente'); ?>" style="width:100%;height:auto;">
-						            		</a>
-						            		<span class="search-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
-						            	</div>
+						            	<?php $loop = new WP_Query( array( 'post_type' => array('ofertas') )); ?>
+							            	<div class="col s12 m6 l3 center hoverable">
+							            		<a href="<?php the_permalink(); ?>">
+							            			<img src="<?php echo get_field('logo_do_cliente'); ?>" style="width:100%;height:auto;">
+							            		</a>
+							            		<span class="search-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+							            	</div>
+							            <?php wp_reset_query(); ?>
 					            	<?php endwhile; ?>
 					            </div>
 					        <?php endif; ?>

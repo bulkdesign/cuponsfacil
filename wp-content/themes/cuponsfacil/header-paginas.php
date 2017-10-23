@@ -80,10 +80,17 @@
                         </div>
                         <!-- LOGIN -->
                         <div class="col s12 l2">
-                            <ul class="right hide-on-med-and-down menu-de-acesso">
-                                <li><a href="/login">Login/Cadastro</a></li>
-                                <li><a href="/anuncie">Anuncie</a></li>
-                            </ul>
+                            <?php if( is_user_logged_in() ): ?>
+                                <ul class="right hide-on-med-and-down menu-de-acesso">
+                                    <li><a href="/cliente">Meus Cupons</a></li>
+                                    <li><a href="/anuncie">Anuncie</a></li>
+                                </ul>
+                            <?php else: ?>
+                                <ul class="right hide-on-med-and-down menu-de-acesso">
+                                    <li><a href="/login">Login/Cadastro</a></li>
+                                    <li><a href="/anuncie">Anuncie</a></li>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

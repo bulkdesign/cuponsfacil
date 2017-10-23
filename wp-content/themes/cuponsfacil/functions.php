@@ -176,4 +176,11 @@ $toCancel = $_POST['cancelado'];
   }
 }
 
+// REMOVING DASH FILTERS FROM TITLE
+remove_filter( 'the_title' , 'wptexturize' );
+remove_filter( 'the_content' , 'wptexturize' );
+remove_filter( 'the_excerpt' , 'wptexturize' );
+remove_filter( 'comment_text' , 'wptexturize' );
+remove_filter( 'list_cats' , 'wptexturize' );
+
 ?>

@@ -4,7 +4,7 @@ get_header('paginas'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
-		<div class="oquefazemos cupom-gerado">
+		<div class="oquefazemos cupom-gerado" style="padding-top:20px !important;">
 			<h1 class="texto-vermelho-cupons center">Cupom gerado com sucesso!</h1>
 
 			<?php global $current_user; get_currentuserinfo(); ?>
