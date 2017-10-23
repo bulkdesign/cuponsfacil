@@ -107,9 +107,17 @@
         </div>
         <nav class="mobile-menu">
             <ul class="menu-de-acesso">
-                <li class="center"><?php get_search_form(); ?></li>
-                <li><a href="/login">Login/Cadastro</a></li>
-                <li><a href="/anuncie">Anuncie</a></li>
+                <?php if( is_user_logged_in() ): ?>
+                    <ul class="right hide-on-med-and-down menu-de-acesso">
+                        <li><a href="/cliente">Meus Cupons</a></li>
+                        <li><a href="/anuncie">Anuncie</a></li>
+                    </ul>
+                <?php else: ?>
+                    <ul class="right hide-on-med-and-down menu-de-acesso">
+                        <li><a href="/login">Login/Cadastro</a></li>
+                        <li><a href="/anuncie">Anuncie</a></li>
+                    </ul>
+                <?php endif; ?>
                 <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias', 'menu_class' => 'menu-de-acesso' ) ); ?>
             </ul>
         </nav>

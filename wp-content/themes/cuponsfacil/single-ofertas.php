@@ -49,13 +49,12 @@ ul.indicators {
 						<?php if( $cupom ): ?>
 							<?php $user_id = get_current_user_id(); ?>
 							<?php foreach( $cupom as $c ): ?>
-								<?php if( $user_id == 0 ): ?>
-									<a href="<?php echo wp_login_url(get_permalink()); ?>" style="pointer-events: all;" class="btn disabled tooltipped hide-on-med-and-down" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
-									<a href="<?php echo wp_login_url(get_permalink()); ?>" class="btn amarelo-cupons texto-vermelho-cupons hide-on-large-only">Pegar cupom</a>
-								<?php else: ?>
+								<?php if( is_user_logged_in() ): ?>
 									<div class="margin-top">
-					    				<a class="btn amarelo-cupons texto-vermelho-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
-					    			</div>
+					    				<a class="btn amarelo-cupons texto-vermelho-cupons hide-on-med-and-down" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+					    			</div>					
+								<?php else: ?>
+									<a href="<?php echo wp_login_url(get_permalink()); ?>" style="pointer-events: all;" class="btn disabled tooltipped hide-on-med-and-down" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
 					    		<?php endif; ?>
 					    	<?php endforeach; ?>
 					    <?php endif; ?>
@@ -71,7 +70,7 @@ ul.indicators {
 		    <div class="hide-on-large-only">
 			    <div class="white-text">
 			    	<div class="overlay-vermelho"></div>
-			    	<img src="<?php echo get_field('foto_de_capa'); ?>" style="width:100%;">
+			    	<img src="<?php echo get_field('foto_de_capa'); ?>" style="width:100%;height:300px">
 			    </div>
 			</div>
 		</div>
@@ -95,7 +94,7 @@ ul.indicators {
 								<div class="slider oferta-mobile" style="margin-top:20px;">
 									<ul class="slides">
 								        <li>
-											<img src="<?php echo the_field('fotos_da_oferta'); ?>">
+											<img style="background-size:contain;background-repeat: no-repeat;background-color: #FFFFFF" src="<?php echo the_field('fotos_da_oferta'); ?>">
 										</li>
 									</ul>
 								</div>
@@ -144,6 +143,16 @@ ul.indicators {
 					        			$validade_oferta = new DateTime($validade_oferta);
 					        		?>
 				        			<p>Validade da oferta: <?php echo $validade_oferta->format('j/m/y'); ?></p>
+				        			<?php if( $cupom ): ?>
+										<?php $user_id = get_current_user_id(); ?>
+										<?php foreach( $cupom as $c ): ?>
+											<?php if( $user_id == 0 ): ?>
+												<a class="col s12 btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo wp_login_url(get_permalink()); ?>">Fazer login</a>
+											<?php else: ?>
+								    			<a class="col s12 btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
+								    		<?php endif; ?>
+								    	<?php endforeach; ?>
+								    <?php endif; ?>
 								</div>
 				    		</div>
 				    	</div>
@@ -271,7 +280,7 @@ ul.indicators {
 												<td>Sábado: fechado</td>
 											<?php endif; ?>
 											<?php if ( get_field('funcionamento_domingo', $p->ID) ): ?>
-												<td>Domingo: <?php echo gets_field('funcionamento_domingo', $p->ID); ?></td>
+												<td>Domingo: <?php echo get_field('funcionamento_domingo', $p->ID); ?></td>
 											<?php else: ?>
 												<td>Domingo: fechado</td>
 											<?php endif; ?>

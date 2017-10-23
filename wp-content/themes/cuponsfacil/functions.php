@@ -76,7 +76,7 @@ function redirect_after_cupom( $redirect_to, $request, $user ){
     // instead of using $redirect_to we're redirecting back to $request
     return $request;
 }
-add_filter('login_redirect', 'redirect_after_cupom', 10, 3);
+add_filter('login_redirect', 'redirect_after_cupom', 10, 20);
 
 // BLOQUEIO DE VISUALIZACAO DE CUPONS SEM ESTAR LOGADO
 function get_out_cupons( $content ) {

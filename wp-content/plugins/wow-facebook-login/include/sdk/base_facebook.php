@@ -595,6 +595,7 @@ abstract class BaseFacebook
     return $this->getUrl(
       'www',
       'dialog/oauth',
+      'display=popup',
       array_merge(array(
                     'client_id' => $this->getAppId(),
                     'redirect_uri' => $currentUrl, // possibly overwritten
