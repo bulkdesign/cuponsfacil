@@ -135,4 +135,27 @@ function send_emails_on_new_event($wp_query) {
 
 }
 
+// CUSTOM POST STATUS
+function post_status_bulk_edit() {
+
+echo '
+
+<script>
+
+jQuery(document).ready(function($){
+
+$(".inline-edit-status select ").append("<option value=\"gerado\">Gerado</option>");
+$(".inline-edit-status select ").append("<option value=\"utilizado\">Utilizado</option>");
+$(".inline-edit-status select ").append("<option value=\"cancelado\">Cancelado</option>");
+
+});
+
+</script>
+
+';
+
+}
+
+add_action( 'admin_footer-edit.php', 'post_status_bulk_edit' );
+
 ?>
