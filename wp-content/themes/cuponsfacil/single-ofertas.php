@@ -181,13 +181,15 @@ ul.indicators {
 			    		<?php if( $posts ): ?>
 						<?php foreach( $posts as $p ): ?>
 			    			<?php if( get_field('foto_da_empresa', $p->ID)): ?>
-				    			<div class="col l12 hide-on-med-and-down" style="height: 300px !important; margin-bottom: 50px">
+				    			<div class="col l12 hide-on-med-and-down" style="height: 390px !important; margin-bottom: 50px">
 				    				<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
-									<img class="margin20" style="width: 100%; height:300px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:75%;background-position: 50% 50%;background-repeat: no-repeat;">
+									<img class="margin20" style="width: 100%; height:390px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:contain;background-position: center;background-repeat: no-repeat;">
 				    			</div>
-				    			<div class="col s12 m12 hide-on-large-only" style="height: 300px !important; margin-bottom: 50px">
+				    			<div class="col s12 m12 hide-on-large-only" style="height: 260px !important;">
 				    				<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
-									<img class="margin20" style="width: 100%; height:300px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:cover;background-repeat: no-repeat;">
+				    				<div class="margin20" style="width: 100%; height:100%;max-height:225px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:contain;background-position:center;background-repeat: no-repeat;">
+										<img width="100%" height="200" border="0">
+									</div>
 				    			</div>
 							<?php else: ?>
 								<h3 class="texto-vermelho-cupons avaliacoes center">Sobre a empresa:</h3>

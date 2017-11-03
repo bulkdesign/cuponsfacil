@@ -53,9 +53,9 @@ $(document).ready(function(){
         $('#global-nav').addClass('scrolled-nav');
         $('.brand-logo img').attr('src',"https://www.cuponsfacil.com.br/wp-content/themes/cuponsfacil/img/logo/logo-scroll.png");
         $('.brand-logo img').css('padding', '12px 0');
-        $('ul.menu-de-acesso').css('margin', '10px 0');
-        $('ul.menu-de-acesso > li a').css('font-size', '14px');
-        $('ul.menu-de-acesso > li a').css('padding', '5px 0');
+        $('ul.menu-de-acesso').css('margin', '5px 0');
+        $('ul.menu-de-acesso > li a').css('font-size', '10px');
+        $('ul.menu-de-acesso > li a').css('padding', '5px 0!important');
         $('i.small.material-icons').css('margin-top', '0');
         }
         

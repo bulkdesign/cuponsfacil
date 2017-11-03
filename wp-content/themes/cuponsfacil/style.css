@@ -203,6 +203,7 @@ nav.mobile-menu {
     width: 85px;
     height: 85px;
     cursor: pointer;
+    z-index: 999999;
 }
 
 ul.menu-de-acesso {
@@ -1094,6 +1095,10 @@ img.logo-cima-banner {
 }
 
 @media (min-width: 602px) and (max-width: 994px) {
+    img[src=''], img:not([src]) {
+        opacity:0;
+    }
+
     .oquefazemos.cupom-gerado {
         padding: 5px 0 60px;
     }
@@ -1155,8 +1160,13 @@ img.logo-cima-banner {
     html, body {
       overflow-x: hidden;
     }
+
     body {
-      position: relative
+      position: relative;
+    }
+
+    img[src=''], img:not([src]) {
+        opacity:0;
     }
 
     .oquefazemos.cupom-gerado {
