@@ -80,25 +80,33 @@ ul.indicators {
 				    <div id="sobreaoferta" class="col s12 m8 push-m2">
 				    	<div class="col s12">
 				    		<!-- FOTO OFERTA DESKTOP -->
-				    		<div class="col hide-on-med-and-down l6">
-								<div class="slider" style="margin-top: 50px;">
-									<ul class="slides">
-								        <li>
-											<img src="<?php echo the_field('fotos_da_oferta'); ?>">
-										</li>
-									</ul>
+							<?php if( have_rows('fotos_da_oferta') ): ?>
+								<div class="col hide-on-med-and-down l6">
+									<div class="slider" style="margin-top: 50px;">
+										<ul class="slides">
+											<?php while( have_rows('fotos_da_oferta') ): the_row(); 
+												$image = get_sub_field('adicionar_imagem');
+											?>
+												<li><img src="<?php echo $image; ?>" /></li>
+											<?php endwhile; ?>
+										</ul>
+									</div>
 								</div>
-				    		</div>
+							<?php endif; ?>
 				    		<!-- FOTO OFERTA MOBILE -->
-				    		<div class="col s12 hide-on-large-only">
-								<div class="slider oferta-mobile" style="margin-top:20px;">
-									<ul class="slides">
-								        <li>
-											<img style="background-size:contain;background-repeat: no-repeat;background-color: #FFFFFF" src="<?php echo the_field('fotos_da_oferta'); ?>">
-										</li>
-									</ul>
-								</div>
-				    		</div>
+				    		<?php if( have_rows('fotos_da_oferta') ): ?>
+					    		<div class="col s12 hide-on-large-only">
+									<div class="slider oferta-mobile" style="margin-top:20px;">
+										<ul class="slides">
+											<?php while( have_rows('fotos_da_oferta') ): the_row(); 
+												$image = get_sub_field('adicionar_imagem');
+											?>
+												<li><img style="background-size:contain;background-repeat: no-repeat;background-color: #FFFFFF" src="<?php echo $image; ?>" /></li>
+											<?php endwhile; ?>
+										</ul>
+									</div>
+					    		</div>
+					    	<?php endif; ?>
 				    		<div class="col s12 l6 margin20">
 				    			<h1 class="hide-on-small-only texto-vermelho-cupons"><?php the_title(); ?></h1>
 								<div class="divider"></div>
@@ -180,16 +188,33 @@ ul.indicators {
 				    <div id="aempresa" class="col s12 m8 push-m2">
 			    		<?php if( $posts ): ?>
 						<?php foreach( $posts as $p ): ?>
-			    			<?php if( get_field('foto_da_empresa', $p->ID)): ?>
-				    			<div class="col l12 hide-on-med-and-down" style="height: 390px !important; margin-bottom: 50px">
+			    			<?php if( get_field('fotos_da_empresa', $p->ID)): ?>
+				    			<div class="col l12 hide-on-med-and-down" style="height: 390px !important;">
 				    				<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
-									<img class="margin20" style="width: 100%; height:390px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:contain;background-position: center;background-repeat: no-repeat;">
+				    				<!-- FOTO -->
+				    				<?php if( have_rows('fotos_da_empresa', $p->ID) ): ?>
+
+										<div class="slider" style="margin-top: 30px;">
+											<ul class="slides">
+												<?php while( have_rows('fotos_da_empresa', $p->ID) ): the_row(); 
+													$image = get_sub_field('adicionar_fotos', $p->ID);
+												?>
+													<li>
+														<img style="width: 100%; height:390px;background-size:contain;background-repeat:no-repeat;background-color:#FFFFFF;" src="<?php echo $image; ?>" />
+													</li>
+												<?php endwhile; ?>
+											</ul>
+										</div>
+
+									<?php endif; ?>
 				    			</div>
 				    			<div class="col s12 m12 hide-on-large-only" style="height: 260px !important;">
 				    				<h3 class="texto-vermelho-cupons avaliacoes">Sobre a empresa:</h3>
-				    				<div class="margin20" style="width: 100%; height:100%;max-height:225px;background-image:url('<?php echo the_field('foto_da_empresa', $p->ID); ?>');background-size:contain;background-position:center;background-repeat: no-repeat;">
+
+				    				<div class="margin20" style="width: 100%; height:100%;max-height:225px;background-image:url('<?php echo $image; ?>');background-size:contain;background-position:center;background-repeat: no-repeat;">
 										<img width="100%" height="200" border="0">
 									</div>
+
 				    			</div>
 							<?php else: ?>
 								<h3 class="texto-vermelho-cupons avaliacoes center">Sobre a empresa:</h3>
