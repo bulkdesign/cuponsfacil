@@ -8,10 +8,7 @@
 
 <div class="container">
 
-	<?php
-	$s=get_search_query();
-	$args = array( 's' =>$s );
-	?>
+	<?php $s=get_search_query(); ?>
 
 	<?php  global $wp_query; ?>
 
@@ -78,56 +75,49 @@
 				</div>
 	            <div class="divider"></div>
 	            <!-- RESULTADO DOS DEMAIS -->
-	 			<?php if ( have_posts() ) : ?> 
 	    			<div class="search-container">
 			 			<div class="row">
-			 				<!-- MOSTRANDO AS OFERTAS -->
-				            <div class="col s12">
-				            	<?php $empresa = get_field('estabelecimento'); ?>
-				            	<?php if( get_field('foto_de_capa')): ?>
-									<div class="col l4 m12 s12">
-							            <a href="<?php echo get_permalink(); ?>">
-							            	<div class="oferta hoverable" style="background-size: cover;background-position:50%;background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_field('foto_de_capa'); ?>');">
-							                	<?php if( $empresa ): ?>
-							                  	<?php foreach( $empresa as $e ): ?>
-							                  	<img src="<?php echo the_field('logo_do_cliente', $e->ID); ?>" />
-							              	</div>
-							              	<div class="descricaooferta">
-							                	<h3 class="white-text"><?php the_title(); ?></h3>
-							                    	<span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $e->ID); ?></span>
-							                  	<?php endforeach; ?>
-							                	<?php endif; ?>
-							              	</div>
-							            </a>
-							            <br>
-					            		<?php if( $empresa ): ?>
-				          					<?php foreach( $empresa as $e ): ?>
-				          						<div class="col s12 center">
-						            				<a style="text-transform: none;" class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php the_permalink(); ?>">Ver detalhes da oferta</a>
-						            			</div>
-						            		<?php endforeach; ?>
-					            		<?php endif; ?>
-							        </div>
-						    	<?php endif; ?>
 
-					            <?php while ( have_posts() ) : the_post(); ?>
-					            	<?php if( get_field('logo_do_cliente')): ?>
-										<div class="col l4 m12 s12">
-								            <a href="<?php echo get_permalink(); ?>">
-								            	<div class="oferta hoverable" style="background-size: 100%;background-position:50%;background-image: url('<?php echo get_field('logo_do_cliente'); ?>');">
-								              	</div>
-								            </a>
-			          						<div class="col s12 center">
-					            				<a style="text-transform: none;margin-top:-6px;" class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					            			</div>
-								        </div>
-								    <?php endif; ?>
-				            	<?php endwhile; ?>
-				            </div>
+	 						<?php if ( have_posts() ) { ?>
+
+				 				<!-- MOSTRANDO AS OFERTAS -->
+					            <div class="col s12">
+					            	<?php while ( have_posts() ) { the_post(); ?>
+
+						            	<?php $empresa = get_field('estabelecimento'); ?>
+						            	<?php if( get_field('foto_de_capa')): ?>
+											<div class="col l4 m12 s12">
+									            <a href="<?php echo get_permalink(); ?>">
+									            	<div class="oferta hoverable" style="background-size: cover;background-position:50%;background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_field('foto_de_capa'); ?>');">
+									                	<?php if( $empresa ): ?>
+									                  	<?php foreach( $empresa as $e ): ?>
+									                  	<img src="<?php echo the_field('logo_do_cliente', $e->ID); ?>" />
+									              	</div>
+									              	<div class="descricaooferta">
+									                	<h3 class="white-text"><?php the_title(); ?></h3>
+									                    	<span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $e->ID); ?></span>
+									                  	<?php endforeach; ?>
+									                	<?php endif; ?>
+									              	</div>
+									            </a>
+									            <br>
+							            		<?php if( $empresa ): ?>
+						          					<?php foreach( $empresa as $e ): ?>
+						          						<div class="col s12 center">
+								            				<a style="text-transform: none;" class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php the_permalink(); ?>">Ver detalhes da oferta</a>
+								            			</div>
+								            		<?php endforeach; ?>
+							            		<?php endif; ?>
+									        </div>
+								    	<?php endif; ?>
+
+	 								<?php } ?>
+					            </div>
+
+				            <?php } ?>
+
 				        </div>
 				    </div>
-		        <?php endif; ?>
-	 
 	        </main><!-- #main -->
 	    </section><!-- #primary -->
 
