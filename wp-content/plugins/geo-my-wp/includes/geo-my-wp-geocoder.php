@@ -127,9 +127,9 @@ function gmw_geocoder( $raw_address, $force_refresh = false ) {
             } elseif ( $data->status === 'INVALID_REQUEST' ) {
                 return array( 'geocoded' => false, 'error' => __( 'Invalid request. Did you enter an address?', 'GMW' ) );
             } elseif ( $data->status === 'OVER_QUERY_LIMIT' ) { 
-                return array( 'geocoded' => false, 'error' => __( 'Something went wrong while retrieving your location.', 'GMW' ) . '<span style="display:none">OVER_QUERY_LIMIT</span>' );
+                return array( 'geocoded' => false, 'error' => __( 'Something went wrong while retrieving Sua Localização.', 'GMW' ) . '<span style="display:none">OVER_QUERY_LIMIT</span>' );
             } else {
-                return array( 'geocoded' => false, 'error' => __( 'Something went wrong while retrieving your location.', 'GMW' ) );
+                return array( 'geocoded' => false, 'error' => __( 'Something went wrong while retrieving Sua Localização.', 'GMW' ) );
             }
 
         } else {

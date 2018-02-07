@@ -622,7 +622,7 @@ class GMW_PT_Admin {
     									'Any text',
     									'0',
     							),
-    							'default'	=> 'Your location',
+    							'default'	=> 'Sua Localização',
     							'desc'	 	=> __( "Any text that will be display within the info-window of the marker represents the user's current location. Use 0 if you want the info-window to be disabled.", 'GMW' )
     					),
     						

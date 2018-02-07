@@ -105,8 +105,8 @@ class GMW_Shortcodes_page {
     									'values' 	=> array(
     											__( 'any text','GMW' ),
     									),
-    									'default'	=> 'Your location',
-    									'desc'	 	=> __( "The title that will be display before the address. For example if you use the title \"Your location\" it will be displayes as Your Location Hollywood Florida ( assuming that the user's location is Hollywood Florida ).", "GMW" )
+    									'default'	=> 'Sua Localização',
+    									'desc'	 	=> __( "The title that will be display before the address. For example if you use the title \"Sua Localização\" it will be displayes as Sua Localização Hollywood Florida ( assuming that the user's location is Hollywood Florida ).", "GMW" )
     							),
     							array(
     									'attr'	 	=> 'address_as_text ( previously used as text_only )',
@@ -190,10 +190,10 @@ class GMW_Shortcodes_page {
     					),
     					'examples'  => array(
     							array(
-    									'example' => "[gmw_current_location elements=\"username,address,map\" title=\"Your Location\" address_fields=\"city,state,country\"]",
+    									'example' => "[gmw_current_location elements=\"username,address,map\" title=\"Sua Localização\" address_fields=\"city,state,country\"]",
     									'desc'	  => __( "This example will display:", 'gmw' ).
     												 "<br />Hello ( username )<br />
-    												  Your Location Hollywood Florida US.<br />
+    												  Sua Localização Hollywood Florida US.<br />
     									              [ Map will be displayed here ]"
 
     							),

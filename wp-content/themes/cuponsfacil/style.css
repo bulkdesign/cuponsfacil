@@ -36,6 +36,12 @@ h3 {
     margin: 0;
 }
 
+[type="radio"]:not(:checked), [type="radio"]:checked {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .wpsl-location-address, p, li {
 	font-family: 'Raleway', sans-serif;
 }
@@ -74,8 +80,32 @@ p.texto-pequeno {
 	margin-bottom: 20px;
 }
 
+.paddingl0 {
+    padding-left: 0 !important;
+}
+
+.paddingr0 {
+    padding-right: 0 !important;
+}
+
+.paddingt0 {
+    padding-top: 0 !important;
+}
+
+.paddingb0 {
+    padding-bottom: 0 !important;
+}
+
+.padding50 {
+    padding-top: 50px !important;
+}
+
 .margin20 {
 	margin-top: 20px;
+}
+
+.marginb20 {
+    margin-bottom: 20px;
 }
 
 .margin40 {
@@ -440,8 +470,14 @@ h1.titulo-oferta {
     border-top: 0;
 }
 
+/* RESULTADO DA BUSCA */
+.filtros {
+    margin: 10px 0;
+}
+
 /* FOOTER */
 footer.page-footer {
+    margin-top: 80px;
 	background: #111111;
 }
 

@@ -40,7 +40,7 @@ class GMW_FL_Location_Page {
     					),
     			),
     			'map' => array(
-    					__( 'Find your location on the map', 'GMW' ),
+    					__( 'Find Sua Localização on the map', 'GMW' ),
     					array(
     							'map' => array(
     									'name'        => 'map',
@@ -401,11 +401,11 @@ class GMW_FL_Location_Page {
     public function display_location_form( $location, $user_id ) {
     	
     	$fieldsLabel = apply_filters( 'gmw_fl_your_location_page_titles', array(
-    			'your_location' 	=> __( 'Your Location', 'GMW' ),
+    			'your_location' 	=> __( 'Sua Localização', 'GMW' ),
     			'no_location' 		=> __( "You haven't set a location yet", 'GMW' ),
     			'edit_location' 	=> __( 'Edit Location', 'GMW' ),
     			'delete_location' 	=> __( 'Delete Location', 'GMW' ),
-    			'manualy_enter' 	=> __( 'Enter your location manually', 'GMW' ),
+    			'manualy_enter' 	=> __( 'Enter Sua Localização manually', 'GMW' ),
     			'address' 			=> __( 'Address', 'GMW' ),
     			'coords' 			=> __( 'Latitude / Longitude', 'GMW' ),
     			'save_location' 	=> __( 'Save Location', 'GMW' ),

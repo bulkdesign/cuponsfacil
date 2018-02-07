@@ -1778,7 +1778,7 @@ msgstr ""
 #: includes/admin/geo-my-wp-shortcodes.php:109
 msgid ""
 "The title that will be display before the address. For example if you use "
-"the title \"Your location\" it will be displayes as Your Location Hollywood "
+"the title \"Sua Localização\" it will be displayes as Sua Localização Hollywood "
 "Florida ( assuming that the user's location is Hollywood Florida )."
 msgstr ""
 
@@ -2217,8 +2217,8 @@ msgstr ""
 
 #: includes/admin/tools/gmw-tools-import-export-tab.php:211
 msgid ""
-"Before importing your locations into this site make sure you used the "
-"\"Export\" form above on the original site in order to export your locations."
+"Before importing Sua Localizaçãos into this site make sure you used the "
+"\"Export\" form above on the original site in order to export Sua Localizaçãos."
 msgstr ""
 
 #: includes/admin/tools/gmw-tools-import-export-tab.php:212
@@ -2614,7 +2614,7 @@ msgstr "Erhalte Deinen aktuellen Standort"
 
 # @ GMW
 #: includes/geo-my-wp-deprecated-functions.php:683
-msgid "- Enter Your Location -"
+msgid "- Enter Sua Localização -"
 msgstr "- Gib Deinen Standort ein -"
 
 # @ GMW
@@ -2640,7 +2640,7 @@ msgstr "Erhalte Deinen aktuellen Standort"
 #: includes/geo-my-wp-deprecated-functions.php:842
 #: plugins/friends/includes/gmw-fl-location-tab.php:404
 #: plugins/posts/includes/gmw-pt-shortcodes.php:41
-msgid "Your Location"
+msgid "Sua Localização"
 msgstr "Dein Standort"
 
 #: includes/geo-my-wp-deprecated-functions.php:866
@@ -2773,7 +2773,7 @@ msgstr ""
 
 # @ GMW
 #: includes/geo-my-wp-geocoder.php:130 includes/geo-my-wp-geocoder.php:132
-msgid "Something went wrong while retrieving your location."
+msgid "Something went wrong while retrieving Sua Localização."
 msgstr ""
 
 # @ GMW
@@ -2903,7 +2903,7 @@ msgstr "Routenplaner"
 #: includes/geo-my-wp-template-functions.php:57
 #: includes/geo-my-wp-template-functions.php:91
 #, fuzzy
-msgid "Your Location "
+msgid "Sua Localização "
 msgstr "Dein Standort"
 
 # @ GMW
@@ -3462,7 +3462,7 @@ msgstr "Tippe eine Adresse für die automatische Vervollständigung"
 
 # @ GMW
 #: plugins/friends/includes/gmw-fl-location-tab.php:43
-msgid "Find your location on the map"
+msgid "Find Sua Localização on the map"
 msgstr "Finde Deinen Standort auf der Landkarte"
 
 # @ GMW
@@ -3550,7 +3550,7 @@ msgstr "Löschen des Standortes"
 
 # @ GMW
 #: plugins/friends/includes/gmw-fl-location-tab.php:408
-msgid "Enter your location manually"
+msgid "Enter Sua Localização manually"
 msgstr "Gebe Deinen Standort manuell ein"
 
 # @ GMW
@@ -3614,7 +3614,7 @@ msgid "Clear"
 msgstr ""
 
 #: plugins/friends/includes/gmw-fl-update-location.php:35
-msgid "There was a problem saving your location."
+msgid "There was a problem saving Sua Localização."
 msgstr ""
 
 # @ GMW
@@ -4747,7 +4747,7 @@ msgstr ""
 #~ msgstr "Widget Titel: "
 
 # @ GMW
-#~ msgid "Title: (ex:\"Your Location\")"
+#~ msgid "Title: (ex:\"Sua Localização\")"
 #~ msgstr "Titel: (bsp.:\"Dein Standort\")"
 
 # @ GMW
@@ -5064,7 +5064,7 @@ msgstr ""
 
 # @ GMW
 #, fuzzy
-#~ msgid "your location"
+#~ msgid "Sua Localização"
 #~ msgstr "Dein Standort"
 
 # @ GMW
@@ -5188,7 +5188,7 @@ msgstr ""
 
 # @ GMW
 #, fuzzy
-#~ msgid "Edit your location"
+#~ msgid "Edit Sua Localização"
 #~ msgstr "Dein Standort"
 
 # @ GMW

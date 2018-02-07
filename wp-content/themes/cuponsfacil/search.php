@@ -75,18 +75,51 @@
 				</div>
 	            <div class="divider"></div>
 	            <!-- RESULTADO DOS DEMAIS -->
-	    			<div class="search-container">
-			 			<div class="row">
+	 			<div class="row" style="margin-bottom: 0;">
+	 				<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+						<div class="col s12">
+	 						<p class="marginb20">Não encontrou o que precisava? Experimente os filtros abaixo ou utilize a <a href="<?php echo site_url() ?>/busca-avancada">Busca Avançada</a>:</p>
+							<div class="col s4 paddingl0">
+								<?php
+									if( $terms = get_terms( 'category', 'orderby=name' ) ) :
+										echo '<select name="categoryfilter"><option>Escolha uma categoria...</option>';
+										foreach ( $terms as $term ) :
+											echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
+										endforeach;
+										echo '</select>';
+									endif;
+								?>
+							</div>
+							<div class="col s2">
+								<label>
+									<input type="radio" name="date" value="ASC" /> Ofertas mais recentes
+								</label>
+							</div>
+							<div class="col s2">
+								<label>
+									<input type="radio" name="date" value="DESC" selected="selected" /> Ofertas mais antigas
+								</label>
+							</div>
+							<div class="col s2">
+								<button>Filtrar</button>
+								<input type="hidden" name="action" value="myfilter">
+							</div>
+						</div>
+					</form>
+					<div id="response"></div>
+				</div>
 
+		 			<div id="resultado-inicial">
+			 			<div class="row">
 	 						<?php if ( have_posts() ) { ?>
 
 				 				<!-- MOSTRANDO AS OFERTAS -->
-					            <div class="col s12">
+					            <div class="col s12 paddingl0 paddingr0">
 					            	<?php while ( have_posts() ) { the_post(); ?>
 
 						            	<?php $empresa = get_field('estabelecimento'); ?>
 						            	<?php if( get_field('foto_de_capa')): ?>
-											<div class="col l4 m12 s12">
+											<div class="col l4 m12 s12 padding50">
 									            <a href="<?php echo get_permalink(); ?>">
 									            	<div class="oferta hoverable" style="background-size: cover;background-position:50%;background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_field('foto_de_capa'); ?>');">
 									                	<?php if( $empresa ): ?>

@@ -236,4 +236,110 @@ function cf_search_distinct( $where ) {
 }
 add_filter( 'posts_distinct', 'cf_search_distinct' );
 
-?>
+//FILTER BY LOCATION
+ 
+class WP_Query_Geo extends WP_Query {
+  var $lat;
+  var $lng;
+  var $distance;
+ 
+  function __construct($args=array()) {
+    if(!empty($args['lat'])) {
+      $this->lat = $args['lat'];
+      $this->lng = $args['lng'];
+      $this->distance = $args['distance'];
+      add_filter('posts_fields', array($this, 'posts_fields'));
+      add_filter('posts_groupby', array($this, 'posts_groupby'));
+      add_filter('posts_join_paged', array($this, 'posts_join_paged'));
+    }
+ 
+    parent::query($args);
+ 
+    remove_filter('posts_fields', array($this, 'posts_fields'));
+    remove_filter('posts_groupby', array($this, 'posts_groupby'));
+    remove_filter('posts_join_paged', array($this, 'posts_join_paged'));
+  }
+ 
+  function posts_fields($fields) {
+    global $wpdb;
+    $fields = $wpdb->prepare(" ((ACOS(SIN(%f * PI() / 180) * SIN(mtlat.meta_value * PI() / 180) + COS(%f * PI() / 180) * COS(mtlat.meta_value * PI() / 180) * COS((%f - mtlng.meta_value) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) AS distance", $this->lat, $this->lat, $this->lng);
+    return $fields;
+  }
+ 
+  function posts_groupby($where) {
+    global $wpdb;
+    $where .= $wpdb->prepare(" HAVING distance < %d ", $this->distance);
+    return $where;
+  }
+ 
+  function posts_join_paged($join) {
+    $join .= " INNER JOIN uc_postmeta AS mtlat ON (IF(mtmaster.meta_value != uc_posts.ID, mtmaster.meta_value, uc_posts.ID) = mtlat.post_id AND mtlat.meta_key = 'lat') ";
+    $join .= " INNER JOIN uc_postmeta AS mtlng ON (IF(mtmaster.meta_value != uc_posts.ID, mtmaster.meta_value, uc_posts.ID) = mtlng.post_id AND mtlng.meta_key = 'lng') ";
+    return $join;
+  }
+}
+
+// AJAX TAXONOMY FILTER
+function misha_filter_function(){
+    $args = array(
+        'orderby' => 'date', // we will sort posts by date
+        'order' => $_POST['date'], // ASC или DESC
+        'post_type' => 'ofertas',
+        'lat' =>  $distance['lat'],
+        'lng' =>  $distance['lng'],
+        'distance' => $distance['range']
+    );
+ 
+    // for taxonomies / categories
+    if( isset( $_POST['categoryfilter'] ) )
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'category',
+                'field' => 'id',
+                'terms' => $_POST['categoryfilter']
+            )
+        );
+ 
+    $query = new WP_Query_Geo( $args );
+ 
+    if( $query->have_posts() ) :
+        while( $query->have_posts() ): $query->the_post(); ?>
+
+            <?php $empresa = get_field('estabelecimento'); ?>
+            <?php if( get_field('foto_de_capa')): ?>
+                <div class="col l4 m12 s12 padding50">
+                    <a href="<?php echo get_permalink(); ?>">
+                        <div class="oferta hoverable" style="background-size: cover;background-position:50%;background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_field('foto_de_capa'); ?>');">
+                            <?php if( $empresa ): ?>
+                            <?php foreach( $empresa as $e ): ?>
+                            <img src="<?php echo the_field('logo_do_cliente', $e->ID); ?>" />
+                        </div>
+                        <div class="descricaooferta">
+                            <h3 class="white-text"><?php the_title(); ?></h3>
+                                <span class="texto-amarelo-cupons"><?php the_field('nome_da_empresa', $e->ID); ?></span>
+                            <?php endforeach; ?>
+                            <?php endif; ?>
+                        </div>
+                    </a>
+                    <br>
+                    <?php if( $empresa ): ?>
+                        <?php foreach( $empresa as $e ): ?>
+                            <div class="col s12 center">
+                                <a style="text-transform: none;" class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php the_permalink(); ?>">Ver detalhes da oferta</a>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+
+        <?php endwhile;
+        wp_reset_postdata();
+    else :
+        echo 'Não foram encontradas ofertas';
+    endif;
+ 
+    die();
+}
+ 
+add_action('wp_ajax_myfilter', 'misha_filter_function'); 
+add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');

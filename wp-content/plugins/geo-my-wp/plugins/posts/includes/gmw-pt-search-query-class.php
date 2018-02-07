@@ -384,7 +384,7 @@ class GMW_PT_Search_Query extends GMW {
     		global $post;
     	}
 
-    	add_filter( 'the_permalink', array( $this, 'append_address_to_permalink') );
+    	// add_filter( 'the_permalink', array( $this, 'append_address_to_permalink') );
     	
         // add permalink and thumbnail into each post in the loop
         // we are doing it here to be able to display it in the info window of the map

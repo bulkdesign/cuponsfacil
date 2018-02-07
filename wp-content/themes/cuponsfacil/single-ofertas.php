@@ -54,7 +54,7 @@ ul.indicators {
 					    				<a class="btn amarelo-cupons texto-vermelho-cupons hide-on-med-and-down" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
 					    			</div>					
 								<?php else: ?>
-									<a href="<?php echo wp_login_url(get_permalink()); ?>" style="pointer-events: all;" class="btn disabled tooltipped hide-on-med-and-down" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
+									<a href="http://www.cuponsfacil.com.br/login" style="pointer-events: all;" class="btn disabled tooltipped hide-on-med-and-down" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
 					    		<?php endif; ?>
 					    	<?php endforeach; ?>
 					    <?php endif; ?>
@@ -124,7 +124,7 @@ ul.indicators {
 										<?php foreach( $cupom as $c ): ?>
 											<?php if( $user_id == 0 ): ?>
 												<a style="pointer-events: all;" class="btn disabled tooltipped" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
-												<a class="texto-vermelho-cupons" href="<?php echo wp_login_url(get_permalink()); ?>">Fazer login</a></p>
+												<a class="texto-vermelho-cupons" href="http://www.cuponsfacil.com.br/login">Fazer login</a></p>
 											<?php else: ?>
 								    			<a class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
 								    		<?php endif; ?>
@@ -155,7 +155,7 @@ ul.indicators {
 										<?php $user_id = get_current_user_id(); ?>
 										<?php foreach( $cupom as $c ): ?>
 											<?php if( $user_id == 0 ): ?>
-												<a class="col s12 btn waves-effect amarelo-cupons texto-vermelho-cupons" href="<?php echo wp_login_url(get_permalink()); ?>">Fazer login</a>
+												<a class="col s12 btn waves-effect amarelo-cupons texto-vermelho-cupons" href="http://www.cuponsfacil.com.br/login">Fazer login</a>
 											<?php else: ?>
 								    			<a class="col s12 btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
 								    		<?php endif; ?>

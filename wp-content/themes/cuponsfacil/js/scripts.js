@@ -5,6 +5,7 @@
  */
  
 $(document).ready(function(){
+
   $('.parallax').parallax();
   $('.scrollspy').scrollSpy();
   $('.slider').slider();
@@ -82,4 +83,25 @@ $(document).ready(function(){
   a2a_config.linkurl = "https://cuponsfacil.com.br";
   a2a_config.locale = "pt-BR";
   a2a_config.num_services = 4;
+});
+
+jQuery(function($){
+  $('#filter').submit(function(){
+    var filter = $('#filter');
+    $.ajax({
+      url:filter.attr('action'),
+      data:filter.serialize(), // form data
+      type:filter.attr('method'), // POST
+      beforeSend:function(xhr){
+        filter.find('button').text('Filtrando...'); // changing the button label
+      },
+      success:function(data){
+        filter.find('button').text('Filtrar'); // changing the button label back
+        $('#response').html(data); // insert data
+        $('#resultado-inicial').css('display', 'none');
+        $('#nao-encontrado').css('display', 'none');
+      }
+    });
+    return false;
+  });
 });

@@ -1509,7 +1509,7 @@ msgstr ""
 #: includes/admin/geo-my-wp-shortcodes.php:109
 msgid ""
 "The title that will be display before the address. For example if you use "
-"the title \"Your location\" it will be displayes as Your Location Hollywood "
+"the title \"Sua Localização\" it will be displayes as Sua Localização Hollywood "
 "Florida ( assuming that the user's location is Hollywood Florida )."
 msgstr ""
 
@@ -1894,8 +1894,8 @@ msgstr ""
 
 #: includes/admin/tools/gmw-tools-import-export-tab.php:211
 msgid ""
-"Before importing your locations into this site make sure you used the "
-"\"Export\" form above on the original site in order to export your locations."
+"Before importing Sua Localizaçãos into this site make sure you used the "
+"\"Export\" form above on the original site in order to export Sua Localizaçãos."
 msgstr ""
 
 #: includes/admin/tools/gmw-tools-import-export-tab.php:212
@@ -2265,7 +2265,7 @@ msgid "Your Current Location"
 msgstr ""
 
 #: includes/geo-my-wp-deprecated-functions.php:683
-msgid "- Enter Your Location -"
+msgid "- Enter Sua Localização -"
 msgstr ""
 
 #: includes/geo-my-wp-deprecated-functions.php:687
@@ -2285,7 +2285,7 @@ msgstr ""
 #: includes/geo-my-wp-deprecated-functions.php:842
 #: plugins/friends/includes/gmw-fl-location-tab.php:404
 #: plugins/posts/includes/gmw-pt-shortcodes.php:41
-msgid "Your Location"
+msgid "Sua Localização"
 msgstr ""
 
 #: includes/geo-my-wp-deprecated-functions.php:866
@@ -2410,7 +2410,7 @@ msgid "Invalid request. Did you enter an address?"
 msgstr ""
 
 #: includes/geo-my-wp-geocoder.php:130 includes/geo-my-wp-geocoder.php:132
-msgid "Something went wrong while retrieving your location."
+msgid "Something went wrong while retrieving Sua Localização."
 msgstr ""
 
 #: includes/geo-my-wp-geocoder.php:136
@@ -2516,7 +2516,7 @@ msgstr ""
 
 #: includes/geo-my-wp-template-functions.php:57
 #: includes/geo-my-wp-template-functions.php:91
-msgid "Your Location "
+msgid "Sua Localização "
 msgstr ""
 
 #: includes/geo-my-wp-template-functions.php:58
@@ -3005,7 +3005,7 @@ msgid "Type an address for autocomplete"
 msgstr ""
 
 #: plugins/friends/includes/gmw-fl-location-tab.php:43
-msgid "Find your location on the map"
+msgid "Find Sua Localização on the map"
 msgstr ""
 
 #: plugins/friends/includes/gmw-fl-location-tab.php:59
@@ -3071,7 +3071,7 @@ msgid "Delete Location"
 msgstr ""
 
 #: plugins/friends/includes/gmw-fl-location-tab.php:408
-msgid "Enter your location manually"
+msgid "Enter Sua Localização manually"
 msgstr ""
 
 #: plugins/friends/includes/gmw-fl-location-tab.php:409
@@ -3122,7 +3122,7 @@ msgid "Clear"
 msgstr ""
 
 #: plugins/friends/includes/gmw-fl-update-location.php:35
-msgid "There was a problem saving your location."
+msgid "There was a problem saving Sua Localização."
 msgstr ""
 
 #: plugins/friends/includes/gmw-fl-update-location.php:39

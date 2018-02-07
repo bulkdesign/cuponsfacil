@@ -1869,7 +1869,7 @@ msgstr "n&#8217;importe quel texte"
 #: includes/admin/geo-my-wp-shortcodes.php:109
 msgid ""
 "The title that will be display before the address. For example if you use "
-"the title \"Your location\" it will be displayes as Your Location Hollywood "
+"the title \"Sua Localização\" it will be displayes as Sua Localização Hollywood "
 "Florida ( assuming that the user's location is Hollywood Florida )."
 msgstr ""
 
@@ -2330,8 +2330,8 @@ msgstr "Importer les positions de posts depuis les post_meta GMW"
 
 #: includes/admin/tools/gmw-tools-import-export-tab.php:211
 msgid ""
-"Before importing your locations into this site make sure you used the "
-"\"Export\" form above on the original site in order to export your locations."
+"Before importing Sua Localizaçãos into this site make sure you used the "
+"\"Export\" form above on the original site in order to export Sua Localizaçãos."
 msgstr ""
 "Avant d&#8217;importer vos positions sur ce site, v&eacute;rifiez que vous "
 "avez bien utilis&eacute; le formulaire d&#8217;export sur le site original "
@@ -2803,7 +2803,7 @@ msgstr "Votre position actuelle"
 
 # @ GMW
 #: includes/geo-my-wp-deprecated-functions.php:683
-msgid "- Enter Your Location -"
+msgid "- Enter Sua Localização -"
 msgstr "- Entrez votre position -"
 
 # @ GMW
@@ -2827,7 +2827,7 @@ msgstr "Obtenir / Afficher la position actuelle de l&#8217;utilisateur"
 #: includes/geo-my-wp-deprecated-functions.php:842
 #: plugins/friends/includes/gmw-fl-location-tab.php:404
 #: plugins/posts/includes/gmw-pt-shortcodes.php:41
-msgid "Your Location"
+msgid "Sua Localização"
 msgstr "Votre position"
 
 #: includes/geo-my-wp-deprecated-functions.php:866
@@ -2960,7 +2960,7 @@ msgstr "Requ&ecirc;te invalide. Avez-vous bien entr&eacute; une adresse ?"
 
 # @ GMW
 #: includes/geo-my-wp-geocoder.php:130 includes/geo-my-wp-geocoder.php:132
-msgid "Something went wrong while retrieving your location."
+msgid "Something went wrong while retrieving Sua Localização."
 msgstr ""
 "Une erreur est survenue lors de la r&eacute;cup&eacute;ration de votre "
 "localisation. "
@@ -3084,7 +3084,7 @@ msgstr "Obtenir l&#8217;itin&eacute;raire"
 # @ GMW
 #: includes/geo-my-wp-template-functions.php:57
 #: includes/geo-my-wp-template-functions.php:91
-msgid "Your Location "
+msgid "Sua Localização "
 msgstr "Votre position"
 
 # @ GMW
@@ -3636,7 +3636,7 @@ msgstr "Tapez une adresse pour compl&eacute;ter automatiquement"
 
 # @ GMW
 #: plugins/friends/includes/gmw-fl-location-tab.php:43
-msgid "Find your location on the map"
+msgid "Find Sua Localização on the map"
 msgstr "Trouvez votre position sur la carte"
 
 # @ GMW
@@ -3715,7 +3715,7 @@ msgstr "Supprimer position"
 
 # @ GMW
 #: plugins/friends/includes/gmw-fl-location-tab.php:408
-msgid "Enter your location manually"
+msgid "Enter Sua Localização manually"
 msgstr "Entrer votre position manuellement"
 
 # @ GMW
@@ -3775,7 +3775,7 @@ msgid "Clear"
 msgstr "Vider"
 
 #: plugins/friends/includes/gmw-fl-update-location.php:35
-msgid "There was a problem saving your location."
+msgid "There was a problem saving Sua Localização."
 msgstr "Un probl&egrave; est survenu en sauvegardant votre position."
 
 # @ GMW
@@ -4814,7 +4814,7 @@ msgstr ""
 #~ "Developp&eacute; par Eyal Fitoussi - merci de prendre une minute pour "
 #~ "m&#8217;encourager"
 
-#~ msgid "Auto-open \"Your Location\" Info Window"
+#~ msgid "Auto-open \"Sua Localização\" Info Window"
 #~ msgstr "Auto-ouvrir popup \"Votre position\""
 
 #~ msgid ""
@@ -5089,7 +5089,7 @@ msgstr ""
 # @ GMW
 #~ msgid ""
 #~ "You can use this to display a title above the \"Get Current Location\" "
-#~ "link. Ex \"Your Location\"."
+#~ "link. Ex \"Sua Localização\"."
 #~ msgstr ""
 #~ "Vous pouvez utiliser ceci pour afficher un titre au-dessus du lien "
 #~ "\"Obtenir votre position\". ex : \"Votre position\"."
@@ -5127,7 +5127,7 @@ msgstr ""
 #~ msgstr "Titre du Widget"
 
 # @ GMW
-#~ msgid "Title: (ex:\"Your Location\")"
+#~ msgid "Title: (ex:\"Sua Localização\")"
 #~ msgstr "Titre : (ex:\"Votre position\")"
 
 # @ GMW
@@ -5596,7 +5596,7 @@ msgstr ""
 #~ msgstr "depuis"
 
 # @ GMW
-#~ msgid "your location"
+#~ msgid "Sua Localização"
 #~ msgstr "votre position"
 
 # @ GMW
@@ -5713,7 +5713,7 @@ msgstr ""
 
 # @ GMW
 #, fuzzy
-#~ msgid "Edit your location"
+#~ msgid "Edit Sua Localização"
 #~ msgstr "votre position"
 
 # @ GMW

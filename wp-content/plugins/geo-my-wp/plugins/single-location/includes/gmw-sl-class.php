@@ -35,7 +35,7 @@ class GMW_Single_Location {
 		'expand_map_on_load'	=> 0,
 		'item_map_icon'			=> 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
 		'user_map_icon'   	  	=> 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
-		'user_info_window'	  	=> 'Your Location',
+		'user_info_window'	  	=> 'Sua Localização',
 		'item_info_window'		=> 'title,address,distance',
 		'no_location_message'   => 0,
 		'is_widget'				=> 0,
@@ -352,7 +352,7 @@ class GMW_Single_Location {
 		$output .= 		"<form action=\"https://maps.google.com/maps\" method=\"get\" target=\"_blank\">";
 		$output .= 		"<div class=\"address-field-wrapper\">";
 		$output .= 				'<label for="start-address-'.$element_id.'">'.esc_attr( $this->labels['live_directions']['from'] ).'</label>';
-		$output .= 				'<input type="text" size="35" id="start-address-'.$element_id.'" class="start-address" name="saddr" value="'.esc_attr( $this->user_position['address'] ).'" placeholder="Your location" />';
+		$output .= 				'<input type="text" size="35" id="start-address-'.$element_id.'" class="start-address" name="saddr" value="'.esc_attr( $this->user_position['address'] ).'" placeholder="Sua Localização" />';
 		$output .= 				"<i class=\"get-directions-link-submit fa fa-search get-directions-submit-icon\" onclick=\"jQuery( this ).closest( 'form' ).submit();\"></i>";
 		$output .= 			"</div>";
 		$output .= 			'<input type="hidden" name="daddr" value="'.esc_attr( $this->item_info->address ).'" />';

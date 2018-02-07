@@ -119,7 +119,7 @@ class GMW_Current_Location_Widget extends WP_Widget {
 				'elements'					=> 'username,address,map,location_form',
 				'location_form_trigger' 	=> 'Get your current location',
 				'address_field_placeholder'	=> 'Enter address',
-				'address_label' 			=> 'Your Location',
+				'address_label' 			=> 'Sua Localização',
 				'address_fields'     		=> 'city,country',
 				'address_as_text'      		=> 0,
 				'user_greeting' 			=> 'Hello',

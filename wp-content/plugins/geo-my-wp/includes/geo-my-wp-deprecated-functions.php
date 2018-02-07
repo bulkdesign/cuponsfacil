@@ -529,7 +529,7 @@ class GMW_Current_location_Dep {
 
 		$args = shortcode_atts( array(
 				'scid'		 			=> rand( 1,100 ),
-				'title'      			=> 'Your location',
+				'title'      			=> 'Sua Localização',
 				'display_by' 			=> 'city,country',
 				'text_only'	 			=> 0,
 				'show_name'  			=> 1,
@@ -680,7 +680,7 @@ class GMW_Current_location_Dep {
     	$template .= 	'<span id="gmw-cl-close-btn">X</span>';
     	$template .= 	'<form id="gmw-cl-form" name="gmw_cl_form" onsubmit="return false">';
     	$template .= 		'<div id="gmw-cl-info-wrapper">';
-    	$template .= 			'<div id="gmw-cl-location-message">' . __('- Enter Your Location -', 'GMW') . '</div>';
+    	$template .= 			'<div id="gmw-cl-location-message">' . __('- Enter Sua Localização -', 'GMW') . '</div>';
     	$template .= 			'<div id="gmw-cl-input-fields"><input type="text" name="gmw-cl_address" id="gmw-cl-address" value="" placeholder="zipcode or full address..." /><input id="gmw-cl-submit-address" type="submit" value="go" /></div>';
     	$template .= 			'<div> - or - </div>';
     	$template .= 			'<div id="gmw-cl-get-location"><a href="#" id="gmw-cl-trigger" >';
@@ -839,7 +839,7 @@ class GMW_Current_Location_Widget_Dep extends WP_Widget {
 
 		$defaults = array(
 				'widget_title'   		=> __('Current Location', 'GMW'),
-				'title_location' 		=> __('Your Location', 'GMW'),
+				'title_location' 		=> __('Sua Localização', 'GMW'),
 				'display_by'     		=> 'city,country',
 				'name_guest'     		=> 1,
 				'user_message' 			=> 'Hello',
@@ -870,7 +870,7 @@ class GMW_Current_Location_Widget_Dep extends WP_Widget {
             <label><?php echo esc_attr( __( 'Location Title', 'GMW' ) ); ?>:</label>
             <input type="text" name="<?php echo $this->get_field_name('title_location'); ?>" value="<?php if (isset($instance['title_location'])) echo $instance['title_location']; ?>" class="widefat" />
             <em style="font-size:12px;color:#777;display:block;margin:5px 0px;">
-            	<?php _e( "The title that will be displayed before the location. For example Your location...", 'GMW' ); ?>
+            	<?php _e( "The title that will be displayed before the location. For example Sua Localização...", 'GMW' ); ?>
             </em>
         </p>
          <p>

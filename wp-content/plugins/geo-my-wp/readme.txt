@@ -14,7 +14,7 @@ Using Google's API tools GEO my WP provides an advance proximity search for any 
 == Description ==
 
 GEO my WP is the complete GEO solution for your Wordpress project. 
-Using google API tool GEO my WP let you add location to any of your post types, pages or BuddyPress members. After adding your locations you can create an advance search form including radius values, units (miles and kilometers) and custom taxonomies for post types or profile fields for Buddypress. Results will be displayed based on the address entered and the chosen radius ordered by the distance.
+Using google API tool GEO my WP let you add location to any of your post types, pages or BuddyPress members. After adding Sua Localizaçãos you can create an advance search form including radius values, units (miles and kilometers) and custom taxonomies for post types or profile fields for Buddypress. Results will be displayed based on the address entered and the chosen radius ordered by the distance.
 Together with other great features like auto locating user's current location, displaying driving distance, "get directions" link, google map with markers of the location and much more, GEO my WP just might be the coolest GEO tool for WordPress.
 
 = Key features of GEO my WP =

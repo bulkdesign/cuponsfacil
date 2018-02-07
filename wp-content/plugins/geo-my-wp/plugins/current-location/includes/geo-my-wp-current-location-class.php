@@ -20,7 +20,7 @@ class GMW_Current_location {
 			'location_form_trigger' 	=> 'Get your current location',
 			'address_field_placeholder'	=> 'Enter address',
 			'address_fields' 			=> 'city,country',
-			'address_label'   			=> 'Your location',	
+			'address_label'   			=> 'Sua Localização',	
 			'user_greeting' 			=> 'Hello',
 			'guest_greeting' 			=> 'Hello, guest!',
 			'map_height' 				=> '200px',

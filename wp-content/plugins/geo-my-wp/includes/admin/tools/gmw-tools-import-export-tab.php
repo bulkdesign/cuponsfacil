@@ -208,7 +208,7 @@ function gmw_output_import_export_tab() {
 		
 					<div class="inside">
 						<ol>
-							<li><?php _e( "Before importing your locations into this site make sure you used the \"Export\" form above on the original site in order to export your locations.", "GMW" ); ?></li>
+							<li><?php _e( "Before importing Sua Localizaçãos into this site make sure you used the \"Export\" form above on the original site in order to export Sua Localizaçãos.", "GMW" ); ?></li>
 							<li><?php printf( __( "Import your posts using <a href=\"%s\" target\"_blank\">WordPress importer</a>. After done so come back to this page to complete step 3.", "GMW" ), admin_url( 'import.php' ) ); ?></li>
 							<li><?php printf( __( "Click on the \"Import\" button. By doing so the plugin will duplicate each post type location from the custom field of the post it belongs to into GEO my WP's custom table in database ( %splaces_locator ).", "GMW" ), $wpdb->prefix ); ?></li>
 						</ol>

@@ -38,7 +38,7 @@ class GMW_Single_Post_Location {
     							'info_window'	  => 1,
     							'show_info'		  => 1,
     							'ul_marker'   	  => 1,
-    							'ul_message'	  => __( 'Your Location', 'GMW' ),
+    							'ul_message'	  => __( 'Sua Localização', 'GMW' ),
     					), $args )
     	);
 
@@ -119,7 +119,7 @@ class GMW_Single_Post_Location {
             $location_directions .= '<div class="directions-wrapper">';
             $location_directions .= 	'<div id="gmw-single-post-sc-form-' . $element_id . '" class="gmw-single-post-sc-form" style="display:none;">';
             $location_directions .= 		'<form action="https://maps.google.com/maps" method="get" target="_blank">';
-            $location_directions .= 			'<input type="text" size="35" name="saddr" value="'. esc_attr( $your_address ).'" placeholder="Your location" />';
+            $location_directions .= 			'<input type="text" size="35" name="saddr" value="'. esc_attr( $your_address ).'" placeholder="Sua Localização" />';
             $location_directions .= 			'<input type="hidden" name="daddr" value="' . esc_attr( $post_info->address ) . '" />';
             $location_directions .= 			'<input type="submit" class="button" value="' . __( 'GO', 'GMW' ) . '" />';
             $location_directions .= 		'</form>';

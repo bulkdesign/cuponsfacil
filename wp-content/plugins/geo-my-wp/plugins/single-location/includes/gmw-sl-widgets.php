@@ -95,7 +95,7 @@ class GMW_Single_Location_Widget extends WP_Widget {
 				'item_map_icon'			=> 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
 				'item_info_window'	  	=> 'distance,title,address,additional_info',
 				'user_map_icon'   	  	=> 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
-				'user_info_window'	  	=> 'Your Location',
+				'user_info_window'	  	=> 'Sua localização',
 				'no_location_message'	=> 'No location found',
 				'show_in_single_post'	=> 0
 					

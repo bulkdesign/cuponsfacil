@@ -34,7 +34,7 @@ function gmw_form_set_labels( $form ) {
 			),
 			'search_results'	=> array(
 					'pt_results_message' 	  => array(
-							'showing'	=> __( 'Showing %s out of %s results', 'GMW' ),
+							'showing'	=> __( 'Exibindo %s de %s resultados', 'GMW' ),
 							'within'	=> __( 'within %s from %s', 'GMW' ),
 					),
 					'fl_results_message' => array(
@@ -54,7 +54,7 @@ function gmw_form_set_labels( $form ) {
 					'address'           => __( 'Address: ',  'GMW' ),
 					'formatted_address' => __( 'Address: ',  'GMW' ),
 					'directions'        => __( 'Get Directions', 'GMW' ),
-					'your_location'     => __( 'Your Location ', 'GMW' ),
+					'your_location'     => __( 'Sua Localização ', 'GMW' ),
 					'pt_no_results'		=> __( 'No results found', 'GMW' ),
 					'fl_no_results'		=> __( 'No members found', 'GMW' ),
 					'gl_no_results'		=> __( 'No groups found', 'GMW' ),
@@ -88,7 +88,7 @@ function gmw_form_set_labels( $form ) {
 					'email'	   			 => __( 'Email: ', 'GMW' ),
 					'website'  			 => __( 'website: ', 'GMW' ),
 					'na'	   			 => __( 'N/A', 'GMW' ),
-					'your_location'		 => __( 'Your Location ', 'GMW' ),
+					'your_location'		 => __( 'Sua Localização ', 'GMW' ),
 					'contact_info'		 => __( 'Contact Information','GMW' ),
 					'read_more'			 => __( 'Read more', 'GMW' ),
 					'member_info'	     => __( 'Member Information', 'GMW' ),

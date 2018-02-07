@@ -32,7 +32,7 @@ function gmw_fl_update_location() {
                 'map_icon'          => $location['gmw_map_icon']
             ) ) === FALSE ) :
 
-        echo __( 'There was a problem saving your location.', 'GMW' );
+        echo __( 'There was a problem saving Sua Localização.', 'GMW' );
 
     else :
 

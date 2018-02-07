@@ -47,10 +47,10 @@
 				<?php do_action( 'gmw_search_results_loop_item_start' , $gmw, $post ); ?>
 				
 				<!-- Title -->
-				<h2>
+				<h3>
 					<a href="<?php echo the_permalink(); ?>"><?php echo $post->post_count; ?>) <?php the_title(); ?></a>
 					<?php if ( isset( $gmw['your_lat'] ) && !empty( $gmw['your_lat'] ) ) { ?><span class="radius-dis">(<?php gmw_distance_to_location( $post, $gmw ); ?>)</span><?php } ?>
-				</h2>
+				</h3>
 				
 				<?php do_action( 'gmw_posts_loop_after_title' , $gmw, $post ); ?>
 				
