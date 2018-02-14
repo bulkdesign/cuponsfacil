@@ -161,10 +161,12 @@ add_action( 'admin_footer-edit.php', 'post_status_bulk_edit' );
 // CHANGE POST STATUS ON BUTTON (UTILIZADO)
 function toDraft($pid) {
 
-$toDraft = $_POST['utilizado'];
-   if($toDraft == 'status_usado'){
-      wp_update_post(array('ID' => $pid, 'post_status'   =>  'utilizado'));
-  }
+    $post_id = $_GET['post_id'];
+    $the_post = get_post( $post_id );
+
+    if( $the_post->post_status = 'gerado') {
+        wp_update_post(array($the_post, 'post_status' => 'utilizado'));
+    }
 }
 
 // CHANGE POST STATUS ON BUTTON (CANCELADO)

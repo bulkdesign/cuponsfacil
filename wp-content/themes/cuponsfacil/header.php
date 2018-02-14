@@ -82,13 +82,13 @@
                         <div class="col s12 l2">
                             <?php if( is_user_logged_in() ): ?>
                                 <ul class="right hide-on-med-and-down menu-de-acesso">
-                                    <li><a href="/cliente">Meus Cupons</a></li>
-                                    <li><a href="/anuncie">Anuncie</a></li>
+                                    <li class="col s12"><a href="<?php echo site_url(); ?>/cliente">Meus Cupons</a></li>
+                                    <li class="col s12"><a href="<?php echo site_url(); ?>/wp-login.php?action=logout">Sair</a></li>
                                 </ul>
                             <?php else: ?>
                                 <ul class="right hide-on-med-and-down menu-de-acesso">
-                                    <li><a href="/login">Login/Cadastro</a></li>
-                                    <li><a href="/anuncie">Anuncie</a></li>
+                                    <li class="col s12"><a href="<?php echo site_url(); ?>/login">Login/Cadastro</a></li>
+                                    <li class="col s12"><a href="<?php echo site_url(); ?>/anuncie">Anuncie</a></li>
                                 </ul>
                             <?php endif; ?>
                         </div>
@@ -109,13 +109,13 @@
             <ul class="menu-de-acesso">
                 <?php if( is_user_logged_in() ): ?>
                     <ul class="right hide-on-med-and-down menu-de-acesso">
-                        <li><a href="/cliente">Meus Cupons</a></li>
-                        <li><a href="/anuncie">Anuncie</a></li>
+                        <li><a href="<?php echo site_url(); ?>/cliente">Meus Cupons</a></li>
+                        <li><a href="<?php echo site_url(); ?>/anuncie">Anuncie</a></li>
                     </ul>
                 <?php else: ?>
                     <ul class="right hide-on-med-and-down menu-de-acesso">
-                        <li><a href="/login">Login/Cadastro</a></li>
-                        <li><a href="/anuncie">Anuncie</a></li>
+                        <li><a href="<?php echo site_url(); ?>/login">Login/Cadastro</a></li>
+                        <li><a href="<?php echo site_url(); ?>/anuncie">Anuncie</a></li>
                     </ul>
                 <?php endif; ?>
                 <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias', 'menu_class' => 'menu-de-acesso' ) ); ?>

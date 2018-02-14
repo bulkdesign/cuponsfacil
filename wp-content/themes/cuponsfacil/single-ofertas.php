@@ -54,7 +54,7 @@ ul.indicators {
 					    				<a class="btn amarelo-cupons texto-vermelho-cupons hide-on-med-and-down" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
 					    			</div>					
 								<?php else: ?>
-									<a href="http://www.cuponsfacil.com.br/login" style="pointer-events: all;" class="btn disabled tooltipped hide-on-med-and-down" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
+									<a class="btn amarelo-cupons texto-vermelho-cupons" href="https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect=https://www.cuponsfacil.com.br" onclick="window.location = 'https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;">Faça o login</a>
 					    		<?php endif; ?>
 					    	<?php endforeach; ?>
 					    <?php endif; ?>
@@ -123,8 +123,7 @@ ul.indicators {
 										<?php $user_id = get_current_user_id(); ?>
 										<?php foreach( $cupom as $c ): ?>
 											<?php if( $user_id == 0 ): ?>
-												<a style="pointer-events: all;" class="btn disabled tooltipped" data-position="bottom" data-delay="50" data-tooltip="Faça o login para pegar seu cupom!" onclick="Materialize.toast('Você precisa fazer o login para pegar o seu cupom!')">Pegar cupom</a>
-												<a class="texto-vermelho-cupons" href="http://www.cuponsfacil.com.br/login">Fazer login</a></p>
+												<a class="btn vermelho-cupons texto-amarelo-cupons" href="https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect=https://www.cuponsfacil.com.br" onclick="window.location = 'https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;">Faça o login</a>
 											<?php else: ?>
 								    			<a class="btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
 								    		<?php endif; ?>
@@ -155,7 +154,7 @@ ul.indicators {
 										<?php $user_id = get_current_user_id(); ?>
 										<?php foreach( $cupom as $c ): ?>
 											<?php if( $user_id == 0 ): ?>
-												<a class="col s12 btn waves-effect amarelo-cupons texto-vermelho-cupons" href="http://www.cuponsfacil.com.br/login">Fazer login</a>
+												<a class="btn amarelo-cupons texto-vermelho-cupons" href="https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect=https://www.cuponsfacil.com.br" onclick="window.location = 'https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;">Faça o login</a>
 											<?php else: ?>
 								    			<a class="col s12 btn waves-effect vermelho-cupons texto-amarelo-cupons" href="<?php echo get_permalink($c->ID); ?>">Pegar cupom</a>
 								    		<?php endif; ?>
@@ -400,7 +399,7 @@ ul.indicators {
 				    		<div class="col s12 margin40">
 					    		<div class="col s12 l3">
 						    		<h3 class="texto-vermelho-cupons ofertas-redes-sociais">Avaliações:</h3>
-						    		<?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
+						    		<?php echo kk_star_ratings(); ?>
 						    	</div>
 						    	<div class="col s12 l5">
 						    		<!-- REDES SOCIAIS DESKTOP -->

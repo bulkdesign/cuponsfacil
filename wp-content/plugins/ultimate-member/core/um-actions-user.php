@@ -12,11 +12,13 @@
 		$wp_user_object = new WP_User( $user_id );
 		
 		if ( isset( $meta['synced_role'] ) && $meta['synced_role'] ) {
-			$wp_user_object->add_role( $meta['synced_role'] );
+			$wp_user_object->set_role( $meta['synced_role'] );
 		}elseif( ! $wp_user_object->roles ) { // Fallback user default role if nothing set
-			$wp_user_object->add_role( 'subscriber' );
+			$wp_user_object->set_role( 'subscriber' );
 		}
 	}
+
+
 
 	/***
 	*** @remove previously synced WP role

@@ -17,7 +17,14 @@ get_header('login'); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<div class="row">
 				<div class="col s12 margin20">
-					<?php the_content(); ?>
+					<div class="col s12 center">
+						<a href="https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect=https://www.cuponsfacil.com.br" onclick="window.location = 'https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;'clientes">
+						<div class="new-fb-btn new-fb-1 new-fb-default-anim"><div class="new-fb-1-1"><div class="new-fb-1-1-1">Entrar com Facebook</div></div></div>
+						</a>
+					</div>
+					<div class="col s12">
+						<?php echo do_shortcode('[ultimatemember form_id=238]'); ?>
+					</div>
 				</div>
 			</div>
 		<?php endwhile; ?>

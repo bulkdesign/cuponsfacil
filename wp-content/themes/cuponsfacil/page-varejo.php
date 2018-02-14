@@ -5,7 +5,7 @@
 
 get_header('categorias'); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="marginb80" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<header class="titulo-pagina">
 			<!-- TÍTULO -->
@@ -26,7 +26,7 @@ get_header('categorias'); ?>
 		<div class="row" style="margin-bottom: 0;">
 			<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
 				<div class="col s12">
-						<p class="marginb20">Não encontrou o que precisava? Experimente os filtros abaixo ou utilize a <a href="<?php echo site_url() ?>/busca-avancada">Busca Avançada</a>:</p>
+					<p class="marginb20">Não encontrou o que precisava? Experimente os filtros abaixo ou utilize o buscador de <a href="<?php echo site_url() ?>/descontos-pertinho-de-voce">Descontos Pertinho de Você</a>:</p>
 					<div class="col s4 paddingl0">
 						<?php
 							if( $terms = get_terms( 'category', 'orderby=name' ) ) :

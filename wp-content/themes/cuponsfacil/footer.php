@@ -14,12 +14,12 @@
           <div class="col l3">
             <h3 class="texto-amarelo-cupons">Cupons Fácil</h3>
             <ul class="left">
-              <li><a href="/conheca">Conheça</a></li>
-              <li><a href="/blog">Blog</a></li>
+              <li><a href="<?php echo site_url(); ?>/conheca">Conheça</a></li>
+              <li><a href="<?php echo site_url(); ?>/blog">Blog</a></li>
               <!-- <li>Categorias</li> -->
-              <li><a href="/anuncie">Anuncie</a></li>
-              <li><a href="/contato">Contato</a></li>
-              <li><a href="/login">Login</a></li>
+              <li><a href="<?php echo site_url(); ?>/anuncie">Anuncie</a></li>
+              <li><a href="<?php echo site_url(); ?>/contato">Contato</a></li>
+              <li><a href="<?php echo site_url(); ?>/login">Login</a></li>
             </ul>
           </div>
           <!-- NEWSLETTER -->

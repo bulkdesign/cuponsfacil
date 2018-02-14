@@ -27,8 +27,8 @@ get_header('paginas'); ?>
 						            <th><strong class="texto-vermelho-cupons">Código do Cupom</strong></th>
 						            <th><strong class="texto-vermelho-cupons">Status</strong></th>
 						            <th><strong class="texto-vermelho-cupons">Ver Cupom</strong></th>
-						            <th><strong class="texto-vermelho-cupons">Marcar como Utilizado</strong></th>
-						            <th><strong class="texto-vermelho-cupons">Cancelar</strong></th>
+						            <!-- <th><strong class="texto-vermelho-cupons">Marcar como Utilizado</strong></th>
+						            <th><strong class="texto-vermelho-cupons">Cancelar</strong></th> -->
 						        </tr>
 						    </thead>
 						    <tbody>
@@ -44,20 +44,22 @@ get_header('paginas'); ?>
 						        	<td><?php the_content(); ?></td>
 						        	<td><span style="text-transform:capitalize;"><?php echo get_post_status(); ?></span></td>
 						        	<td><a href="<?php the_permalink(); ?>">Clique aqui</td>
+						        	<!--
 						        	<td>
 						        		<form action="" method="POST" >
 										    <input type="checkbox" value="status_usado" checked="checked" name="utilizado">
 										    <input type="submit" value="Alterar">
 										</form>
-										<?php toDraft($post->ID); ?>
+										<?php //toDraft($post->ID); ?>
 						        	</td>
 						        	<td>
 						        		<form action="" method="POST" >
 										    <input type="checkbox" value="status_cancelado" checked="checked" name="cancelado">
 										    <input type="submit" value="Cancelar">
 										</form>
-										<?php toCancel($post->ID); ?>
+										<?php //toCancel($post->ID); ?>
 						        	</td>
+						        	-->
 					        	</tr>
 						       	
 					       		<?php endwhile;
