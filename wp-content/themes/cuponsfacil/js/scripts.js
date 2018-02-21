@@ -58,6 +58,7 @@ $(document).ready(function(){
         $('ul.menu-de-acesso > li a').css('font-size', '10px');
         $('ul.menu-de-acesso > li a').css('padding', '10px 5px 0');
         $('i.small.material-icons').css('margin-top', '0');
+        $('.busca-mobile').css('margin-top', '4px');
         }
         
         else if (scrollTop < 100) {
@@ -75,6 +76,7 @@ $(document).ready(function(){
           $('ul.menu-de-acesso > li a').css('font-size', '15px');
           $('ul.menu-de-acesso > li a').css('padding', '10px 0');
           $('i.small.material-icons').css('margin-top', '35px');
+          $('.busca-mobile').css('margin-top', '50px');
         }   
   }); 
 

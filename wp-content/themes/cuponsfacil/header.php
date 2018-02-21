@@ -60,7 +60,8 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="row">
-                    <div class="col s12">
+                    <!-- DESKTOP -->
+                    <div class="col hide-on-med-and-down l12">
                         <!-- LOGO -->
                         <div class="col l2">
                             <a href="/" class="brand-logo">
@@ -68,11 +69,11 @@
                             </a>
                         </div>
                         <!-- BUSCA -->
-                        <div class="col hide-on-med-and-down l8">
+                        <div class="col l8">
                             <?php get_search_form(); ?>
-                            <div class="col hide-on-med-and-down l12 categorias">
-                                <ul class="menu hide-on-med-and-down">
-                                    <div class="col hide-on-med-and-down l12">
+                            <div class="col l12 categorias">
+                                <ul class="menu">
+                                    <div class="col l12">
                                     <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias' ) ); ?>
                                     </div>
                                 </ul>
@@ -81,23 +82,36 @@
                         <!-- LOGIN -->
                         <div class="col s12 l2">
                             <?php if( is_user_logged_in() ): ?>
-                                <ul class="right hide-on-med-and-down menu-de-acesso">
+                                <ul class="right menu-de-acesso">
                                     <li class="col s12"><a href="<?php echo site_url(); ?>/cliente">Meus Cupons</a></li>
                                     <li class="col s12"><a href="<?php echo site_url(); ?>/wp-login.php?action=logout">Sair</a></li>
                                 </ul>
                             <?php else: ?>
-                                <ul class="right hide-on-med-and-down menu-de-acesso">
+                                <ul class="right menu-de-acesso">
                                     <li class="col s12"><a href="<?php echo site_url(); ?>/login">Login/Cadastro</a></li>
                                     <li class="col s12"><a href="<?php echo site_url(); ?>/anuncie">Anuncie</a></li>
                                 </ul>
                             <?php endif; ?>
                         </div>
                     </div>
+                    <!-- MED AND DOWN -->
+                    <div class="col s12 hide-on-large-only">
+                        <div class="col s2">
+                            <main class="hide-on-large-only">
+                                <a class="white-text toggle-overlay"><i class="small material-icons">menu</i></a>
+                            </main>
+                        </div>
+                        <div class="col s7">
+                            <a href="/" class="brand-logo">
+                                <img src="<?php bloginfo('template_url');?>/img/logo/logo.png"/>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <main class="hide-on-large-only">
-                    <a class="white-text toggle-overlay"><i class="small material-icons">menu</i></a>
-                </main>
             </div>
+        </div>
+        <div class="busca-mobile hide-on-large-only">
+            <?php echo do_shortcode('[wd_asp elements="search" ratio="100%" id=2]'); ?>
         </div>
     </nav>
     <!-- Mobile Menu -->
@@ -118,7 +132,7 @@
                         <li><a href="<?php echo site_url(); ?>/anuncie">Anuncie</a></li>
                     </ul>
                 <?php endif; ?>
-                <?php wp_nav_menu( array( 'theme_location' => 'menu-categorias', 'menu_class' => 'menu-de-acesso' ) ); ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'menu-mobile', 'menu_class' => 'menu-de-acesso' ) ); ?>
             </ul>
         </nav>
     </aside>

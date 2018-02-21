@@ -27,7 +27,7 @@ get_header('categorias'); ?>
 			<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
 				<div class="col s12">
 					<p class="marginb20">Não encontrou o que precisava? Experimente os filtros abaixo ou utilize o buscador de <a href="<?php echo site_url() ?>/descontos-pertinho-de-voce">Descontos Pertinho de Você</a>:</p>
-					<div class="col s4 paddingl0">
+					<div class="col s12 l4 paddingl0">
 						<?php
 							if( $terms = get_terms( 'category', 'orderby=name' ) ) :
 								echo '<select name="categoryfilter"><option>Escolha uma categoria...</option>';
@@ -38,19 +38,37 @@ get_header('categorias'); ?>
 							endif;
 						?>
 					</div>
-					<div class="col s2">
-						<label>
-							<input type="radio" name="date" value="ASC" /> Ofertas mais recentes
-						</label>
+					<div class="hide-on-med-and-down">
+						<div class="col l2">
+							<label>
+								<input type="radio" name="date" value="ASC" /> Ofertas mais recentes
+							</label>
+						</div>
+						<div class="col l2">
+							<label>
+								<input type="radio" name="date" value="DESC" selected="selected" /> Ofertas mais antigas
+							</label>
+						</div>
+						<div class="col l2">
+							<button>Filtrar</button>
+							<input type="hidden" name="action" value="myfilter">
+						</div>
 					</div>
-					<div class="col s2">
-						<label>
-							<input type="radio" name="date" value="DESC" selected="selected" /> Ofertas mais antigas
-						</label>
-					</div>
-					<div class="col s2">
-						<button>Filtrar</button>
-						<input type="hidden" name="action" value="myfilter">
+					<div class="hide-on-large-only">
+						<div class="col s12 margin20">
+							<label>
+								<input type="radio" name="date" value="ASC" /> Ofertas mais recentes
+							</label>
+						</div>
+						<div class="col s12 margin20">
+							<label>
+								<input type="radio" name="date" value="DESC" selected="selected" /> Ofertas mais antigas
+							</label>
+						</div>
+						<div class="col s12 margin20">
+							<button>Filtrar</button>
+							<input type="hidden" name="action" value="myfilter">
+						</div>
 					</div>
 				</div>
 			</form>

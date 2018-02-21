@@ -19,6 +19,12 @@ function menu_de_categorias() {
 }
 add_action( 'init', 'menu_de_categorias' );
 
+/* Suporte do tema para menu do topo */
+function menu_mobile() {
+  register_nav_menu('menu-mobile',__( 'Menu Mobile' ));
+}
+add_action( 'init', 'menu_mobile' );
+
 /* Remoção dos avisos de update do WordPress */
 function remove_core_updates(){
 global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);

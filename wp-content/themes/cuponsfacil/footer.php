@@ -14,6 +14,7 @@
           <div class="col l3">
             <h3 class="texto-amarelo-cupons">Cupons Fácil</h3>
             <ul class="left">
+              <li><a href="<?php echo site_url(); ?>/descontos-pertinho-de-voce">Descontos Pertinho de Você</a></li>
               <li><a href="<?php echo site_url(); ?>/conheca">Conheça</a></li>
               <li><a href="<?php echo site_url(); ?>/blog">Blog</a></li>
               <!-- <li>Categorias</li> -->
