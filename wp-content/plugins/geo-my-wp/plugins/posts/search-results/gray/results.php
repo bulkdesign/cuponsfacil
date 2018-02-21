@@ -39,39 +39,47 @@
 	<?php do_action( 'gmw_search_results_before_loop' , $gmw ); ?>
 	
 	<!--  Results wrapper -->
-	<ul class="posts-list-wrapper">
+	<table class="striped" id="table" data-toggle="table" data-filter-control="true">
+	    <thead>
+	        <tr>					        	
+	            <th data-field="estabelecimento" data-filter-control="input"><strong>Estabelecimento</strong></th>
+	            <th data-field="ramo_de_atuacao" data-filter-control="input"><strong>Ramo de Atuação</strong></th>
+	            <th data-field="distancia" data-filter-control="input"><strong>Distância</strong></th>
+	            <th data-field="endereco" data-filter-control="input"><strong>Endereço</strong></th>
+	        </tr>
+	    </thead>
+	    <tbody>
 
-		<?php while ( $gmw_query->have_posts() ) : $gmw_query->the_post(); ?>
+			<?php while ( $gmw_query->have_posts() ) : $gmw_query->the_post(); ?>
 			
 			<?php $featured = ( !empty( $post->feature ) ) ? 'gmw-featured-post' : ''; ?>
 
-			<li id="post-<?php the_ID(); ?>" <?php post_class( 'single-post '.$featured ); ?>>
-				
-				<?php do_action( 'gmw_search_results_loop_item_start' , $gmw, $post ); ?>
-			
-				<!-- Title -->
-				<div class="top-wrapper">
-					<div class="row">
-						<div class="col s12">
-							<div class="col s12 l4 left-align">
-								<h2 class="post-title">
-									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-										<?php the_title(); ?> 
-									</a>
-								</h2>
-							</div>
-							<div class="col s12 l2">
-								<span class="radius"><?php gmw_distance_to_location( $post, $gmw ); ?></span>
-							</div>
-							<div class="col s12 l6">
-								<div class="address-wrapper">
-							    	<span class="fa fa-map-marker address-icon"></span>
-							    	<span class="address"><?php gmw_location_address( $post, $gmw ); ?></span>
-							    </div>
-							</div>
-						</div>
+			<?php do_action( 'gmw_search_results_loop_item_start' , $gmw, $post ); ?>
+
+	        <tr>
+	        	<!-- Estabelecimento -->
+				<td>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_title(); ?>
+					</a>
+				</td>
+				<!-- Ramo de Atuacao -->
+				<td>
+					<?php echo get_field('ramo_de_atuacao'); ?>
+				</td>
+				<!-- Distancia -->
+				<td>
+					<span class="radius"><?php gmw_distance_to_location( $post, $gmw ); ?></span>
+				</td>
+				<!-- Endereco -->
+				<td>
+					<div class="address-wrapper">
+				    	<span class="fa fa-map-marker address-icon"></span>
+				    	<span class="address"><?php gmw_location_address( $post, $gmw ); ?></span>
 					</div>
-				</div>
+				</td>
+        	</tr>
+
 
 				<?php do_action( 'gmw_posts_loop_before_content' , $gmw, $post ); ?>
 	   						
@@ -92,11 +100,11 @@
     			
     			<?php do_action( 'gmw_search_results_loop_item_end' , $gmw, $post ); ?>
 				
-			</li><!-- #post -->
-		
 		<?php endwhile;	 ?>
+	    
+	    </tbody>
 		
-	</ul>
+	</table>
 	
 	<?php do_action( 'gmw_search_results_after_loop' , $gmw ); ?>
 	
