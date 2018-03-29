@@ -520,6 +520,8 @@ class WP_List_Table {
 		}
 		$out .= '</div>';
 
+		$out .= the_title();
+
 		$out .= '<button type="button" class="toggle-row"><span class="screen-reader-text">' . __( 'Show more details' ) . '</span></button>';
 
 		return $out;

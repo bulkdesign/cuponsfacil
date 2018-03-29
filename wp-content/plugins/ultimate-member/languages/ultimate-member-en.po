@@ -3560,7 +3560,7 @@ msgid "Keep me signed in"
 msgstr ""
 
 #: core/um-actions-login.php:297
-msgid "Forgot your password?"
+msgid "Esqueceu sua senha?"
 msgstr ""
 
 #: core/um-actions-members.php:63

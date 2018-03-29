@@ -46,6 +46,7 @@ ul.indicators {
 								<?php endforeach; ?>
 							<?php endif; ?>
 						</h1>
+						<span class="hide-on-med-and-down">
 						<?php if( $cupom ): ?>
 							<?php $user_id = get_current_user_id(); ?>
 							<?php foreach( $cupom as $c ): ?>
@@ -58,6 +59,7 @@ ul.indicators {
 					    		<?php endif; ?>
 					    	<?php endforeach; ?>
 					    <?php endif; ?>
+						</span>
 					</div>
 				</div>
 		    </div>

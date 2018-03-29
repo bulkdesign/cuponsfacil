@@ -83,12 +83,12 @@
                         <div class="col s12 l2">
                             <?php if( is_user_logged_in() ): ?>
                                 <ul class="right menu-de-acesso">
-                                    <li class="col s12"><a href="<?php echo site_url(); ?>/cliente">Meus Cupons</a></li>
+                                    <li class="col s12"><a href="<?php echo site_url(); ?>/wp-admin/edit.php?post_type=cupom_gerado">Meus Cupons</a></li>
                                     <li class="col s12"><a href="<?php echo site_url(); ?>/wp-login.php?action=logout">Sair</a></li>
                                 </ul>
                             <?php else: ?>
                                 <ul class="right menu-de-acesso">
-                                    <li class="col s12"><a href="<?php echo site_url(); ?>/login">Login/Cadastro</a></li>
+                                    <li class="col s12"><a href="<?php echo site_url(); ?>/admin">Login/Cadastro</a></li>
                                     <li class="col s12"><a href="<?php echo site_url(); ?>/anuncie">Anuncie</a></li>
                                 </ul>
                             <?php endif; ?>

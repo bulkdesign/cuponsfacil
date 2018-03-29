@@ -21,13 +21,13 @@
 // ** Configurações do MySQL - Você pode pegar estas informações
 // com o serviço de hospedagem ** //
 /** O nome do banco de dados do WordPress */
-define('DB_NAME', 'cuponsfacil');
+define('DB_NAME', 'cupon531_novo');
 
 /** Usuário do banco de dados MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'cupon531_cupons');
 
 /** Senha do banco de dados MySQL */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'CuponsSaopaulo123');
 
 /** Nome do host do MySQL */
 define('DB_HOST', 'localhost');

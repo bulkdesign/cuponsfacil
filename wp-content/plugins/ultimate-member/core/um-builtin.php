@@ -967,7 +967,7 @@ class UM_Builtin {
 			'password_reset_text' => array(
 				'title' => __('Password Reset','ultimate-member'),
 				'type' => 'block',
-				'content' => '<div style="text-align:center">' . __('To reset your password, please enter your email address or username below','ultimate-member'). '</div>',
+				'content' => '<div style="text-align:center">' . __('Para redefinir a sua senha, digite o seu e-mail abaixo:','ultimate-member'). '</div>',
 				'private_use' => true,
 			),
 			
@@ -975,7 +975,7 @@ class UM_Builtin {
 				'title' => __('Username or E-mail','ultimate-member'),
 				'metakey' => 'username_b',
 				'type' => 'text',
-				'placeholder' => __('Enter your username or email','ultimate-member'),
+				'placeholder' => __('Digite o seu e-mail','ultimate-member'),
 				'required' => 1,
 				'public' => 1,
 				'editable' => 0,

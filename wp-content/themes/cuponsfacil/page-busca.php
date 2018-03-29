@@ -5,6 +5,14 @@
 
 get_header('categorias'); ?>
 
+<style type="text/css">
+	
+.margin-categoria {
+	margin-top: 220px;
+}
+
+</style>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<header class="titulo-pagina">

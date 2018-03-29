@@ -54,10 +54,10 @@ function logo_de_login() {
   display: none;
 } 
 body.login div#login h1 a {
-	width: 165px;
-	background-size: 150px;
-	background-image: url(https://www.cuponsfacil.com.br/wp-content/themes/cuponsfacil/img/logo/logo.png);
-	padding-bottom: 30px; 
+    width: 165px;
+    background-size: 150px;
+    background-image: url(https://www.cuponsfacil.com.br/wp-content/themes/cuponsfacil/img/logo/logo.png);
+    padding-bottom: 30px; 
 }
 </style>
 <?php 
@@ -351,3 +351,68 @@ function misha_filter_function(){
  
 add_action('wp_ajax_myfilter', 'misha_filter_function'); 
 add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');
+
+// ADMIN MENU (CUPONS GERADOS)
+add_action( 'admin_menu', 'register_custom_menu_link' );
+
+function register_custom_menu_link(){
+    add_menu_page( 'Cupons Gerados', 'Cupons Gerados', 'comerciante, usuario', 'cupons-gerados', 'menu_dos_cupons_gerados', 'dashicons-external' ); 
+}
+
+function menu_dos_cupons_gerados(){
+    $current_user = wp_get_current_user();
+    $s = strtolower($current_user->first_name . '+' . $current_user->last_name);
+    wp_redirect( site_url('/wp-admin/edit.php?s=' . $s . '&post_type=cupom_gerado'), 301 ); 
+    exit;
+}
+
+// ADMIN MENU (OFERTAS)
+add_action( 'admin_menu', 'register_custom_menu_ofertas' );
+
+function register_custom_menu_ofertas(){
+    add_menu_page( 'Ofertas', 'Ofertas', 'comerciante', 'ofertas', 'menu_das_ofertas', 'dashicons-external' ); 
+}
+
+function menu_das_ofertas(){
+    $current_user = wp_get_current_user();
+    $s = strtolower($current_user->first_name . '+' . $current_user->last_name);
+    wp_redirect( site_url('/wp-admin/edit.php?s=' . $s . '&post_type=ofertas'), 301 ); 
+    exit;
+}
+
+// REMOVING SCREEN OPTIONS
+function wpb_remove_screen_options() { 
+if(!current_user_can('manage_options')) {
+return false;
+}
+return true; 
+}
+add_filter('screen_options_show_screen', 'wpb_remove_screen_options');
+
+// REDIRECT TO COUPONS PAGE
+function admin_redirects() {
+    global $pagenow;
+
+    /* OP's redirect from /wp-admin/edit.php?post_type=page */
+    if($pagenow == 'index.php'){
+        wp_redirect(admin_url('/edit.php?post_type=cupom_gerado', 'https'), 301);
+        exit;
+    }
+}
+
+add_action('admin_init', 'admin_redirects');
+
+// Removes from admin menu
+add_action( 'admin_menu', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+
+// Removes from admin bar
+function mytheme_admin_bar_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+
+?>

@@ -9,13 +9,15 @@ Author: Bainternet
 Author URI: http://en.bainternet.info
 */
 
+
+
 if ( !class_exists('ajaxed_status')){
     class ajaxed_status {
 
         //constarctor
         public function __construct() {
             global $pagenow,$typenow; //&& $typenow =='page'
-            if (is_admin()  && $pagenow=='edit.php?post_type=cupom_gerado'){
+            if (is_admin()  && $pagenow=='edit.php'){
                 add_filter('admin_footer',array($this,'insert_ajax_status_script'));
             }
 
@@ -41,6 +43,7 @@ if ( !class_exists('ajaxed_status')){
             wp_update_post($current_post);
         }
 
+
         /* 
          ****************************
          * manage columns functions *
@@ -49,24 +52,24 @@ if ( !class_exists('ajaxed_status')){
 
         //add new columns function 
         public function add_new_columns($columns){
-            $columns['Status']= __('Status');
+            $columns['status']= __('Status');
             return $columns;
         }
 
         //rander columns function 
         public function manage_columns($column_name, $id) {
             global $wpdb,$post;
-            if ("Status" == $column_name){
+            if ("status" == $column_name){
                 echo '<div id="psatus">';
                 switch ($post->post_status) {
-                    case 'gerado':
-                        echo '<a href="#" class="pb" change_to="pending" pid="'.$id.'">Gerado</a>';
+                    case 'publish':
+                        echo '<a href="#" class="pb" change_to="pending" pid="'.$id.'">Published</a>';
                         break;
-                    case 'utilizado':
-                        echo '<a href="#" class="pb" change_to="gerado" pid="'.$id.'">Utilizado</a>';
+                    case 'draft':
+                        echo '<a href="#" class="pb" change_to="publish" pid="'.$id.'">Draft</a>';
                         break;
-                    case 'cancelado':
-                        echo '<a href="#" class="pb" change_to="cancelado" pid="'.$id.'">Cancelado</a>';
+                    case 'pending':
+                        echo '<a href="#" class="pb" change_to="publish" pid="'.$id.'">Pending</a>';
                         break;
                     default:
                         echo 'unknown';
@@ -119,12 +122,12 @@ if ( !class_exists('ajaxed_status')){
             }
             if (isset($_GET['change_to'])){
                 $this->change_post_status($_GET['post_id'],$_GET['change_to']);
-                if ($_GET['change_to'] == "cancelado"){
-                    $re['text'] = "Cancelado";
-                    $re['change_to'] = "gerado";
+                if ($_GET['change_to'] == "pending"){
+                    $re['text'] = "Pending";
+                    $re['change_to'] = "publish";
                 }else{
-                    $re['text'] = "Gerado";
-                    $re['change_to'] = "cancelado";
+                    $re['text'] = "Published";
+                    $re['change_to'] = "pending";
                 }
             }else{
                 $re['data'] = 'something went wrong ...';

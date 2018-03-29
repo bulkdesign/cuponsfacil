@@ -18,6 +18,9 @@ get_header('login'); ?>
 			<div class="row">
 				<div class="col s12 margin20">
 					<div class="col s12 center">
+						<p>É comerciante? <a href="<?php echo site_url(); ?>/login-comerciante">Clique aqui para fazer seu login.</a></p>
+					</div>
+					<div class="col s12 center">
 						<a href="https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect=https://www.cuponsfacil.com.br" onclick="window.location = 'https://www.cuponsfacil.com.br/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;'clientes">
 						<div class="new-fb-btn new-fb-1 new-fb-default-anim"><div class="new-fb-1-1"><div class="new-fb-1-1-1">Entrar com Facebook</div></div></div>
 						</a>

@@ -19,6 +19,7 @@
  * It will show in the "Search results" dropdown menu as "Custom: gray".
  */
 ?>
+
 <!--  Main results wrapper - wraps the paginations, map and results -->
 <div class="gmw-results-wrapper gmw-results-wrapper-<?php echo $gmw['ID']; ?> gmw-pt-gray-results-wrapper">
 	
@@ -39,7 +40,7 @@
 	<?php do_action( 'gmw_search_results_before_loop' , $gmw ); ?>
 	
 	<!--  Results wrapper -->
-	<table class="striped" id="table" data-toggle="table" data-filter-control="true">
+	<table class="striped hide-on-small-only" id="table" data-toggle="table" data-filter-control="true">
 	    <thead>
 	        <tr>					        	
 	            <th data-field="estabelecimento" data-filter-control="input"><strong>Estabelecimento</strong></th>
@@ -80,6 +81,63 @@
 				</td>
         	</tr>
 
+
+				<?php do_action( 'gmw_posts_loop_before_content' , $gmw, $post ); ?>
+	   						
+    			<!-- Get directions -->	 	
+				<?php if ( isset( $gmw['search_results']['get_directions'] ) ) { ?>
+					
+					<?php do_action( 'gmw_posts_loop_before_get_directions' , $gmw, $post ); ?>
+					
+					<div class="get-directions-link">
+    					<?php gmw_directions_link( $post, $gmw, false ); ?>
+    				</div>
+    			<?php } ?>
+    			
+				<!--  Driving Distance -->
+				<?php if ( isset( $gmw['search_results']['by_driving'] ) ) { ?>
+    				<?php gmw_driving_distance( $post, $gmw, false ); ?>
+    			<?php } ?>
+    			
+    			<?php do_action( 'gmw_search_results_loop_item_end' , $gmw, $post ); ?>
+				
+		<?php endwhile;	 ?>
+	    
+	    </tbody>
+		
+	</table>
+
+	<table class="striped hide-on-med-and-up" id="table" data-toggle="table" data-filter-control="true">
+	    <thead>
+	        <tr>					        	
+	            <th data-field="estabelecimento" data-filter-control="input"><strong>Estabelecimento</strong></th>
+	            <th data-field="endereco" data-filter-control="input"><strong>Endereço</strong></th>
+	        </tr>
+	    </thead>
+	    <tbody>
+
+			<?php while ( $gmw_query->have_posts() ) : $gmw_query->the_post(); ?>
+			
+			<?php $featured = ( !empty( $post->feature ) ) ? 'gmw-featured-post' : ''; ?>
+
+			<?php do_action( 'gmw_search_results_loop_item_start' , $gmw, $post ); ?>
+
+	        <tr>
+	        	<!-- Estabelecimento -->
+				<td>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_title(); ?>
+					</a> - <?php echo get_field('ramo_de_atuacao'); ?><br>
+					<span class="radius"><?php gmw_distance_to_location( $post, $gmw ); ?></span>
+				</td>
+				<!-- Endereco -->
+				<td>
+					<div class="address-wrapper">
+				    	<span class="fa fa-map-marker address-icon"></span>
+				    	<span class="address"><?php gmw_location_address( $post, $gmw ); ?></span>
+					</div>
+				</td>
+        	</tr>
 
 				<?php do_action( 'gmw_posts_loop_before_content' , $gmw, $post ); ?>
 	   						
